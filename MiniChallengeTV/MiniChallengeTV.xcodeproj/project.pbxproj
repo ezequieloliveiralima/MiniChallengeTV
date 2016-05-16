@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57BF64F91CEA600E00298EA2 /* BModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF64F51CEA600E00298EA2 /* BModels.swift */; };
+		57BF64FA1CEA600E00298EA2 /* BuscapeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF64F61CEA600E00298EA2 /* BuscapeAPI.swift */; };
+		57BF64FB1CEA600E00298EA2 /* BuscapeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF64F71CEA600E00298EA2 /* BuscapeConnector.swift */; };
+		57BF64FE1CEA602800298EA2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF64FD1CEA602800298EA2 /* Constants.swift */; };
+		57BF65001CEA603100298EA2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF64FF1CEA603100298EA2 /* Extensions.swift */; };
 		E6CC77E31CE66F700046DF18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77E21CE66F700046DF18 /* AppDelegate.swift */; };
 		E6CC77E51CE66F700046DF18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77E41CE66F700046DF18 /* ViewController.swift */; };
 		E6CC77E81CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77E61CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld */; };
@@ -36,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57BF64F51CEA600E00298EA2 /* BModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BModels.swift; sourceTree = "<group>"; };
+		57BF64F61CEA600E00298EA2 /* BuscapeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeAPI.swift; sourceTree = "<group>"; };
+		57BF64F71CEA600E00298EA2 /* BuscapeConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeConnector.swift; sourceTree = "<group>"; };
+		57BF64FD1CEA602800298EA2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		57BF64FF1CEA603100298EA2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E6CC77DF1CE66F700046DF18 /* MiniChallengeTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallengeTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CC77E21CE66F700046DF18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6CC77E41CE66F700046DF18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +88,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57BF64F41CEA600E00298EA2 /* API Buscape */ = {
+			isa = PBXGroup;
+			children = (
+				57BF64F51CEA600E00298EA2 /* BModels.swift */,
+				57BF64F61CEA600E00298EA2 /* BuscapeAPI.swift */,
+				57BF64F71CEA600E00298EA2 /* BuscapeConnector.swift */,
+			);
+			path = "API Buscape";
+			sourceTree = "<group>";
+		};
 		E6CC77D61CE66F700046DF18 = {
 			isa = PBXGroup;
 			children = (
@@ -108,10 +128,13 @@
 				E6F7608A1CEA38490099B5A6 /* Controllers */,
 				E6CC77E21CE66F700046DF18 /* AppDelegate.swift */,
 				E6CC77E41CE66F700046DF18 /* ViewController.swift */,
+				57BF64FD1CEA602800298EA2 /* Constants.swift */,
+				57BF64FF1CEA603100298EA2 /* Extensions.swift */,
 				E6CC77E91CE66F700046DF18 /* Main.storyboard */,
 				E6CC77EC1CE66F700046DF18 /* Assets.xcassets */,
 				E6CC77EE1CE66F700046DF18 /* Info.plist */,
 				E6CC77E61CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld */,
+				57BF64F41CEA600E00298EA2 /* API Buscape */,
 			);
 			path = MiniChallengeTV;
 			sourceTree = "<group>";
@@ -293,11 +316,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57BF64F91CEA600E00298EA2 /* BModels.swift in Sources */,
 				E6F760901CEA543B0099B5A6 /* CoreDataManager.swift in Sources */,
 				E6CC77E51CE66F700046DF18 /* ViewController.swift in Sources */,
 				E6F7608C1CEA38690099B5A6 /* QRCode.swift in Sources */,
+				57BF64FA1CEA600E00298EA2 /* BuscapeAPI.swift in Sources */,
+				57BF65001CEA603100298EA2 /* Extensions.swift in Sources */,
 				E6CC77E81CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld in Sources */,
 				E6CC77E31CE66F700046DF18 /* AppDelegate.swift in Sources */,
+				57BF64FB1CEA600E00298EA2 /* BuscapeConnector.swift in Sources */,
+				57BF64FE1CEA602800298EA2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

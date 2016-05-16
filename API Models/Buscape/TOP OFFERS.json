@@ -1,0 +1,463 @@
+TOP OFFERS
+
+http://sandbox.buscape.com.br/service/v2/topOffers/buscape/4130577772346e466a48673d/BR/?format=json
+
+{
+    "offer": [{
+        "id": 214611769,
+        "categoryId": 77,
+        "productId": 614591,
+        "categoryName": "Celular e Smartphone",
+        "offerName": "Smartphone Samsung Galaxy J5 Duos Android 5.1 Tela 5 ´ 16GB 4G Câmera 13MP - Dourado + Pulseira Swarovski",
+
+        "priceValue": 835.12,
+        "priceFromValue": 1479.0,
+        "discountPercent": 44,
+        "seal": false,
+
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/T100x100/__2.81-ccab739.jpg"
+        },
+
+        "links": {
+            "link": [{
+                "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0",
+                "type": "offer"
+            }]
+        },
+
+        "seller": {
+            "id": 81,
+            "sellerName": "Americanas.com",
+            "thumbnail": {
+                "url": "http://imagem.buscape.com.br/vitrine/logo81.gif"
+            },
+            "rating": {
+                "userAverageRating": {
+                    "numComments": 10862,
+                    "rating": "0.0"
+                },
+                "eBitRating": {
+                    "numComments": 10862,
+                    "rating": "e-bit Excelente",
+                    "brand": "http://img.ebit.com.br/Site-ebit/images/med-diamante-gnd.png"
+                }
+            }
+        }
+    }, {
+        "offerName": "Smartphone Samsung Galaxy J7 Duos Branco com Dual chip, Tela 5.5 ´, 4G, Câmera 13MP, Android 5.1 e Processador Octa Core de 1.5 Ghz",
+        "categoryName": "Celular e Smartphone",
+        "links": {
+            "link": [{
+                "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0",
+                "type": "offer"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/T100x100/__2.77-b8d3008.jpg"
+        },
+        "priceValue": 1055.03,
+        "priceFromValue": 1702.9,
+        "discountPercent": 39,
+        "seller": {
+            "sellerName": "Extra.com.br",
+            "thumbnail": {
+                "url": "http://imagem.buscape.com.br/vitrine/logo77.gif"
+            },
+            "rating": {
+                "userAverageRating": {
+                    "numComments": 262920,
+                    "rating": "8.0"
+                },
+                "eBitRating": {
+                    "numComments": 262920,
+                    "rating": "e-bit Excelente",
+                    "brand": "http://img.ebit.com.br/Site-ebit/images/med-diamante-gnd.png"
+                }
+            },
+            "id": 77
+        },
+        "categoryId": 77,
+        "id": 193802248,
+        "productId": 615241,
+        "seal": false
+    }, {
+        "offerName": "Smartphone Samsung Galaxy J3 SM - J320M / DS, Quad Core 1.5 Ghz, Android 5.1, Tela de 5, 8GB, 8 MP, 4G, Dual Chip, Desbloqueado - Dourado",
+        "categoryName": "Celular e Smartphone",
+        "links": {
+            "link": [{
+                "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0",
+                "type": "offer"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/T100x100/__2.72420-c9ecf74.jpg"
+        },
+        "priceValue": 649.9,
+        "priceFromValue": 1189.0,
+        "discountPercent": 46,
+        "seller": {
+            "sellerName": "KaBuM!",
+            "thumbnail": {
+                "url": "http://imagem.buscape.com.br/vitrine/logo72420.gif"
+            },
+            "rating": {
+                "userAverageRating": {
+                    "numComments": 226334,
+                    "rating": "8.0"
+                },
+                "eBitRating": {
+                    "numComments": 226334,
+                    "rating": "e-bit Excelente",
+                    "brand": "http://img.ebit.com.br/Site-ebit/images/med-diamante-gnd.png"
+                }
+            },
+            "id": 72420
+        },
+        "categoryId": 77,
+        "id": 211734388,
+        "productId": 619484,
+        "seal": false
+    }, {
+        "offerName": "Smartphone Motorola Moto G ( 3ª Geração ) Colors - Dual Chip, 16GB, 4G, Resistente à água ( IPX7 ) , Câmera instântanea traseira de 13MP e frontal 5MP, Android Lollipop.",
+        "categoryName": "Celular e Smartphone",
+        "links": {
+            "link": [{
+                "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0",
+                "type": "offer"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/T100x100/__2.55067-abc918c.jpg"
+        },
+        "priceValue": 892.05,
+        "priceFromValue": 1308.9,
+        "discountPercent": 32,
+        "seller": {
+            "sellerName": "Motorola",
+            "thumbnail": {
+                "url": "http://imagem.buscape.com.br/vitrine/logo55067.gif"
+            },
+            "rating": {
+                "userAverageRating": {
+                    "numComments": 40,
+                    "rating": "0.0"
+                }
+            },
+            "id": 55067
+        },
+        "categoryId": 77,
+        "id": 180130188,
+        "productId": 613349,
+        "seal": false
+    }, {
+        "offerName": "Smartphone Samsung Galaxy Gran Prime Duos Dual Chip Android Tela 5 ´ Memória Interna 8GB 3G Câmera 8MP - Cinza",
+        "categoryName": "Celular e Smartphone",
+        "links": {
+            "link": [{
+                "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0",
+                "type": "offer"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/T100x100/__2.125-bb07f6f.jpg"
+        },
+        "priceValue": 629.1,
+        "priceFromValue": 1409.0,
+        "discountPercent": 56,
+        "seller": {
+            "sellerName": "Shoptime",
+            "thumbnail": {
+                "url": "http://imagem.buscape.com.br/vitrine/logo125.gif"
+            },
+            "rating": {
+                "userAverageRating": {
+                    "numComments": 24748,
+                    "rating": "0.0"
+                },
+                "eBitRating": {
+                    "numComments": 24748,
+                    "rating": "e-bit Excelente",
+                    "brand": "http://img.ebit.com.br/Site-ebit/images/med-diamante-gnd.png"
+                }
+            },
+            "id": 125
+        },
+        "categoryId": 77,
+        "id": 196116335,
+        "productId": 614885,
+        "seal": false
+    }, {
+        "offerName": "Smartphone Motorola Moto X Play Colors Preto 4G Tela 5.5 ´ Android 5 Câmera 21Mp Dualchip 32Gb - Cod: 8915010",
+        "categoryName": "Celular e Smartphone",
+        "links": {
+            "link": [{
+                "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0",
+                "type": "offer"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/T100x100/__2.155-aebe2d3.jpg"
+        },
+        "priceValue": 1619.1,
+        "priceFromValue": 1899.9,
+        "discountPercent": 15,
+        "seller": {
+            "sellerName": "Saraiva.com.br",
+            "thumbnail": {
+                "url": "http://imagem.buscape.com.br/vitrine/logo155.gif"
+            },
+            "rating": {
+                "userAverageRating": {
+                    "numComments": 214539,
+                    "rating": "8.0"
+                },
+                "eBitRating": {
+                    "numComments": 214539,
+                    "rating": "e-bit Excelente",
+                    "brand": "http://img.ebit.com.br/Site-ebit/images/med-diamante-gnd.png"
+                }
+            },
+            "id": 155
+        },
+        "categoryId": 77,
+        "id": 183231187,
+        "productId": 613365,
+        "seal": false
+    }, {
+        "offerName": "iPhone 5S 16Gb Cinza Espacial Apple - Cod: 8632872",
+        "categoryName": "Celular e Smartphone",
+        "links": {
+            "link": [{
+                "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0",
+                "type": "offer"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/T100x100/__2.155-9c6ece5.jpg"
+        },
+        "priceValue": 1899.05,
+        "priceFromValue": 2948.3,
+        "discountPercent": 36,
+        "seller": {
+            "sellerName": "Saraiva.com.br",
+            "thumbnail": {
+                "url": "http://imagem.buscape.com.br/vitrine/logo155.gif"
+            },
+            "rating": {
+                "userAverageRating": {
+                    "numComments": 214539,
+                    "rating": "8.0"
+                },
+                "eBitRating": {
+                    "numComments": 214539,
+                    "rating": "e-bit Excelente",
+                    "brand": "http://img.ebit.com.br/Site-ebit/images/med-diamante-gnd.png"
+                }
+            },
+            "id": 155
+        },
+        "categoryId": 77,
+        "id": 164031717,
+        "productId": 548829,
+        "seal": false
+    }, {
+        "offerName": "Smartphone Asus Zenfone 2 Laser ZE550KL - 6J152WW, Qualcomm Snapdragon, Android 5.0, 5,5 ´, 16GB, 13MP, 4G, Dual Chip - Prata",
+        "categoryName": "Celular e Smartphone",
+        "links": {
+            "link": [{
+                "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0",
+                "type": "offer"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/T100x100/__2.72420-cb3d08f.jpg"
+        },
+        "priceValue": 849.9,
+        "priceFromValue": 1415.9,
+        "discountPercent": 40,
+        "seller": {
+            "sellerName": "KaBuM!",
+            "thumbnail": {
+                "url": "http://imagem.buscape.com.br/vitrine/logo72420.gif"
+            },
+            "rating": {
+                "userAverageRating": {
+                    "numComments": 226334,
+                    "rating": "8.0"
+                },
+                "eBitRating": {
+                    "numComments": 226334,
+                    "rating": "e-bit Excelente",
+                    "brand": "http://img.ebit.com.br/Site-ebit/images/med-diamante-gnd.png"
+                }
+            },
+            "id": 72420
+        },
+        "categoryId": 77,
+        "id": 213110927,
+        "productId": 616840,
+        "seal": false
+    }, {
+        "offerName": "Smartphone Samsung Galaxy J2 Duos Dual Chip Desbloqueado Android Tela 4.7 ´ 8GB 4G Wi - Fi Câmera 5MP TV Digital - Preto",
+        "categoryName": "Celular e Smartphone",
+        "links": {
+            "link": [{
+                "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0",
+                "type": "offer"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/T100x100/__2.81-bda1936.jpg"
+        },
+        "priceValue": 549.0,
+        "priceFromValue": 975.9,
+        "discountPercent": 44,
+        "seller": {
+            "sellerName": "Americanas.com",
+            "thumbnail": {
+                "url": "http://imagem.buscape.com.br/vitrine/logo81.gif"
+            },
+            "rating": {
+                "userAverageRating": {
+                    "numComments": 10862,
+                    "rating": "0.0"
+                },
+                "eBitRating": {
+                    "numComments": 10862,
+                    "rating": "e-bit Excelente",
+                    "brand": "http://img.ebit.com.br/Site-ebit/images/med-diamante-gnd.png"
+                }
+            },
+            "id": 81
+        },
+        "categoryId": 77,
+        "id": 198842678,
+        "productId": 616630,
+        "seal": true
+    }, {
+        "offerName": "Smartphone LG K10 K430TV, Octa Core 1.14Ghz, Android 6.0, Tela 5.3 ´, 16GB, 13MP, 4G, Dual Chip, Desbloqueado - Dourado",
+        "categoryName": "Celular e Smartphone",
+        "links": {
+            "link": [{
+                "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0",
+                "type": "offer"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/T100x100/__2.72420-cc4e36b.jpg"
+        },
+        "priceValue": 899.9,
+        "priceFromValue": 1649.0,
+        "discountPercent": 46,
+        "seller": {
+            "sellerName": "KaBuM!",
+            "thumbnail": {
+                "url": "http://imagem.buscape.com.br/vitrine/logo72420.gif"
+            },
+            "rating": {
+                "userAverageRating": {
+                    "numComments": 226334,
+                    "rating": "8.0"
+                },
+                "eBitRating": {
+                    "numComments": 226334,
+                    "rating": "e-bit Excelente",
+                    "brand": "http://img.ebit.com.br/Site-ebit/images/med-diamante-gnd.png"
+                }
+            },
+            "id": 72420
+        },
+        "categoryId": 77,
+        "id": 214229867,
+        "productId": 619178,
+        "seal": false
+    }, {
+        "offerName": "Smartphone Moto G ( 3ª Geração ) Colors HDTV XT1544 Preto com Tela de 5 ´ ´, Dual Chip, Android 5.1, 4G, Câmera 13MP e Processador Quad - Core de 1.4 GHz",
+        "categoryName": "Celular e Smartphone",
+        "links": {
+            "link": [{
+                "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0",
+                "type": "offer"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/T100x100/__2.114286-b2b4802.jpg"
+        },
+        "priceValue": 854.1,
+        "priceFromValue": 1365.9,
+        "discountPercent": 38,
+        "seller": {
+            "sellerName": "PontoFrio.com",
+            "thumbnail": {
+                "url": "http://imagem.buscape.com.br/vitrine/logo114286.gif"
+            },
+            "rating": {
+                "userAverageRating": {
+                    "numComments": 211178,
+                    "rating": "8.0"
+                },
+                "eBitRating": {
+                    "numComments": 211178,
+                    "rating": "e-bit Excelente",
+                    "brand": "http://img.ebit.com.br/Site-ebit/images/med-diamante-gnd.png"
+                }
+            },
+            "id": 114286
+        },
+        "categoryId": 77,
+        "id": 187385858,
+        "productId": 613347,
+        "seal": false
+    }, {
+        "offerName": "Smartphone Samsung Galaxy A5 2016 Dual Chip Desbloqueado Android 5.1 Tela 5.2 ´ 16GB 4G 13MP - Rosé",
+        "categoryName": "Celular e Smartphone",
+        "links": {
+            "link": [{
+                "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0",
+                "type": "offer"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/T100x100/__2.65-c5b48eb.jpg"
+        },
+        "priceValue": 1439.1,
+        "priceFromValue": 2292.9,
+        "discountPercent": 38,
+        "seller": {
+            "sellerName": "Submarino",
+            "thumbnail": {
+                "url": "http://imagem.buscape.com.br/vitrine/logo65.gif"
+            },
+            "rating": {
+                "userAverageRating": {
+                    "numComments": 39463,
+                    "rating": "0.0"
+                },
+                "eBitRating": {
+                    "numComments": 39463,
+                    "rating": "e-bit Excelente",
+                    "brand": "http://img.ebit.com.br/Site-ebit/images/med-diamante-gnd.png"
+                }
+            },
+            "id": 65
+        },
+        "categoryId": 77,
+        "id": 207309035,
+        "productId": 618959,
+        "seal": false
+    }],
+    "totalResultsAvailable": 170,
+    "totalResultsReturned": 12,
+    "totalPages": 15,
+    "page": 1,
+    "totalLooseOffers": 0,
+    "details": {
+        "applicationID": "4130577772346e466a48673d",
+        "applicationVersion": "1.0",
+        "applicationPath": "",
+        "status": "success",
+        "code": 0,
+        "message": "success"
+    }
+}
