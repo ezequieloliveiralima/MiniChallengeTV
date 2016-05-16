@@ -14,6 +14,8 @@
 		E6CC77ED1CE66F700046DF18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6CC77EC1CE66F700046DF18 /* Assets.xcassets */; };
 		E6CC77F81CE66F700046DF18 /* MiniChallengeTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77F71CE66F700046DF18 /* MiniChallengeTVTests.swift */; };
 		E6CC78031CE66F700046DF18 /* MiniChallengeTVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC78021CE66F700046DF18 /* MiniChallengeTVUITests.swift */; };
+		E6F7608C1CEA38690099B5A6 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7608B1CEA38690099B5A6 /* QRCode.swift */; };
+		E6F760901CEA543B0099B5A6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7608F1CEA543B0099B5A6 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		E6CC77FE1CE66F700046DF18 /* MiniChallengeTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniChallengeTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CC78021CE66F700046DF18 /* MiniChallengeTVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallengeTVUITests.swift; sourceTree = "<group>"; };
 		E6CC78041CE66F700046DF18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6F7608B1CEA38690099B5A6 /* QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRCode.swift; path = MiniChallengeTV/Models/QRCode.swift; sourceTree = "<group>"; };
+		E6F7608F1CEA543B0099B5A6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = MiniChallengeTV/CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 		E6CC77D61CE66F700046DF18 = {
 			isa = PBXGroup;
 			children = (
+				E6F7608F1CEA543B0099B5A6 /* CoreDataManager.swift */,
+				E6F7608B1CEA38690099B5A6 /* QRCode.swift */,
 				E6CC77E11CE66F700046DF18 /* MiniChallengeTV */,
 				E6CC77F61CE66F700046DF18 /* MiniChallengeTVTests */,
 				E6CC78011CE66F700046DF18 /* MiniChallengeTVUITests */,
@@ -97,6 +103,9 @@
 		E6CC77E11CE66F700046DF18 /* MiniChallengeTV */ = {
 			isa = PBXGroup;
 			children = (
+				E6F760881CEA383D0099B5A6 /* Models */,
+				E6F760891CEA38440099B5A6 /* Views */,
+				E6F7608A1CEA38490099B5A6 /* Controllers */,
 				E6CC77E21CE66F700046DF18 /* AppDelegate.swift */,
 				E6CC77E41CE66F700046DF18 /* ViewController.swift */,
 				E6CC77E91CE66F700046DF18 /* Main.storyboard */,
@@ -123,6 +132,35 @@
 				E6CC78041CE66F700046DF18 /* Info.plist */,
 			);
 			path = MiniChallengeTVUITests;
+			sourceTree = "<group>";
+		};
+		E6F760881CEA383D0099B5A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E6F760911CEA54650099B5A6 /* Core Data */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E6F760891CEA38440099B5A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E6F7608A1CEA38490099B5A6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E6F760911CEA54650099B5A6 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +293,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6F760901CEA543B0099B5A6 /* CoreDataManager.swift in Sources */,
 				E6CC77E51CE66F700046DF18 /* ViewController.swift in Sources */,
+				E6F7608C1CEA38690099B5A6 /* QRCode.swift in Sources */,
 				E6CC77E81CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld in Sources */,
 				E6CC77E31CE66F700046DF18 /* AppDelegate.swift in Sources */,
 			);
@@ -476,6 +516,7 @@
 				E6CC78091CE66F700046DF18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6CC780A1CE66F700046DF18 /* Build configuration list for PBXNativeTarget "MiniChallengeTVTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +525,7 @@
 				E6CC780C1CE66F700046DF18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6CC780D1CE66F700046DF18 /* Build configuration list for PBXNativeTarget "MiniChallengeTVUITests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +534,7 @@
 				E6CC780F1CE66F700046DF18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
