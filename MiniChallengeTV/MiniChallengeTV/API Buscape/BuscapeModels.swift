@@ -85,7 +85,7 @@ class BProduct {
     
     var thumbnailUrl    : String? //600x600
     var imageUrl        : String?
-    var specification   : Specification?
+    var specification   : BSpecification?
     
     init(id: Int) {
         self.id = id
@@ -156,7 +156,7 @@ struct BProductDescription {
     }
 }
 
-struct Specification {
+struct BSpecification {
     var url: String?
     var items: [(name: String, value: [String])]?
 }

@@ -12,6 +12,10 @@
 		57BF64FB1CEA600E00298EA2 /* BuscapeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF64F71CEA600E00298EA2 /* BuscapeConnector.swift */; };
 		57BF64FE1CEA602800298EA2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF64FD1CEA602800298EA2 /* Constants.swift */; };
 		57BF65001CEA603100298EA2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF64FF1CEA603100298EA2 /* Extensions.swift */; };
+		57F4997F1CEB9AE0008FA0A3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F4997E1CEB9AE0008FA0A3 /* Product.swift */; };
+		57F499811CEB9AE8008FA0A3 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F499801CEB9AE8008FA0A3 /* Offer.swift */; };
+		57F499831CEB9AF8008FA0A3 /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F499821CEB9AF8008FA0A3 /* Vendor.swift */; };
+		57F499851CEB9B13008FA0A3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F499841CEB9B13008FA0A3 /* Category.swift */; };
 		E6CC77E31CE66F700046DF18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77E21CE66F700046DF18 /* AppDelegate.swift */; };
 		E6CC77E51CE66F700046DF18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77E41CE66F700046DF18 /* ViewController.swift */; };
 		E6CC77E81CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77E61CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld */; };
@@ -46,6 +50,10 @@
 		57BF64F71CEA600E00298EA2 /* BuscapeConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeConnector.swift; sourceTree = "<group>"; };
 		57BF64FD1CEA602800298EA2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		57BF64FF1CEA603100298EA2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		57F4997E1CEB9AE0008FA0A3 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product.swift; path = Models/Product.swift; sourceTree = "<group>"; };
+		57F499801CEB9AE8008FA0A3 /* Offer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Offer.swift; path = Models/Offer.swift; sourceTree = "<group>"; };
+		57F499821CEB9AF8008FA0A3 /* Vendor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vendor.swift; path = Models/Vendor.swift; sourceTree = "<group>"; };
+		57F499841CEB9B13008FA0A3 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Models/Category.swift; sourceTree = "<group>"; };
 		E6CC77DF1CE66F700046DF18 /* MiniChallengeTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallengeTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CC77E21CE66F700046DF18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6CC77E41CE66F700046DF18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +169,10 @@
 			isa = PBXGroup;
 			children = (
 				E6F760911CEA54650099B5A6 /* Core Data */,
+				57F4997E1CEB9AE0008FA0A3 /* Product.swift */,
+				57F499801CEB9AE8008FA0A3 /* Offer.swift */,
+				57F499821CEB9AF8008FA0A3 /* Vendor.swift */,
+				57F499841CEB9B13008FA0A3 /* Category.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -316,16 +328,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F499811CEB9AE8008FA0A3 /* Offer.swift in Sources */,
 				57BF64F91CEA600E00298EA2 /* BuscapeModels.swift in Sources */,
 				E6F760901CEA543B0099B5A6 /* CoreDataManager.swift in Sources */,
 				E6CC77E51CE66F700046DF18 /* ViewController.swift in Sources */,
 				E6F7608C1CEA38690099B5A6 /* QRCode.swift in Sources */,
 				57BF64FA1CEA600E00298EA2 /* BuscapeAPI.swift in Sources */,
+				57F4997F1CEB9AE0008FA0A3 /* Product.swift in Sources */,
 				57BF65001CEA603100298EA2 /* Extensions.swift in Sources */,
 				E6CC77E81CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld in Sources */,
+				57F499831CEB9AF8008FA0A3 /* Vendor.swift in Sources */,
 				E6CC77E31CE66F700046DF18 /* AppDelegate.swift in Sources */,
 				57BF64FB1CEA600E00298EA2 /* BuscapeConnector.swift in Sources */,
 				57BF64FE1CEA602800298EA2 /* Constants.swift in Sources */,
+				57F499851CEB9B13008FA0A3 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
