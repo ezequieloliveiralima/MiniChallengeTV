@@ -88,18 +88,6 @@
                     <view key="view" contentMode="scaleToFill" id="mSe-Ol-GMq">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="40" sectionFooterHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="Ui8-kl-DzU">
-                                <rect key="frame" x="20" y="180" width="1880" height="880"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="Ui8-kl-DzU" firstAttribute="top" secondItem="4MG-78-Qwe" secondAttribute="bottom" constant="180" id="L4S-yM-ap4"/>
-                            <constraint firstItem="Ui8-kl-DzU" firstAttribute="trailing" secondItem="mSe-Ol-GMq" secondAttribute="trailingMargin" id="ef5-tt-5eP"/>
-                            <constraint firstItem="zqJ-Vg-0eT" firstAttribute="top" secondItem="Ui8-kl-DzU" secondAttribute="bottom" constant="20" id="pyp-bc-NSN"/>
-                            <constraint firstItem="Ui8-kl-DzU" firstAttribute="leading" secondItem="mSe-Ol-GMq" secondAttribute="leadingMargin" id="wWd-57-ZAJ"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favoritos" id="5Nf-Kv-o9a"/>
                 </viewController>
