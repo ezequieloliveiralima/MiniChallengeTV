@@ -9,14 +9,14 @@
 import UIKit
 
 class QRCode {
-    var url: String!
+    var content: String!
     
-    init(url: String) {
-        self.url = url
+    init(content: String) {
+        self.content = content
     }
     
     func generate() -> UIImage {
-        let data = url.dataUsingEncoding(NSISOLatin1StringEncoding, allowLossyConversion: false)
+        let data = content.dataUsingEncoding(NSISOLatin1StringEncoding, allowLossyConversion: false)
         let filter = CIFilter(name: "CIQRCodeGenerator")
         filter!.setValue(data, forKey: "inputMessage")
         filter!.setValue("Q", forKey: "inputCorrectionLevel")
