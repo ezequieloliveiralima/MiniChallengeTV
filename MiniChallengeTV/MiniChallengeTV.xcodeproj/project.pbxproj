@@ -17,6 +17,10 @@
 		E65B77051CEB92630054526E /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E65B77041CEB92630054526E /* ProductTableViewCell.xib */; };
 		E65B77081CEBA78E0054526E /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65B77061CEBA78E0054526E /* FavoritesVC.swift */; };
 		E65B77091CEBA78E0054526E /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65B77071CEBA78E0054526E /* QRCode.swift */; };
+		E65B770B1CEBA8520054526E /* OffersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65B770A1CEBA8520054526E /* OffersVC.swift */; };
+		E65B770D1CEBA8ED0054526E /* CollectionCellWithImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = E65B770C1CEBA8ED0054526E /* CollectionCellWithImage.xib */; };
+		E65B770F1CEBAB9C0054526E /* CollectionViewCellWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65B770E1CEBAB9C0054526E /* CollectionViewCellWithLabel.swift */; };
+		E65B77111CEBABF00054526E /* CollectionViewCellWithLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = E65B77101CEBABF00054526E /* CollectionViewCellWithLabel.xib */; };
 		E6CC77E31CE66F700046DF18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77E21CE66F700046DF18 /* AppDelegate.swift */; };
 		E6CC77E51CE66F700046DF18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77E41CE66F700046DF18 /* ViewController.swift */; };
 		E6CC77E81CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77E61CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld */; };
@@ -55,6 +59,10 @@
 		E65B77041CEB92630054526E /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductTableViewCell.xib; path = Views/ProductTableViewCell.xib; sourceTree = "<group>"; };
 		E65B77061CEBA78E0054526E /* FavoritesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesVC.swift; path = Controllers/FavoritesVC.swift; sourceTree = "<group>"; };
 		E65B77071CEBA78E0054526E /* QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRCode.swift; path = Controllers/QRCode.swift; sourceTree = "<group>"; };
+		E65B770A1CEBA8520054526E /* OffersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OffersVC.swift; path = Controllers/OffersVC.swift; sourceTree = "<group>"; };
+		E65B770C1CEBA8ED0054526E /* CollectionCellWithImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CollectionCellWithImage.xib; path = Views/CollectionCellWithImage.xib; sourceTree = "<group>"; };
+		E65B770E1CEBAB9C0054526E /* CollectionViewCellWithLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewCellWithLabel.swift; path = Views/CollectionViewCellWithLabel.swift; sourceTree = "<group>"; };
+		E65B77101CEBABF00054526E /* CollectionViewCellWithLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CollectionViewCellWithLabel.xib; path = Views/CollectionViewCellWithLabel.xib; sourceTree = "<group>"; };
 		E6CC77DF1CE66F700046DF18 /* MiniChallengeTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallengeTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CC77E21CE66F700046DF18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6CC77E41CE66F700046DF18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -177,7 +185,10 @@
 			children = (
 				E65B76FC1CEB8BAF0054526E /* CollectionCellWithImage.swift */,
 				E65B76FE1CEB8BDD0054526E /* ProductTableViewCell.swift */,
+				E65B770E1CEBAB9C0054526E /* CollectionViewCellWithLabel.swift */,
 				E65B77041CEB92630054526E /* ProductTableViewCell.xib */,
+				E65B770C1CEBA8ED0054526E /* CollectionCellWithImage.xib */,
+				E65B77101CEBABF00054526E /* CollectionViewCellWithLabel.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -187,6 +198,7 @@
 			children = (
 				E65B77061CEBA78E0054526E /* FavoritesVC.swift */,
 				E65B77071CEBA78E0054526E /* QRCode.swift */,
+				E65B770A1CEBA8520054526E /* OffersVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -303,8 +315,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6CC77ED1CE66F700046DF18 /* Assets.xcassets in Resources */,
+				E65B77111CEBABF00054526E /* CollectionViewCellWithLabel.xib in Resources */,
 				E65B77051CEB92630054526E /* ProductTableViewCell.xib in Resources */,
 				E6CC77EB1CE66F700046DF18 /* Main.storyboard in Resources */,
+				E65B770D1CEBA8ED0054526E /* CollectionCellWithImage.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,10 +348,12 @@
 				E6CC77E51CE66F700046DF18 /* ViewController.swift in Sources */,
 				57BF64FA1CEA600E00298EA2 /* BuscapeAPI.swift in Sources */,
 				E65B76FF1CEB8BDD0054526E /* ProductTableViewCell.swift in Sources */,
+				E65B770F1CEBAB9C0054526E /* CollectionViewCellWithLabel.swift in Sources */,
 				57BF65001CEA603100298EA2 /* Extensions.swift in Sources */,
 				E6CC77E81CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld in Sources */,
 				E6CC77E31CE66F700046DF18 /* AppDelegate.swift in Sources */,
 				E65B77081CEBA78E0054526E /* FavoritesVC.swift in Sources */,
+				E65B770B1CEBA8520054526E /* OffersVC.swift in Sources */,
 				E65B77091CEBA78E0054526E /* QRCode.swift in Sources */,
 				57BF64FB1CEA600E00298EA2 /* BuscapeConnector.swift in Sources */,
 				57BF64FE1CEA602800298EA2 /* Constants.swift in Sources */,
