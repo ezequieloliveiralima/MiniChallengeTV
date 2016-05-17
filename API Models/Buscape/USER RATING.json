@@ -1,0 +1,155 @@
+USER RATING
+
+{
+    "product": [{
+        "product": {
+            "thumbnail": {
+                "formats": [{
+                    "formats": {
+                        "width": 100,
+                        "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j5-sm-j500m_100x100-PU960bf_1.jpg",
+                        "height": 100
+                    }
+                }, {
+                    "formats": {
+                        "width": 300,
+                        "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j5-sm-j500m_300x300-PU960bf_1.jpg",
+                        "height": 300
+                    }
+                }, {
+                    "formats": {
+                        "width": 600,
+                        "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j5-sm-j500m_600x600-PU960bf_1.jpg",
+                        "height": 600
+                    }
+                }],
+                "width": 200,
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j5-sm-j500m_200x200-PU960bf_1.jpg",
+                "height": 200
+            },
+            "pricemax": "1356.90",
+            "quantity": 0,
+            "rating": {
+                "useraveragerating": {
+                    "rating": "9.2",
+                    "links": [{
+                        "link": {
+                            "type": "xml",
+                            "url": "http://sandbox.buscape.com.br/service/viewUserRatings/4130577772346e466a48673d/br/?productId=614591&sourceId=9262544"
+                        }
+                    }],
+                    "numcomments": 501
+                }
+            },
+            "specification": {
+                "item": [{
+                    "item": {
+                        "label": "Chips",
+                        "value": ["Dual Chip"]
+                    }
+                }, {
+                    "item": {
+                        "label": "CÃ¢mera Traseira",
+                        "value": ["13.0 Megapixels"]
+                    }
+                }, {
+                    "item": {
+                        "label": "Tamanho da Tela",
+                        "value": ["5.0 polegadas"]
+                    }
+                }, {
+                    "item": {
+                        "label": "Sistema Operacional",
+                        "value": ["Android"]
+                    }
+                }],
+                "links": [{
+                    "link": {
+                        "type": "xml",
+                        "url": "http://sandbox.buscape.com.br/service/viewProductDetails/4130577772346e466a48673d/br/?productId=614591&sourceId=9262544"
+                    }
+                }]
+            },
+            "productshortname": "Samsung J5 SM-J500M",
+            "hasmetasearch": false,
+            "eco": false,
+            "pricemin": "791.12",
+            "numoffers": 126,
+            "totalsellers": 29,
+            "productname": "Smartphone Samsung Galaxy J5 SM-J500M",
+            "fulldescription": true,
+            "links": [{
+                "link": {
+                    "type": "product",
+                    "url": "http://www.buscape.com.br/prod_unico?idu=614591&mdsrc=9262544&mdapp=7984&mddtn=51922611"
+                }
+            }, {
+                "link": {
+                    "type": "xml",
+                    "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/br/?productId=614591&sourceId=9262544"
+                }
+            }],
+            "currency": {
+                "abbreviation": "BRL"
+            },
+            "id": 614591,
+            "categoryid": 77
+        }
+    }],
+    "totallooseoffers": 0,
+    "match": "all",
+    "details": {
+        "applicationpath": "",
+        "date": {
+            "valid": true,
+            "eonandyear": {
+                "lowestsetbit": 5
+            },
+            "hour": 15,
+            "month": 5,
+            "year": 2016,
+            "timezone": -180,
+            "millisecond": 524,
+            "xmlschematype": {
+                "prefix": "",
+                "localpart": "dateTime",
+                "namespaceuri": "http://www.w3.org/2001/XMLSchema"
+            },
+            "day": 13,
+            "minute": 18,
+            "second": 37
+        },
+        "code": 0,
+        "applicationversion": "1.0",
+        "elapsedtime": 13,
+        "applicationid": "4130577772346e466a48673d",
+        "message": "success",
+        "status": "success"
+    },
+    "totalpages": 101,
+    "page": 1,
+    "totalresultsavailable": 501,
+    "totalresultsreturned": 5,
+    "category": {
+        "concatenatecategoryname": false,
+        "thumbnail": {
+            "url": "http://imagem.buscape.com.br/bp5/categorias/77.jpg"
+        },
+        "hasoffer": false,
+        "parentcategoryid": 6420,
+        "isfinal": true,
+        "name": "Celular e Smartphone",
+        "links": [{
+            "link": {
+                "type": "category",
+                "url": "http://www.buscape.com.br/celular-e-smartphone.html?mdsrc=9262544&mdapp=7984&mddtn=51922611"
+            }
+        }, {
+            "link": {
+                "type": "xml",
+                "url": "http://sandbox.buscape.com.br/service/findProductList/4130577772346e466a48673d/br/?categoryId=77&sourceId=9262544"
+            }
+        }],
+        "id": 77
+    }
+}

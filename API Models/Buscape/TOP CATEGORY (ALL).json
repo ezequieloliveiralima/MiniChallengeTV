@@ -1,0 +1,286 @@
+TOP CATEGORY (ALL)
+
+http://sandbox.buscape.com.br/service/v2/topCategories/4130577772346e466a48673d/BR/?format=json
+
+{
+    "subCategory": [{
+        "id": 77,
+        "parentCategoryId": 6420,
+        "name": "Celular e Smartphone",
+        "isFinal": true,
+        "hasOffer": true,
+        "hasProduct": true,
+
+        "thumbnail": {
+            "url": "http://imagem.buscape.com.br/bp5/categorias/77.jpg"
+        },
+        
+        "links": {
+            "link": [{
+                "url": "http://sandbox.buscape.com.br/service/findProductList/4130577772346e466a48673d/BR?categoryId=77&sourceId=9262544&partnerId=0",
+                "type": "list_product"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?categoryId=77&sourceId=9262544&partnerId=0",
+                "type": "list_offer"
+            }, {
+                "url": "http://www.buscape.com.br/celular-e-smartphone.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "buscape"
+            }]
+        }
+    }, {
+        "thumbnail": {
+            "url": "http://imagem.buscape.com.br/bp5/categorias/2852.jpg"
+        },
+        "links": {
+            "link": [{
+                "url": "http://sandbox.buscape.com.br/service/findProductList/4130577772346e466a48673d/BR?categoryId=2852&sourceId=9262544&partnerId=0",
+                "type": "list_product"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?categoryId=2852&sourceId=9262544&partnerId=0",
+                "type": "list_offer"
+            }, {
+                "url": "http://www.buscape.com.br/tv.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "buscape"
+            }]
+        },
+        "name": "TV",
+        "id": 2852,
+        "parentCategoryId": 1,
+        "isFinal": true,
+        "hasOffer": true,
+        "hasProduct": true
+    }, {
+        "thumbnail": {
+            "url": "http://imagem.buscape.com.br/bp5/categorias/3673.jpg"
+        },
+        "links": {
+            "link": [{
+                "url": "http://sandbox.buscape.com.br/service/findProductList/4130577772346e466a48673d/BR?categoryId=3673&sourceId=9262544&partnerId=0",
+                "type": "list_product"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?categoryId=3673&sourceId=9262544&partnerId=0",
+                "type": "list_offer"
+            }, {
+                "url": "http://www.buscape.com.br/geladeira-refrigerador.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "buscape"
+            }]
+        },
+        "name": "Geladeira / Refrigerador",
+        "id": 3673,
+        "parentCategoryId": 116,
+        "isFinal": true,
+        "hasOffer": true,
+        "hasProduct": true
+    }, {
+        "thumbnail": {
+            "url": "http://imagem.buscape.com.br/bp5/categorias/3671.jpg"
+        },
+        "links": {
+            "link": [{
+                "url": "http://sandbox.buscape.com.br/service/findProductList/4130577772346e466a48673d/BR?categoryId=3671&sourceId=9262544&partnerId=0",
+                "type": "list_product"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?categoryId=3671&sourceId=9262544&partnerId=0",
+                "type": "list_offer"
+            }, {
+                "url": "http://www.buscape.com.br/maquina-de-lavar-roupas.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "buscape"
+            }]
+        },
+        "name": "MÃ¡quina de Lavar Roupas",
+        "id": 3671,
+        "parentCategoryId": 116,
+        "isFinal": true,
+        "hasOffer": true,
+        "hasProduct": true
+    }, {
+        "thumbnail": {
+            "url": "http://imagem.buscape.com.br/bp5/categorias/6424.jpg"
+        },
+        "links": {
+            "link": [{
+                "url": "http://sandbox.buscape.com.br/service/findProductList/4130577772346e466a48673d/BR?categoryId=6424&sourceId=9262544&partnerId=0",
+                "type": "list_product"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?categoryId=6424&sourceId=9262544&partnerId=0",
+                "type": "list_offer"
+            }, {
+                "url": "http://www.buscape.com.br/notebook.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "buscape"
+            }]
+        },
+        "name": "Notebook",
+        "id": 6424,
+        "parentCategoryId": 2,
+        "isFinal": true,
+        "hasOffer": true,
+        "hasProduct": true
+    }, {
+        "thumbnail": {
+            "url": "http://imagem.buscape.com.br/bp5/categorias/138.jpg"
+        },
+        "links": {
+            "link": [{
+                "url": "http://sandbox.buscape.com.br/service/findProductList/4130577772346e466a48673d/BR?categoryId=138&sourceId=9262544&partnerId=0",
+                "type": "list_product"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?categoryId=138&sourceId=9262544&partnerId=0",
+                "type": "list_offer"
+            }, {
+                "url": "http://www.buscape.com.br/fogao.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "buscape"
+            }]
+        },
+        "name": "FogÃ£o",
+        "id": 138,
+        "parentCategoryId": 116,
+        "isFinal": true,
+        "hasOffer": true,
+        "hasProduct": true
+    }, {
+        "thumbnail": {
+            "url": "http://imagem.buscape.com.br/bp5/categorias/6058.jpg"
+        },
+        "links": {
+            "link": [{
+                "url": "http://sandbox.buscape.com.br/service/findProductList/4130577772346e466a48673d/BR?categoryId=6058&sourceId=9262544&partnerId=0",
+                "type": "list_product"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?categoryId=6058&sourceId=9262544&partnerId=0",
+                "type": "list_offer"
+            }, {
+                "url": "http://www.buscape.com.br/console-de-videogame.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "buscape"
+            }]
+        },
+        "name": "Console de Videogame",
+        "id": 6058,
+        "parentCategoryId": 2376,
+        "isFinal": true,
+        "hasOffer": true,
+        "hasProduct": true
+    }, {
+        "thumbnail": {
+            "url": "http://imagem.buscape.com.br/bp5/categorias/126.jpg"
+        },
+        "links": {
+            "link": [{
+                "url": "http://sandbox.buscape.com.br/service/findProductList/4130577772346e466a48673d/BR?categoryId=126&sourceId=9262544&partnerId=0",
+                "type": "list_product"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?categoryId=126&sourceId=9262544&partnerId=0",
+                "type": "list_offer"
+            }, {
+                "url": "http://www.buscape.com.br/microondas.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "buscape"
+            }]
+        },
+        "name": "Microondas",
+        "id": 126,
+        "parentCategoryId": 116,
+        "isFinal": true,
+        "hasOffer": true,
+        "hasProduct": true
+    }, {
+        "thumbnail": {
+            "url": "http://imagem.buscape.com.br/bp5/categorias/3606.jpg"
+        },
+        "links": {
+            "link": [{
+                "url": "http://sandbox.buscape.com.br/service/findProductList/4130577772346e466a48673d/BR?categoryId=3606&sourceId=9262544&partnerId=0",
+                "type": "list_product"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?categoryId=3606&sourceId=9262544&partnerId=0",
+                "type": "list_offer"
+            }, {
+                "url": "http://www.buscape.com.br/impressora.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "buscape"
+            }]
+        },
+        "name": "Impressora",
+        "id": 3606,
+        "parentCategoryId": 2,
+        "isFinal": true,
+        "hasOffer": true,
+        "hasProduct": true
+    }, {
+        "thumbnail": {
+            "url": "http://imagem.buscape.com.br/bp5/categorias/10232.jpg"
+        },
+        "links": {
+            "link": [{
+                "url": "http://sandbox.buscape.com.br/service/findProductList/4130577772346e466a48673d/BR?categoryId=10232&sourceId=9262544&partnerId=0",
+                "type": "list_product"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?categoryId=10232&sourceId=9262544&partnerId=0",
+                "type": "list_offer"
+            }, {
+                "url": "http://www.buscape.com.br/tablet.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "buscape"
+            }]
+        },
+        "name": "Tablet",
+        "id": 10232,
+        "parentCategoryId": 2,
+        "isFinal": true,
+        "hasOffer": true,
+        "hasProduct": true
+    }, {
+        "thumbnail": {
+            "url": "http://imagem.buscape.com.br/bp5/categorias/121.jpg"
+        },
+        "links": {
+            "link": [{
+                "url": "http://sandbox.buscape.com.br/service/findProductList/4130577772346e466a48673d/BR?categoryId=121&sourceId=9262544&partnerId=0",
+                "type": "list_product"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?categoryId=121&sourceId=9262544&partnerId=0",
+                "type": "list_offer"
+            }, {
+                "url": "http://www.buscape.com.br/cafeteira.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "buscape"
+            }]
+        },
+        "name": "Cafeteira",
+        "id": 121,
+        "parentCategoryId": 116,
+        "isFinal": true,
+        "hasOffer": true,
+        "hasProduct": true
+    }, {
+        "thumbnail": {
+            "url": "http://imagem.buscape.com.br/bp5/categorias/3737.jpg"
+        },
+        "links": {
+            "link": [{
+                "url": "http://sandbox.buscape.com.br/service/findProductList/4130577772346e466a48673d/BR?categoryId=3737&sourceId=9262544&partnerId=0",
+                "type": "list_product"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?categoryId=3737&sourceId=9262544&partnerId=0",
+                "type": "list_offer"
+            }, {
+                "url": "http://www.buscape.com.br/hd.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "buscape"
+            }]
+        },
+        "name": "HD",
+        "id": 3737,
+        "parentCategoryId": 58,
+        "isFinal": true,
+        "hasOffer": true,
+        "hasProduct": true
+    }],
+    "totalResultsAvailable": 87,
+    "totalResultsReturned": 12,
+    "totalPages": 8,
+    "page": 1,
+    "totalLooseOffers": 0,
+    "details": {
+        "applicationID": "4130577772346e466a48673d",
+        "applicationVersion": "1.0",
+        "applicationPath": "",
+        "status": "success",
+        "code": 0,
+        "message": "success"
+    }
+}

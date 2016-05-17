@@ -1,0 +1,982 @@
+TOP PRODUCTS
+
+{
+    "product": [{
+        "id": 614591,
+        "categoryId": 77,
+        "categoryName": "Celular e Smartphone",
+        "productName": "Smartphone Samsung Galaxy J5 SM-J500M",
+        "productShortName": "Samsung J5 SM-J500M",
+        "fullDescription": true,
+        "priceMin": "835.12",
+        "priceMax": "1479.00",
+
+        "hasMetaSearch": false,
+        "eco": false,
+        "quantity": 0,
+        "numOffers": 91,
+        "totalSellers": 18,
+
+        "currency": {
+            "abbreviation": "BRL"
+        },
+        
+        "links": {
+            "link": [{
+                "url": "http://www.buscape.com.br/smartphone-samsung-galaxy-j5-sm-j500m.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "product"
+            }, {
+                "url": "http://www.buscape.com.br/prod_ficha?idu=614591",
+                "type": "specification"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?productId=614591&sourceId=9262544&partnerId=0",
+                "type": "xml"
+            }]
+        },
+
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j5-sm-j500m_200x200-PU960bf_1.jpg",
+            "height": 200,
+            "width": 200,
+            "formats": [{
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j5-sm-j500m_100x100-PU960bf_1.jpg",
+                "height": 100,
+                "width": 100
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j5-sm-j500m_300x300-PU960bf_1.jpg",
+                "height": 300,
+                "width": 300
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j5-sm-j500m_600x600-PU960bf_1.jpg",
+                "height": 600,
+                "width": 600
+            }]
+        },
+        "rating": {
+            "userAverageRating": {
+                "numComments": 500,
+                "rating": "9.2",
+                "links": {
+                    "link": [{
+                        "url": "http://sandbox.buscape.com.br/service/viewUserRatings/4130577772346e466a48673d/BR?productId=614591",
+                        "type": "xml"
+                    }]
+                }
+            }
+        },
+        "specification": {
+            "links": {
+                "link": [{
+                    "url": "http://sandbox.buscape.com.br/service/viewProductDetails/4130577772346e466a48673d/BR?productId=614591",
+                    "type": "xml"
+                }]
+            },
+            "item": [{
+                "value": ["Dual Chip"],
+                "label": "Chips"
+            }, {
+                "value": ["13.0 Megapixels"],
+                "label": "Câmera Traseira"
+            }, {
+                "value": ["5.0 polegadas"],
+                "label": "Tamanho da Tela"
+            }, {
+                "value": ["Android"],
+                "label": "Sistema Operacional"
+            }]
+        }
+    }, {
+        "productName": "Smartphone Samsung Galaxy J7 SM-J700M",
+        "productShortName": "Samsung J7 SM-J700M",
+        "categoryName": "Celular e Smartphone",
+        "currency": {
+            "abbreviation": "BRL"
+        },
+        "priceMin": "1055.03",
+        "priceMax": "1499.90",
+        "links": {
+            "link": [{
+                "url": "http://www.buscape.com.br/smartphone-samsung-galaxy-j7-sm-j700m.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "product"
+            }, {
+                "url": "http://www.buscape.com.br/prod_ficha?idu=615241",
+                "type": "specification"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?productId=615241&sourceId=9262544&partnerId=0",
+                "type": "xml"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j7-sm-j700m_200x200-PU96349_1.jpg",
+            "height": 200,
+            "width": 200,
+            "formats": [{
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j7-sm-j700m_100x100-PU96349_1.jpg",
+                "height": 100,
+                "width": 100
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j7-sm-j700m_300x300-PU96349_1.jpg",
+                "height": 300,
+                "width": 300
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j7-sm-j700m_600x600-PU96349_1.jpg",
+                "height": 600,
+                "width": 600
+            }]
+        },
+        "rating": {
+            "userAverageRating": {
+                "numComments": 177,
+                "rating": "9.4",
+                "links": {
+                    "link": [{
+                        "url": "http://sandbox.buscape.com.br/service/viewUserRatings/4130577772346e466a48673d/BR?productId=615241",
+                        "type": "xml"
+                    }]
+                }
+            }
+        },
+        "specification": {
+            "links": {
+                "link": [{
+                    "url": "http://sandbox.buscape.com.br/service/viewProductDetails/4130577772346e466a48673d/BR?productId=615241",
+                    "type": "xml"
+                }]
+            },
+            "item": [{
+                "value": ["Dual Chip"],
+                "label": "Chips"
+            }, {
+                "value": ["13.0 Megapixels"],
+                "label": "Câmera Traseira"
+            }, {
+                "value": ["5.5 polegadas"],
+                "label": "Tamanho da Tela"
+            }, {
+                "value": ["Android"],
+                "label": "Sistema Operacional"
+            }]
+        },
+        "fullDescription": true,
+        "totalSellers": 18,
+        "categoryId": 77,
+        "hasMetaSearch": false,
+        "eco": false,
+        "id": 615241,
+        "quantity": 0,
+        "numOffers": 69
+    }, {
+        "productName": "Smartphone Samsung Galaxy J3 SM-J320M",
+        "productShortName": "Samsung J3 SM-J320M",
+        "categoryName": "Celular e Smartphone",
+        "currency": {
+            "abbreviation": "BRL"
+        },
+        "priceMin": "649.90",
+        "priceMax": "1189.00",
+        "links": {
+            "link": [{
+                "url": "http://www.buscape.com.br/smartphone-samsung-galaxy-j3-sm-j320m.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "product"
+            }, {
+                "url": "http://www.buscape.com.br/prod_ficha?idu=619484",
+                "type": "specification"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?productId=619484&sourceId=9262544&partnerId=0",
+                "type": "xml"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j3-sm-j320m_200x200-PU973dc_1.jpg",
+            "height": 200,
+            "width": 200,
+            "formats": [{
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j3-sm-j320m_100x100-PU973dc_1.jpg",
+                "height": 100,
+                "width": 100
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j3-sm-j320m_300x300-PU973dc_1.jpg",
+                "height": 300,
+                "width": 300
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j3-sm-j320m_600x600-PU973dc_1.jpg",
+                "height": 600,
+                "width": 600
+            }]
+        },
+        "rating": {
+            "userAverageRating": {
+                "numComments": 6,
+                "rating": "8.8",
+                "links": {
+                    "link": [{
+                        "url": "http://sandbox.buscape.com.br/service/viewUserRatings/4130577772346e466a48673d/BR?productId=619484",
+                        "type": "xml"
+                    }]
+                }
+            }
+        },
+        "specification": {
+            "links": {
+                "link": [{
+                    "url": "http://sandbox.buscape.com.br/service/viewProductDetails/4130577772346e466a48673d/BR?productId=619484",
+                    "type": "xml"
+                }]
+            },
+            "item": [{
+                "value": ["Dual Chip"],
+                "label": "Chips"
+            }, {
+                "value": ["8.0 Megapixels"],
+                "label": "Câmera Traseira"
+            }, {
+                "value": ["5.0 polegadas"],
+                "label": "Tamanho da Tela"
+            }, {
+                "value": ["Android"],
+                "label": "Sistema Operacional"
+            }]
+        },
+        "fullDescription": true,
+        "totalSellers": 19,
+        "categoryId": 77,
+        "hasMetaSearch": false,
+        "eco": false,
+        "id": 619484,
+        "quantity": 0,
+        "numOffers": 70
+    }, {
+        "productName": "Smartphone Motorola Moto G 3ª Geração XT1543 16GB",
+        "productShortName": "Motorola 3ª Geração XT1543 16GB",
+        "categoryName": "Celular e Smartphone",
+        "currency": {
+            "abbreviation": "BRL"
+        },
+        "priceMin": "892.05",
+        "priceMax": "1299.00",
+        "links": {
+            "link": [{
+                "url": "http://www.buscape.com.br/smartphone-motorola-moto-g-3-geracao-xt1543-16gb.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "product"
+            }, {
+                "url": "http://www.buscape.com.br/prod_ficha?idu=613349",
+                "type": "specification"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?productId=613349&sourceId=9262544&partnerId=0",
+                "type": "xml"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-motorola-moto-g-3-geracao-xt1543-16gb_200x200-PU95be5_1.jpg",
+            "height": 200,
+            "width": 200,
+            "formats": [{
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-motorola-moto-g-3-geracao-xt1543-16gb_100x100-PU95be5_1.jpg",
+                "height": 100,
+                "width": 100
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-motorola-moto-g-3-geracao-xt1543-16gb_300x300-PU95be5_1.jpg",
+                "height": 300,
+                "width": 300
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-motorola-moto-g-3-geracao-xt1543-16gb_600x600-PU95be5_1.jpg",
+                "height": 600,
+                "width": 600
+            }]
+        },
+        "rating": {
+            "userAverageRating": {
+                "numComments": 451,
+                "rating": "9.0",
+                "links": {
+                    "link": [{
+                        "url": "http://sandbox.buscape.com.br/service/viewUserRatings/4130577772346e466a48673d/BR?productId=613349",
+                        "type": "xml"
+                    }]
+                }
+            }
+        },
+        "specification": {
+            "links": {
+                "link": [{
+                    "url": "http://sandbox.buscape.com.br/service/viewProductDetails/4130577772346e466a48673d/BR?productId=613349",
+                    "type": "xml"
+                }]
+            },
+            "item": [{
+                "value": ["Dual Chip"],
+                "label": "Chips"
+            }, {
+                "value": ["13.0 Megapixels"],
+                "label": "Câmera Traseira"
+            }, {
+                "value": ["5.0 polegadas"],
+                "label": "Tamanho da Tela"
+            }, {
+                "value": ["Android"],
+                "label": "Sistema Operacional"
+            }]
+        },
+        "fullDescription": true,
+        "totalSellers": 17,
+        "categoryId": 77,
+        "hasMetaSearch": false,
+        "eco": false,
+        "id": 613349,
+        "quantity": 0,
+        "numOffers": 47
+    }, {
+        "productName": "Smartphone Samsung Galaxy Gran Prime SM-G531",
+        "productShortName": "Samsung SM-G531",
+        "categoryName": "Celular e Smartphone",
+        "currency": {
+            "abbreviation": "BRL"
+        },
+        "priceMin": "629.10",
+        "priceMax": "1409.00",
+        "links": {
+            "link": [{
+                "url": "http://www.buscape.com.br/smartphone-samsung-galaxy-gran-prime-sm-g531.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "product"
+            }, {
+                "url": "http://www.buscape.com.br/prod_ficha?idu=614885",
+                "type": "specification"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?productId=614885&sourceId=9262544&partnerId=0",
+                "type": "xml"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-gran-prime-sm-g531_200x200-PU961e5_1.jpg",
+            "height": 200,
+            "width": 200,
+            "formats": [{
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-gran-prime-sm-g531_100x100-PU961e5_1.jpg",
+                "height": 100,
+                "width": 100
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-gran-prime-sm-g531_300x300-PU961e5_1.jpg",
+                "height": 300,
+                "width": 300
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-gran-prime-sm-g531_600x600-PU961e5_1.jpg",
+                "height": 600,
+                "width": 600
+            }]
+        },
+        "rating": {
+            "userAverageRating": {
+                "numComments": 220,
+                "rating": "9.0",
+                "links": {
+                    "link": [{
+                        "url": "http://sandbox.buscape.com.br/service/viewUserRatings/4130577772346e466a48673d/BR?productId=614885",
+                        "type": "xml"
+                    }]
+                }
+            }
+        },
+        "specification": {
+            "links": {
+                "link": [{
+                    "url": "http://sandbox.buscape.com.br/service/viewProductDetails/4130577772346e466a48673d/BR?productId=614885",
+                    "type": "xml"
+                }]
+            },
+            "item": [{
+                "value": ["Dual Chip"],
+                "label": "Chips"
+            }, {
+                "value": ["8.0 Megapixels"],
+                "label": "Câmera Traseira"
+            }, {
+                "value": ["5.0 polegadas"],
+                "label": "Tamanho da Tela"
+            }, {
+                "value": ["Android"],
+                "label": "Sistema Operacional"
+            }]
+        },
+        "fullDescription": true,
+        "totalSellers": 11,
+        "categoryId": 77,
+        "hasMetaSearch": false,
+        "eco": false,
+        "id": 614885,
+        "quantity": 0,
+        "numOffers": 58
+    }, {
+        "productName": "Smartphone Motorola Moto X Play XT1563 32GB",
+        "productShortName": "Motorola Play XT1563 32GB",
+        "categoryName": "Celular e Smartphone",
+        "currency": {
+            "abbreviation": "BRL"
+        },
+        "priceMin": "1529.15",
+        "priceMax": "1899.90",
+        "links": {
+            "link": [{
+                "url": "http://www.buscape.com.br/smartphone-motorola-moto-x-play-xt1563-32gb.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "product"
+            }, {
+                "url": "http://www.buscape.com.br/prod_ficha?idu=613365",
+                "type": "specification"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?productId=613365&sourceId=9262544&partnerId=0",
+                "type": "xml"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-motorola-moto-x-play-xt1563-32gb_200x200-PU95bf5_1.jpg",
+            "height": 200,
+            "width": 200,
+            "formats": [{
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-motorola-moto-x-play-xt1563-32gb_100x100-PU95bf5_1.jpg",
+                "height": 100,
+                "width": 100
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-motorola-moto-x-play-xt1563-32gb_300x300-PU95bf5_1.jpg",
+                "height": 300,
+                "width": 300
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-motorola-moto-x-play-xt1563-32gb_600x600-PU95bf5_1.jpg",
+                "height": 600,
+                "width": 600
+            }]
+        },
+        "rating": {
+            "userAverageRating": {
+                "numComments": 269,
+                "rating": "9.2",
+                "links": {
+                    "link": [{
+                        "url": "http://sandbox.buscape.com.br/service/viewUserRatings/4130577772346e466a48673d/BR?productId=613365",
+                        "type": "xml"
+                    }]
+                }
+            }
+        },
+        "specification": {
+            "links": {
+                "link": [{
+                    "url": "http://sandbox.buscape.com.br/service/viewProductDetails/4130577772346e466a48673d/BR?productId=613365",
+                    "type": "xml"
+                }]
+            },
+            "item": [{
+                "value": ["Dual Chip"],
+                "label": "Chips"
+            }, {
+                "value": ["21 Megapixels"],
+                "label": "Câmera Traseira"
+            }, {
+                "value": ["5.5 polegadas"],
+                "label": "Tamanho da Tela"
+            }, {
+                "value": ["Android"],
+                "label": "Sistema Operacional"
+            }]
+        },
+        "fullDescription": true,
+        "totalSellers": 8,
+        "categoryId": 77,
+        "hasMetaSearch": false,
+        "eco": false,
+        "id": 613365,
+        "quantity": 0,
+        "numOffers": 15
+    }, {
+        "productName": "Smartphone Apple iPhone 5S 16GB",
+        "productShortName": "Apple 5S 16GB",
+        "categoryName": "Celular e Smartphone",
+        "currency": {
+            "abbreviation": "BRL"
+        },
+        "priceMin": "1699.15",
+        "priceMax": "2669.00",
+        "links": {
+            "link": [{
+                "url": "http://www.buscape.com.br/smartphone-apple-iphone-5s-16gb.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "product"
+            }, {
+                "url": "http://www.buscape.com.br/prod_ficha?idu=548829",
+                "type": "specification"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?productId=548829&sourceId=9262544&partnerId=0",
+                "type": "xml"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-5s-16gb_200x200-PU85fdd_1.jpg",
+            "height": 200,
+            "width": 200,
+            "formats": [{
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-5s-16gb_100x100-PU85fdd_1.jpg",
+                "height": 100,
+                "width": 100
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-5s-16gb_300x300-PU85fdd_1.jpg",
+                "height": 300,
+                "width": 300
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-5s-16gb_600x600-PU85fdd_1.jpg",
+                "height": 600,
+                "width": 600
+            }]
+        },
+        "rating": {
+            "userAverageRating": {
+                "numComments": 940,
+                "rating": "9.4",
+                "links": {
+                    "link": [{
+                        "url": "http://sandbox.buscape.com.br/service/viewUserRatings/4130577772346e466a48673d/BR?productId=548829",
+                        "type": "xml"
+                    }]
+                }
+            }
+        },
+        "specification": {
+            "links": {
+                "link": [{
+                    "url": "http://sandbox.buscape.com.br/service/viewProductDetails/4130577772346e466a48673d/BR?productId=548829",
+                    "type": "xml"
+                }]
+            },
+            "item": [{
+                "value": ["Single Chip"],
+                "label": "Chips"
+            }, {
+                "value": ["8.0 Megapixels"],
+                "label": "Câmera Traseira"
+            }, {
+                "value": ["4.0 polegadas"],
+                "label": "Tamanho da Tela"
+            }, {
+                "value": ["iOS"],
+                "label": "Sistema Operacional"
+            }]
+        },
+        "fullDescription": true,
+        "totalSellers": 16,
+        "categoryId": 77,
+        "hasMetaSearch": false,
+        "eco": false,
+        "id": 548829,
+        "quantity": 0,
+        "numOffers": 41
+    }, {
+        "productName": "Smartphone Asus ZenFone 2 Laser ZE550KL 16GB",
+        "productShortName": "Asus 2 Laser ZE550KL 16GB",
+        "categoryName": "Celular e Smartphone",
+        "currency": {
+            "abbreviation": "BRL"
+        },
+        "priceMin": "849.90",
+        "priceMax": "1415.90",
+        "links": {
+            "link": [{
+                "url": "http://www.buscape.com.br/smartphone-asus-zenfone-2-laser-ze550kl-16gb.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "product"
+            }, {
+                "url": "http://www.buscape.com.br/prod_ficha?idu=616840",
+                "type": "specification"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?productId=616840&sourceId=9262544&partnerId=0",
+                "type": "xml"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-asus-zenfone-2-laser-ze550kl-16gb_200x200-PU96988_1.jpg",
+            "height": 200,
+            "width": 200,
+            "formats": [{
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-asus-zenfone-2-laser-ze550kl-16gb_100x100-PU96988_1.jpg",
+                "height": 100,
+                "width": 100
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-asus-zenfone-2-laser-ze550kl-16gb_300x300-PU96988_1.jpg",
+                "height": 300,
+                "width": 300
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-asus-zenfone-2-laser-ze550kl-16gb_600x600-PU96988_1.jpg",
+                "height": 600,
+                "width": 600
+            }]
+        },
+        "rating": {
+            "userAverageRating": {
+                "numComments": 66,
+                "rating": "9.0",
+                "links": {
+                    "link": [{
+                        "url": "http://sandbox.buscape.com.br/service/viewUserRatings/4130577772346e466a48673d/BR?productId=616840",
+                        "type": "xml"
+                    }]
+                }
+            }
+        },
+        "specification": {
+            "links": {
+                "link": [{
+                    "url": "http://sandbox.buscape.com.br/service/viewProductDetails/4130577772346e466a48673d/BR?productId=616840",
+                    "type": "xml"
+                }]
+            },
+            "item": [{
+                "value": ["Dual Chip"],
+                "label": "Chips"
+            }, {
+                "value": ["13.0 Megapixels"],
+                "label": "Câmera Traseira"
+            }, {
+                "value": ["5.5 polegadas"],
+                "label": "Tamanho da Tela"
+            }, {
+                "value": ["Android"],
+                "label": "Sistema Operacional"
+            }]
+        },
+        "fullDescription": true,
+        "totalSellers": 11,
+        "categoryId": 77,
+        "hasMetaSearch": false,
+        "eco": false,
+        "id": 616840,
+        "quantity": 0,
+        "numOffers": 54
+    }, {
+        "productName": "Smartphone Samsung Galaxy J2 SM-J200M",
+        "productShortName": "Samsung J2 SM-J200M",
+        "categoryName": "Celular e Smartphone",
+        "currency": {
+            "abbreviation": "BRL"
+        },
+        "priceMin": "571.12",
+        "priceMax": "899.90",
+        "links": {
+            "link": [{
+                "url": "http://www.buscape.com.br/smartphone-samsung-galaxy-j2-sm-j200m.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "product"
+            }, {
+                "url": "http://www.buscape.com.br/prod_ficha?idu=616630",
+                "type": "specification"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?productId=616630&sourceId=9262544&partnerId=0",
+                "type": "xml"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j2-sm-j200m_200x200-PU968b6_1.jpg",
+            "height": 200,
+            "width": 200,
+            "formats": [{
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j2-sm-j200m_100x100-PU968b6_1.jpg",
+                "height": 100,
+                "width": 100
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j2-sm-j200m_300x300-PU968b6_1.jpg",
+                "height": 300,
+                "width": 300
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j2-sm-j200m_600x600-PU968b6_1.jpg",
+                "height": 600,
+                "width": 600
+            }]
+        },
+        "rating": {
+            "userAverageRating": {
+                "numComments": 64,
+                "rating": "8.8",
+                "links": {
+                    "link": [{
+                        "url": "http://sandbox.buscape.com.br/service/viewUserRatings/4130577772346e466a48673d/BR?productId=616630",
+                        "type": "xml"
+                    }]
+                }
+            }
+        },
+        "specification": {
+            "links": {
+                "link": [{
+                    "url": "http://sandbox.buscape.com.br/service/viewProductDetails/4130577772346e466a48673d/BR?productId=616630",
+                    "type": "xml"
+                }]
+            },
+            "item": [{
+                "value": ["Dual Chip"],
+                "label": "Chips"
+            }, {
+                "value": ["5.0 Megapixels"],
+                "label": "Câmera Traseira"
+            }, {
+                "value": ["4.7 polegadas"],
+                "label": "Tamanho da Tela"
+            }, {
+                "value": ["Android"],
+                "label": "Sistema Operacional"
+            }]
+        },
+        "fullDescription": true,
+        "totalSellers": 15,
+        "categoryId": 77,
+        "hasMetaSearch": false,
+        "eco": false,
+        "id": 616630,
+        "quantity": 0,
+        "numOffers": 47
+    }, {
+        "productName": "Smartphone LG K10 K430TV",
+        "productShortName": "LG K10 K430TV",
+        "categoryName": "Celular e Smartphone",
+        "currency": {
+            "abbreviation": "BRL"
+        },
+        "priceMin": "899.90",
+        "priceMax": "1649.00",
+        "links": {
+            "link": [{
+                "url": "http://www.buscape.com.br/smartphone-lg-k10-k430tv.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "product"
+            }, {
+                "url": "http://www.buscape.com.br/prod_ficha?idu=619178",
+                "type": "specification"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?productId=619178&sourceId=9262544&partnerId=0",
+                "type": "xml"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-lg-k10-k430tv_200x200-PU972aa_1.jpg",
+            "height": 200,
+            "width": 200,
+            "formats": [{
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-lg-k10-k430tv_100x100-PU972aa_1.jpg",
+                "height": 100,
+                "width": 100
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-lg-k10-k430tv_300x300-PU972aa_1.jpg",
+                "height": 300,
+                "width": 300
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-lg-k10-k430tv_600x600-PU972aa_1.jpg",
+                "height": 600,
+                "width": 600
+            }]
+        },
+        "rating": {
+            "userAverageRating": {
+                "numComments": 19,
+                "rating": "9.0",
+                "links": {
+                    "link": [{
+                        "url": "http://sandbox.buscape.com.br/service/viewUserRatings/4130577772346e466a48673d/BR?productId=619178",
+                        "type": "xml"
+                    }]
+                }
+            }
+        },
+        "specification": {
+            "links": {
+                "link": [{
+                    "url": "http://sandbox.buscape.com.br/service/viewProductDetails/4130577772346e466a48673d/BR?productId=619178",
+                    "type": "xml"
+                }]
+            },
+            "item": [{
+                "value": ["Dual Chip"],
+                "label": "Chips"
+            }, {
+                "value": ["13.0 Megapixels"],
+                "label": "Câmera Traseira"
+            }, {
+                "value": ["5.3 polegadas"],
+                "label": "Tamanho da Tela"
+            }, {
+                "value": ["Android"],
+                "label": "Sistema Operacional"
+            }]
+        },
+        "fullDescription": true,
+        "totalSellers": 16,
+        "categoryId": 77,
+        "hasMetaSearch": false,
+        "eco": false,
+        "id": 619178,
+        "quantity": 0,
+        "numOffers": 42
+    }, {
+        "productName": "Smartphone Motorola Moto G 3ª Geração HDTV XT1544 16GB",
+        "productShortName": "Motorola 3ª Geração HDTV XT1544 16GB",
+        "categoryName": "Celular e Smartphone",
+        "currency": {
+            "abbreviation": "BRL"
+        },
+        "priceMin": "836.10",
+        "priceMax": "1209.00",
+        "links": {
+            "link": [{
+                "url": "http://www.buscape.com.br/smartphone-motorola-moto-g-3-geracao-hdtv-xt1544-16gb.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "product"
+            }, {
+                "url": "http://www.buscape.com.br/prod_ficha?idu=613347",
+                "type": "specification"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?productId=613347&sourceId=9262544&partnerId=0",
+                "type": "xml"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-motorola-moto-g-3-geracao-hdtv-xt1544-16gb_200x200-PU95be3_1.jpg",
+            "height": 200,
+            "width": 200,
+            "formats": [{
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-motorola-moto-g-3-geracao-hdtv-xt1544-16gb_100x100-PU95be3_1.jpg",
+                "height": 100,
+                "width": 100
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-motorola-moto-g-3-geracao-hdtv-xt1544-16gb_300x300-PU95be3_1.jpg",
+                "height": 300,
+                "width": 300
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-motorola-moto-g-3-geracao-hdtv-xt1544-16gb_600x600-PU95be3_1.jpg",
+                "height": 600,
+                "width": 600
+            }]
+        },
+        "rating": {
+            "userAverageRating": {
+                "numComments": 332,
+                "rating": "9.2",
+                "links": {
+                    "link": [{
+                        "url": "http://sandbox.buscape.com.br/service/viewUserRatings/4130577772346e466a48673d/BR?productId=613347",
+                        "type": "xml"
+                    }]
+                }
+            }
+        },
+        "specification": {
+            "links": {
+                "link": [{
+                    "url": "http://sandbox.buscape.com.br/service/viewProductDetails/4130577772346e466a48673d/BR?productId=613347",
+                    "type": "xml"
+                }]
+            },
+            "item": [{
+                "value": ["Dual Chip"],
+                "label": "Chips"
+            }, {
+                "value": ["13.0 Megapixels"],
+                "label": "Câmera Traseira"
+            }, {
+                "value": ["5.0 polegadas"],
+                "label": "Tamanho da Tela"
+            }, {
+                "value": ["Android"],
+                "label": "Sistema Operacional"
+            }]
+        },
+        "fullDescription": true,
+        "totalSellers": 14,
+        "categoryId": 77,
+        "hasMetaSearch": false,
+        "eco": false,
+        "id": 613347,
+        "quantity": 0,
+        "numOffers": 32
+    }, {
+        "productName": "Smartphone Samsung Galaxy A5 SM-A510M",
+        "productShortName": "Samsung A5 SM-A510M",
+        "categoryName": "Celular e Smartphone",
+        "currency": {
+            "abbreviation": "BRL"
+        },
+        "priceMin": "1439.10",
+        "priceMax": "2199.00",
+        "links": {
+            "link": [{
+                "url": "http://www.buscape.com.br/smartphone-samsung-galaxy-a5-sm-a510m.html?mdapp=7984&mdsrc=9262544&pr=0",
+                "type": "product"
+            }, {
+                "url": "http://www.buscape.com.br/prod_ficha?idu=618959",
+                "type": "specification"
+            }, {
+                "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?productId=618959&sourceId=9262544&partnerId=0",
+                "type": "xml"
+            }]
+        },
+        "thumbnail": {
+            "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-a5-sm-a510m_200x200-PU971cf_1.jpg",
+            "height": 200,
+            "width": 200,
+            "formats": [{
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-a5-sm-a510m_100x100-PU971cf_1.jpg",
+                "height": 100,
+                "width": 100
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-a5-sm-a510m_300x300-PU971cf_1.jpg",
+                "height": 300,
+                "width": 300
+            }, {
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-a5-sm-a510m_600x600-PU971cf_1.jpg",
+                "height": 600,
+                "width": 600
+            }]
+        },
+        "rating": {
+            "userAverageRating": {
+                "numComments": 23,
+                "rating": "8.8",
+                "links": {
+                    "link": [{
+                        "url": "http://sandbox.buscape.com.br/service/viewUserRatings/4130577772346e466a48673d/BR?productId=618959",
+                        "type": "xml"
+                    }]
+                }
+            }
+        },
+        "specification": {
+            "links": {
+                "link": [{
+                    "url": "http://sandbox.buscape.com.br/service/viewProductDetails/4130577772346e466a48673d/BR?productId=618959",
+                    "type": "xml"
+                }]
+            },
+            "item": [{
+                "value": ["Dual Chip"],
+                "label": "Chips"
+            }, {
+                "value": ["13.0 Megapixels"],
+                "label": "Câmera Traseira"
+            }, {
+                "value": ["5.2 polegadas"],
+                "label": "Tamanho da Tela"
+            }, {
+                "value": ["Android"],
+                "label": "Sistema Operacional"
+            }]
+        },
+        "fullDescription": true,
+        "totalSellers": 18,
+        "categoryId": 77,
+        "hasMetaSearch": false,
+        "eco": false,
+        "id": 618959,
+        "quantity": 0,
+        "numOffers": 55
+    }],
+    "totalResultsAvailable": 170,
+    "totalResultsReturned": 12,
+    "totalPages": 15,
+    "page": 1,
+    "totalLooseOffers": 0,
+    "details": {
+        "applicationID": "4130577772346e466a48673d",
+        "applicationVersion": "1.0",
+        "applicationPath": "",
+        "status": "success",
+        "code": 0,
+        "message": "success"
+    }
+}
