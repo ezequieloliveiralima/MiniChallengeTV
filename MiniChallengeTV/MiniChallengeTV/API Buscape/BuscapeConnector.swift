@@ -58,31 +58,22 @@ class BuscapeConnector {
     }
 
     func getTopProducts(callback: (BTopProducts) -> Void) {
-        getTopProducts(1, callback: callback)
-    }
-    
-    func getTopProducts(page: Int, callback: (BTopProducts) -> Void) {
-        let uri = BuscapeAPI(type: BuscapeSearchType.TopProducts)
-            .setParameter("page", value: String(page))
-            .getURI()
-        openConnection(uri) { (json, response, error) in
-            guard let json = json, products = json["product"] as? [Payload] else {
-                print("TODO error getting Top Products")
-                return
-            }
-            let top = BTopProducts()
-            top.detail = self.parseListDetail(json)
-            top.products = products.map({ self.parseProduct($0) })
-            callback(top)
+        let uri = BuscapeAPI(searchType: .TopProducts).addParameters(.Format(.JSON)).getURI()
+            openConnection(uri) { (json, response, error) in
+                guard let json = json, products = json["product"] as? [Payload] else {
+                    print("TODO error getting Top Products")
+                    return
+                }
+                let top = BTopProducts()
+                top.detail = self.parseListDetail(json)
+                top.products = products.map({ self.parseProduct($0) })
+                callback(top)
         }
     }
     
-    func getTopCategories(callback: (BTopCategories) -> Void) {
-        getTopCategories(1, callback: callback)
-    }
     
-    func getTopCategories(page:Int, callback: (BTopCategories) -> Void) {
-        let uri = BuscapeAPI(type: BuscapeSearchType.TopCategories).getURI()
+    func getTopCategories(callback: (BTopCategories) -> Void) {
+        let uri = BuscapeAPI(searchType: .TopCategories).addParameters(.Format(.JSON)).getURI()
         openConnection(uri) { (json, response, error) in
             guard let json = json, categories = json["subcategory"] as? [Payload] else {
                 print("TODO error getting Top Categories")
@@ -97,11 +88,7 @@ class BuscapeConnector {
     }
     
     func getTopOffers(callback: (BTopOffers) -> Void) {
-        getTopOffers(1, callback: callback)
-    }
-    
-    func getTopOffers(page:Int, callback: (BTopOffers) -> Void) {
-        let uri = BuscapeAPI(type: BuscapeSearchType.TopOffers).getURI()
+        let uri = BuscapeAPI(searchType: .TopOffers).addParameters(.Format(.JSON)).getURI()
         openConnection(uri) { (json, response, error) in
             guard let json = json, offers = json["offer"] as? [Payload] else {
                 print("TODO error getting Top Offers")
@@ -115,7 +102,7 @@ class BuscapeConnector {
     }
     
     func getProduct(id: Int, callback: (BFindProduct) -> Void) {
-        let uri = BuscapeAPI(type: BuscapeSearchType.Product(id: id)).getURI()
+        let uri = BuscapeAPI(searchType: .Product).addParameters(.Format(.JSON), .ProductId(id)).getURI()
         openConnection(uri) { (json, response, error) in
             guard let json = json, offers = json["offer"] as? [Payload], product = json["product"]?[0]?["product"] as? Payload
                 , category = json["category"] as? Payload else {

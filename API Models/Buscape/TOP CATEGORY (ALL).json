@@ -270,11 +270,13 @@ http://sandbox.buscape.com.br/service/v2/topCategories/4130577772346e466a48673d/
         "hasOffer": true,
         "hasProduct": true
     }],
+
     "totalResultsAvailable": 87,
     "totalResultsReturned": 12,
     "totalPages": 8,
     "page": 1,
     "totalLooseOffers": 0,
+    
     "details": {
         "applicationID": "4130577772346e466a48673d",
         "applicationVersion": "1.0",
