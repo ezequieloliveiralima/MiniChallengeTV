@@ -16,7 +16,7 @@ class OffersVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let imageCell = UINib(nibName: "CollectionCellWithImage", bundle: nil)
         let labelCell = UINib(nibName: "CollectionCellWithLabel", bundle: nil)
         collectionOffers.registerNib(imageCell, forCellWithReuseIdentifier: "image-cell")
@@ -26,12 +26,17 @@ class OffersVC: UIViewController {
         categoriesLoading.stopAnimating()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.performSegueWithIdentifier("Filter", sender: self)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

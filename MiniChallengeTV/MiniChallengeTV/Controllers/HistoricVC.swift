@@ -1,30 +1,31 @@
 //
-//  FavoritesVC.swift
+//  HistoricVC.swift
 //  MiniChallengeTV
 //
-//  Created by Ezequiel de Oliveira Lima on 17/05/16.
+//  Created by Ezequiel de Oliveira Lima on 18/05/16.
 //  Copyright © 2016 BEPiD. All rights reserved.
 //
 
 import UIKit
 
-class FavoritesVC: UITableViewController {
+class HistoricVC: UITableViewController {
 
-    var favoritesList: [String]!
+    var historic: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        favoritesList = []
-        favoritesList.append("Oi")
-        
+        historic = []
+        historic.append("DefaultTableCell")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        let productCell = UINib(nibName: "DefaultTableCell", bundle: nil)
-        tableView.registerNib(productCell, forCellReuseIdentifier: "product-cell")
+        let offerCell = UINib(nibName: "DefaultTableCell", bundle: nil)
+        tableView.registerNib(offerCell, forCellReuseIdentifier: "product-cell")
+        
+        tableView.rowHeight = 150.0
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,48 +42,28 @@ class FavoritesVC: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return favoritesList.count
+        return historic.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("product-cell", forIndexPath: indexPath) as! DefaultTableCell
 
-        cell.productName.text = favoritesList[indexPath.row]
-        let gest = UITapGestureRecognizer(target: self, action: #selector(FavoritesVC.editCell(_:)))
-        gest.allowedPressTypes = [ NSNumber(integer: UIPressType.PlayPause.rawValue) ]
-        cell.addGestureRecognizer(gest)
-        cell.tag = indexPath.row
         // Configure the cell...
 
         return cell
     }
     
-    func editCell(sender: UITapGestureRecognizer) {
-        let index = sender.view!.tag
-
-        let alert = UIAlertController(title: "Editar favorito"
-            , message: "O que deseja fazer com este item?"
-            , preferredStyle: .ActionSheet)
-
-        alert.addAction(UIAlertAction(title: "Remover", style: .Destructive, handler: { (action) -> Void in
-            self.favoritesList.removeAtIndex(index)
-            dispatch_async(dispatch_get_main_queue(), {
-                self.tableView.reloadData()
-            })
-        }))
-
-        alert.addAction(UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil))
-
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("Select Product", sender: self)
     }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 150.0
+
+    /*
+    // Override to support conditional editing of the table view.
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
     }
+    */
 
     /*
     // Override to support editing the table view.

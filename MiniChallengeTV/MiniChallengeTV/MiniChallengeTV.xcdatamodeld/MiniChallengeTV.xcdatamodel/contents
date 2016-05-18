@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Automatic">
-    <elements/>
+    <entity name="Category" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parentId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FavoriteProduct" parentEntity="Product" syncable="YES"/>
+    <entity name="HistoricProduct" parentEntity="Product" syncable="YES"/>
+    <entity name="Product" syncable="YES">
+        <attribute name="addedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Category" positionX="-216" positionY="-18" width="128" height="103"/>
+        <element name="Product" positionX="34" positionY="-28" width="128" height="88"/>
+        <element name="FavoriteProduct" positionX="34" positionY="108" width="128" height="43"/>
+        <element name="HistoricProduct" positionX="216" positionY="-7" width="128" height="43"/>
+    </elements>
 </model>
