@@ -1,0 +1,1298 @@
+PRODUCT 
+
+http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/BR?productId=614591&format=json
+
+{
+    "offer": [{
+        "offer": {
+            "id": 202224343,
+            "sku": "2005558",
+            "categoryid": 77,
+            "productid": 614591,
+            "offername": "Smartphone Galaxy J5 Samsung, Dual, MemÃ³ria 16 GB, Desbloqueado Oi, Preto - J500M",
+            "offershortname": "Samsung J5 ",
+
+            "thumbnail": {
+                "url": "http://thumbs.buscape.com.br/T100x100/__2.1314-c0db2d7.jpg"
+            },
+            
+            "links": [{
+                "link": {
+                    "type": "offer",
+                    "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0"
+                }
+            }],
+
+            "price": {
+                "parcel": {
+                    "number": 6,
+                    "interest": 0,
+                    "value": "174.83"
+                },
+                "currency": {
+                    "abbreviation": "BRL"
+                },
+                "value": "996.55"
+            },
+
+            "seller": {
+                "id": 1314,
+                "sellername": "Novo Mundo",
+
+                "istrustedstore": false,
+                "pagamentodigital": false,
+                "cpcdifferentiated": false,
+                "oneclickbuy": false,
+                "oneclickbuyvalue": 0,
+                "advertiserid": 0,
+
+                "thumbnail": {
+                    "url": "http://imagem.buscape.com.br/vitrine/logo1314.gif"
+                },
+
+                "rating": {
+                    "ebitrating": {
+                        "ratingid": "30",
+                        "rating": "Ouro",
+                        "ratingnew": "e-bit Ã“tima",
+                        "numcomments": 18824,
+                        "ebitid": 1762
+                    },
+                    "useraveragerating": {
+                        "rating": "0.0",
+                        "numcomments": 18824
+                    }
+                },
+
+                "links": [{
+                    "link": {
+                        "type": "seller",
+                        "url": "http://www.novomundo.com.br"
+                    }
+                }],
+
+                "contacts": [{
+                    "contact": {
+                        "label": "Atendimento",
+                        "value": "62-35011000"
+                    }
+                }]
+            }
+        }
+    }, {
+        "offer": {
+            "seller": {
+                "thumbnail": {
+                    "url": "http://imagem.buscape.com.br/vitrine/logo1150540.gif"
+                },
+                "rating": {
+                    "ebitrating": {
+                        "ratingid": "30",
+                        "rating": "Ouro",
+                        "ratingnew": "e-bit Ã“tima",
+                        "numcomments": 442,
+                        "ebitid": 74542
+                    },
+                    "useraveragerating": {
+                        "rating": "0.0",
+                        "numcomments": 442
+                    }
+                },
+                "oneclickbuyvalue": 0,
+                "advertiserid": 0,
+                "istrustedstore": false,
+                "pagamentodigital": false,
+                "extra": "Eletrum, os melhores preÃ§os estÃ£o aqui !",
+                "cpcdifferentiated": false,
+                "links": [{
+                    "link": {
+                        "type": "seller",
+                        "url": "http://www.eletrum.com.br"
+                    }
+                }],
+                "sellername": "Eletrum",
+                "oneclickbuy": false,
+                "id": 1150540,
+                "contacts": [{
+                    "contact": {
+                        "label": "Atendimento",
+                        "value": "41-30991900"
+                    }
+                }]
+            },
+            "thumbnail": {
+                "url": "http://thumbs.buscape.com.br/T100x100/__2.1150540-cc57525.jpg"
+            },
+            "productid": 614591,
+            "offername": "Smartphone Samsung Galaxy J5 Dourado Duos",
+            "price": {
+                "parcel": {
+                    "number": 10,
+                    "interest": 0,
+                    "value": "99.90"
+                },
+                "currency": {
+                    "abbreviation": "BRL"
+                },
+                "value": "878.02"
+            },
+            "links": [{
+                "link": {
+                    "type": "offer",
+                    "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0"
+                }
+            }],
+            "offershortname": "Samsung J5 ",
+            "id": 214267173,
+            "sku": "0010190017",
+            "categoryid": 77
+        }
+    }, {
+        "offer": {
+            "seller": {
+                "istrustedstore": false,
+                "pagamentodigital": false,
+                "thumbnail": {
+                    "url": "http://imagem.buscape.com.br/vitrine/logo77.gif"
+                },
+                "rating": {
+                    "ebitrating": {
+                        "ratingid": "40",
+                        "rating": "Diamante",
+                        "ratingnew": "e-bit Excelente",
+                        "numcomments": 262922,
+                        "ebitid": 2043
+                    },
+                    "useraveragerating": {
+                        "rating": "8.0",
+                        "numcomments": 262922
+                    }
+                },
+                "cpcdifferentiated": false,
+                "links": [{
+                    "link": {
+                        "type": "seller",
+                        "url": "http://www.extra.com.br/?utm_source=buscape&utm_medium=comparadorpreco&utm_campaign=BuscaExtra"
+                    }
+                }],
+                "sellername": "Extra.com.br",
+                "oneclickbuy": false,
+                "oneclickbuyvalue": 0,
+                "id": 77,
+                "contacts": [{
+                    "contact": {
+                        "label": "SAC",
+                        "value": "4003-3383"
+                    }
+                }, {
+                    "contact": {
+                        "label": "Televendas",
+                        "value": "4003-0363"
+                    }
+                }],
+                "advertiserid": 0
+            },
+            "thumbnail": {
+                "url": "http://thumbs.buscape.com.br/T100x100/__2.77-b881c26.jpg"
+            },
+            "productid": 614591,
+            "offername": "Smartphone Samsung Galaxy J5 Duos Branco com Dual chip, Tela 5.0 Â´, 4G, CÃ¢mera 13MP, Android 5.1 e Processador Quad Core de 1.2 Ghz",
+            "price": {
+                "parcel": {
+                    "number": 7,
+                    "interest": 0,
+                    "value": "128.43"
+                },
+                "currency": {
+                    "abbreviation": "BRL"
+                },
+                "value": "854.05"
+            },
+            "links": [{
+                "link": {
+                    "type": "offer",
+                    "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0"
+                }
+            }],
+            "offershortname": "Samsung J5 ",
+            "id": 193469478,
+            "sku": "5409354",
+            "categoryid": 77
+        }
+    }, {
+        "offer": {
+            "seller": {
+                "istrustedstore": false,
+                "pagamentodigital": false,
+                "thumbnail": {
+                    "url": "http://imagem.buscape.com.br/vitrine/logo255256.gif"
+                },
+                "rating": {
+                    "ebitrating": {
+                        "ratingid": "40",
+                        "rating": "Diamante",
+                        "ratingnew": "e-bit Excelente",
+                        "numcomments": 396000,
+                        "ebitid": 742
+                    },
+                    "useraveragerating": {
+                        "rating": "7.0",
+                        "numcomments": 396000
+                    }
+                },
+                "cpcdifferentiated": false,
+                "links": [{
+                    "link": {
+                        "type": "seller",
+                        "url": "http://www.walmart.com.br"
+                    }
+                }],
+                "sellername": "Wal-Mart",
+                "oneclickbuy": false,
+                "oneclickbuyvalue": 0,
+                "id": 255256,
+                "advertiserid": 0
+            },
+            "thumbnail": {
+                "url": "http://thumbs.buscape.com.br/T100x100/__2.255256-b845ae6.jpg"
+            },
+            "productid": 614591,
+            "offername": "Smartphone Samsung Galaxy J5 SM - J500M / DS Preto Dual Chip Android 5.1 Lollipop 4G Wi - Fi 16GB SM - J500MZKEZTO 1390315",
+            "price": {
+                "parcel": {
+                    "number": 10,
+                    "interest": 0,
+                    "value": "92.90"
+                },
+                "currency": {
+                    "abbreviation": "BRL"
+                },
+                "value": "929.00"
+            },
+            "links": [{
+                "link": {
+                    "type": "offer",
+                    "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0"
+                }
+            }],
+            "offershortname": "Samsung J5 ",
+            "id": 193223398,
+            "sku": "1390315",
+            "categoryid": 77
+        }
+    }, {
+        "offer": {
+            "seller": {
+                "istrustedstore": false,
+                "pagamentodigital": false,
+                "thumbnail": {
+                    "url": "http://imagem.buscape.com.br/vitrine/logo81.gif"
+                },
+                "rating": {
+                    "ebitrating": {
+                        "ratingid": "40",
+                        "rating": "Diamante",
+                        "ratingnew": "e-bit Excelente",
+                        "numcomments": 10863,
+                        "ebitid": 568
+                    },
+                    "useraveragerating": {
+                        "rating": "0.0",
+                        "numcomments": 10863
+                    }
+                },
+                "cpcdifferentiated": false,
+                "links": [{
+                    "link": {
+                        "type": "seller",
+                        "url": "http://www.americanas.com.br"
+                    }
+                }],
+                "sellername": "Americanas.com",
+                "oneclickbuy": false,
+                "oneclickbuyvalue": 0,
+                "id": 81,
+                "contacts": [{
+                    "contact": {
+                        "label": "Atendimento",
+                        "value": "4003-4848"
+                    }
+                }, {
+                    "contact": {
+                        "label": "Televendas",
+                        "value": "0300-7893200"
+                    }
+                }, {
+                    "contact": {
+                        "label": "Televendas",
+                        "value": "4003-1000"
+                    }
+                }],
+                "advertiserid": 0
+            },
+            "thumbnail": {
+                "url": "http://thumbs.buscape.com.br/T100x100/__2.81-b87c52e.jpg"
+            },
+            "productid": 614591,
+            "offername": "Smartphone Samsung Galaxy J5 Duos Dual Chip Desbloqueado Android 5.1 Tela 5 Â´ 16GB 4G Wi - Fi CÃ¢mera 13MP - Branco",
+            "price": {
+                "parcel": {
+                    "number": 10,
+                    "interest": 2.39,
+                    "value": "109.90"
+                },
+                "currency": {
+                    "abbreviation": "BRL"
+                },
+                "value": "967.12"
+            },
+            "links": [{
+                "link": {
+                    "type": "offer",
+                    "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0"
+                }
+            }],
+            "offershortname": "Samsung J5 ",
+            "id": 193447214,
+            "sku": "124132603",
+            "categoryid": 77
+        }
+    }, {
+        "offer": {
+            "seller": {
+                "thumbnail": {
+                    "url": "http://imagem.buscape.com.br/vitrine/logo1147781.gif"
+                },
+                "coupon": {
+                    "description": "desconto de 10.00%",
+                    "id": 52156,
+                    "type": "info_desc"
+                },
+                "rating": {
+                    "ebitrating": {
+                        "ratingid": "5",
+                        "rating": "sob-avaliaÃ§Ã£o",
+                        "ratingnew": "e-bit em avaliaÃ§Ã£o",
+                        "numcomments": 0,
+                        "ebitid": 636
+                    },
+                    "useraveragerating": {
+                        "rating": "0.0",
+                        "numcomments": 0
+                    }
+                },
+                "oneclickbuyvalue": 0,
+                "advertiserid": 0,
+                "istrustedstore": false,
+                "pagamentodigital": false,
+                "cpcdifferentiated": false,
+                "links": [{
+                    "link": {
+                        "type": "seller",
+                        "url": "http://www.samsung.com/br/home"
+                    }
+                }],
+                "sellername": "SAMSUNG",
+                "oneclickbuy": false,
+                "id": 1147781,
+                "contacts": [{
+                    "contact": {
+                        "label": "Atendimento",
+                        "value": "11-40040000"
+                    }
+                }]
+            },
+            "thumbnail": {
+                "url": "http://thumbs.buscape.com.br/T100x100/__2.1147781-c0dc214.jpg"
+            },
+            "productid": 614591,
+            "offername": "Galaxy J5 Duos",
+            "price": {
+                "currency": {
+                    "abbreviation": "BRL"
+                },
+                "value": "1249.00"
+            },
+            "links": [{
+                "link": {
+                    "type": "offer",
+                    "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0"
+                }
+            }],
+            "offershortname": "Samsung J5 ",
+            "id": 202228244,
+            "sku": "SM-J500MZKZZTO",
+            "categoryid": 77
+        }
+    }, {
+        "offer": {
+            "seller": {
+                "istrustedstore": false,
+                "pagamentodigital": false,
+                "thumbnail": {
+                    "url": "http://imagem.buscape.com.br/vitrine/logo72420.gif"
+                },
+                "rating": {
+                    "ebitrating": {
+                        "ratingid": "40",
+                        "rating": "Diamante",
+                        "ratingnew": "e-bit Excelente",
+                        "numcomments": 226398,
+                        "ebitid": 2709
+                    },
+                    "useraveragerating": {
+                        "rating": "8.0",
+                        "numcomments": 226398
+                    }
+                },
+                "cpcdifferentiated": false,
+                "links": [{
+                    "link": {
+                        "type": "seller",
+                        "url": "http://www.kabum.com.br?utm_source=buscape&utm_medium=buscape&utm_campaign=buscape"
+                    }
+                }],
+                "sellername": "KaBuM!",
+                "oneclickbuy": false,
+                "oneclickbuyvalue": 0,
+                "id": 72420,
+                "contacts": [{
+                    "contact": {
+                        "label": "Atendimento",
+                        "value": "19-21144400"
+                    }
+                }, {
+                    "contact": {
+                        "label": "DÃºvidas",
+                        "value": "19-21144404"
+                    }
+                }, {
+                    "contact": {
+                        "label": "FAX",
+                        "value": "19-21144412"
+                    }
+                }, {
+                    "contact": {
+                        "label": "InformaÃ§Ãµes",
+                        "value": "19-21144411"
+                    }
+                }, {
+                    "contact": {
+                        "label": "SAC",
+                        "value": "19-21144409"
+                    }
+                }, {
+                    "contact": {
+                        "label": "Televendas",
+                        "value": "19-21144444"
+                    }
+                }],
+                "advertiserid": 0
+            },
+            "thumbnail": {
+                "url": "http://thumbs.buscape.com.br/T100x100/__2.72420-b756b78.jpg"
+            },
+            "productid": 614591,
+            "offername": "Smartphone Samsung Galaxy J5 Duos SM - J500M / DS, Quad Core 1.2Ghz, Android 5.1, Tela 5, 16GB, 13MP, 4G, Dual Chip, Desbl - Branco",
+            "price": {
+                "parcel": {
+                    "number": 10,
+                    "interest": 0,
+                    "value": "105.87"
+                },
+                "currency": {
+                    "abbreviation": "BRL"
+                },
+                "value": "899.90"
+            },
+            "links": [{
+                "link": {
+                    "type": "offer",
+                    "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0"
+                }
+            }],
+            "offershortname": "Samsung J5 ",
+            "id": 192244600,
+            "sku": "66506",
+            "categoryid": 77
+        }
+    }, {
+        "offer": {
+            "seller": {
+                "thumbnail": {
+                    "url": "http://imagem.buscape.com.br/vitrine/logo988.gif"
+                },
+                "rating": {
+                    "ebitrating": {
+                        "ratingid": "40",
+                        "rating": "Diamante",
+                        "ratingnew": "e-bit Excelente",
+                        "numcomments": 71837,
+                        "ebitid": 857
+                    },
+                    "useraveragerating": {
+                        "rating": "0.0",
+                        "numcomments": 71837
+                    }
+                },
+                "oneclickbuyvalue": 0,
+                "advertiserid": 0,
+                "istrustedstore": false,
+                "pagamentodigital": false,
+                "extra": "Feliz Compra",
+                "cpcdifferentiated": false,
+                "links": [{
+                    "link": {
+                        "type": "seller",
+                        "url": "http://www.efacil.com.br"
+                    }
+                }],
+                "sellername": "eFÃ¡cil",
+                "oneclickbuy": false,
+                "id": 988,
+                "contacts": [{
+                    "contact": {
+                        "label": "Atendimento",
+                        "value": "34-32181777"
+                    }
+                }, {
+                    "contact": {
+                        "label": "InformaÃ§Ãµes",
+                        "value": "34-40045999"
+                    }
+                }, {
+                    "contact": {
+                        "label": "SAC",
+                        "value": "34-40045999"
+                    }
+                }]
+            },
+            "thumbnail": {
+                "url": "http://thumbs.buscape.com.br/T100x100/__2.988-ba5426b.jpg"
+            },
+            "productid": 614591,
+            "offername": "Smartphone Galaxy J5 Dual Chip Dourado Tela 5 4G+WiFi Android 5.0 13MP 16GB - Samsung",
+            "price": {
+                "parcel": {
+                    "number": 10,
+                    "interest": 0.95,
+                    "value": "92.90"
+                },
+                "currency": {
+                    "abbreviation": "BRL"
+                },
+                "value": "882.25"
+            },
+            "links": [{
+                "link": {
+                    "type": "offer",
+                    "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0"
+                }
+            }],
+            "offershortname": "Samsung J5 ",
+            "id": 195379819,
+            "sku": "3301633",
+            "categoryid": 77
+        }
+    }, {
+        "offer": {
+            "seller": {
+                "thumbnail": {
+                    "url": "http://imagem.buscape.com.br/vitrine/logo778206.gif"
+                },
+                "rating": {
+                    "ebitrating": {
+                        "ratingid": "30",
+                        "rating": "Ouro",
+                        "ratingnew": "e-bit Ã“tima",
+                        "numcomments": 11721,
+                        "ebitid": 808
+                    },
+                    "useraveragerating": {
+                        "rating": "6.0",
+                        "numcomments": 11721
+                    }
+                },
+                "oneclickbuyvalue": 0,
+                "advertiserid": 0,
+                "istrustedstore": false,
+                "pagamentodigital": true,
+                "extra": "Eletronicos, EletrodomÃ©sticos e InformÃ¡tca",
+                "cpcdifferentiated": false,
+                "links": [{
+                    "link": {
+                        "type": "seller",
+                        "url": "http://www.girafa.com.br?origem=buscape&utm_source=buscape&utm_medium=buscape&utm_campaign=buscape"
+                    }
+                }],
+                "sellername": "GIRAFA",
+                "oneclickbuy": false,
+                "id": 778206,
+                "contacts": [{
+                    "contact": {
+                        "label": "Atendimento",
+                        "value": "11-37044515"
+                    }
+                }]
+            },
+            "thumbnail": {
+                "url": "http://thumbs.buscape.com.br/T100x100/__2.778206-be13910.jpg"
+            },
+            "productid": 614591,
+            "offername": "Smartphone Samsung Galaxy J5 Duos Preto 5 Â´ 4G 13MP QuadCore 16GB com Flash Frontal",
+            "price": {
+                "parcel": {
+                    "number": 10,
+                    "interest": 1.34,
+                    "value": "94.90"
+                },
+                "currency": {
+                    "abbreviation": "BRL"
+                },
+                "value": "854.10"
+            },
+            "links": [{
+                "link": {
+                    "type": "offer",
+                    "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0"
+                }
+            }],
+            "offershortname": "Samsung J5 ",
+            "id": 199309584,
+            "sku": "59718",
+            "categoryid": 77
+        }
+    }, {
+        "offer": {
+            "seller": {
+                "istrustedstore": false,
+                "pagamentodigital": false,
+                "thumbnail": {
+                    "url": "http://imagem.buscape.com.br/vitrine/logo1261.gif"
+                },
+                "rating": {
+                    "ebitrating": {
+                        "ratingid": "40",
+                        "rating": "Diamante",
+                        "ratingnew": "e-bit Excelente",
+                        "numcomments": 77039,
+                        "ebitid": 1928
+                    },
+                    "useraveragerating": {
+                        "rating": "0.0",
+                        "numcomments": 77039
+                    }
+                },
+                "cpcdifferentiated": false,
+                "links": [{
+                    "link": {
+                        "type": "seller",
+                        "url": "http://www.fastshop.com.br/default.aspx"
+                    }
+                }],
+                "sellername": "Fast Shop.com.br",
+                "oneclickbuy": false,
+                "oneclickbuyvalue": 0,
+                "id": 1261,
+                "contacts": [{
+                    "contact": {
+                        "label": "SAC",
+                        "value": "11-32323200"
+                    }
+                }, {
+                    "contact": {
+                        "label": "Televendas",
+                        "value": "11-32323100"
+                    }
+                }],
+                "advertiserid": 0
+            },
+            "thumbnail": {
+                "url": "http://thumbs.buscape.com.br/T100x100/__2.1261-b81216b.jpg"
+            },
+            "productid": 614591,
+            "offername": "Samsung Galaxy J5 Duos Dourado, Com Tela De 5 Â´ , 4g, 16 Gb E CÃ¢mera De 13 Mp ? J500",
+            "price": {
+                "parcel": {
+                    "number": 8,
+                    "interest": 1.99,
+                    "value": "124.88"
+                },
+                "currency": {
+                    "abbreviation": "BRL"
+                },
+                "value": "915.16"
+            },
+            "links": [{
+                "link": {
+                    "type": "offer",
+                    "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0"
+                }
+            }],
+            "offershortname": "Samsung J5 ",
+            "id": 193012075,
+            "categoryid": 77
+        }
+    }, {
+        "offer": {
+            "seller": {
+                "istrustedstore": false,
+                "pagamentodigital": false,
+                "thumbnail": {
+                    "url": "http://imagem.buscape.com.br/vitrine/logo1109460.gif"
+                },
+                "rating": {
+                    "ebitrating": {
+                        "ratingid": "30",
+                        "rating": "Ouro",
+                        "ratingnew": "e-bit Ã“tima",
+                        "numcomments": 42456,
+                        "ebitid": 17613
+                    },
+                    "useraveragerating": {
+                        "rating": "0.0",
+                        "numcomments": 42456
+                    }
+                },
+                "cpcdifferentiated": false,
+                "links": [{
+                    "link": {
+                        "type": "seller",
+                        "url": "http://www.clubedoricardo.com.br"
+                    }
+                }],
+                "sellername": "Clube do Ricardo",
+                "oneclickbuy": false,
+                "oneclickbuyvalue": 0,
+                "id": 1109460,
+                "advertiserid": 0
+            },
+            "thumbnail": {
+                "url": "http://thumbs.buscape.com.br/T100x100/__2.1109460-bfbf1ad.jpg"
+            },
+            "productid": 614591,
+            "offername": "Celular Smartphone Samsung Galaxy J5 Duos J500M Dourado - Dual Chip, 4G, Tela 5, CÃ¢mera 13MP + Frontal 5MP com Flash, Quad Core de 1.2 Ghz, 16GB SM - J500M / DS 631476",
+            "price": {
+                "parcel": {
+                    "number": 6,
+                    "interest": 0,
+                    "value": "149.98"
+                },
+                "currency": {
+                    "abbreviation": "BRL"
+                },
+                "value": "899.88"
+            },
+            "links": [{
+                "link": {
+                    "type": "offer",
+                    "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0"
+                }
+            }],
+            "offershortname": "Samsung J5 ",
+            "id": 201060781,
+            "sku": "631476",
+            "categoryid": 77
+        }
+    }, {
+        "offer": {
+            "seller": {
+                "istrustedstore": false,
+                "pagamentodigital": false,
+                "thumbnail": {
+                    "url": "http://imagem.buscape.com.br/vitrine/logo1129026.gif"
+                },
+                "rating": {
+                    "ebitrating": {
+                        "ratingid": "30",
+                        "rating": "Ouro",
+                        "ratingnew": "e-bit Ã“tima",
+                        "numcomments": 84,
+                        "ebitid": 3450
+                    },
+                    "useraveragerating": {
+                        "rating": "0.0",
+                        "numcomments": 84
+                    }
+                },
+                "cpcdifferentiated": false,
+                "links": [{
+                    "link": {
+                        "type": "seller",
+                        "url": "http://www.fnac.com.br/index.html"
+                    }
+                }],
+                "sellername": "Fnac.com",
+                "oneclickbuy": false,
+                "oneclickbuyvalue": 0,
+                "id": 1129026,
+                "contacts": [{
+                    "contact": {
+                        "label": "Atendimento",
+                        "value": "11-38488700"
+                    }
+                }],
+                "advertiserid": 0
+            },
+            "thumbnail": {
+                "url": "http://thumbs.buscape.com.br/T100x100/__2.1129026-bc48190.jpg"
+            },
+            "productid": 614591,
+            "offername": "Smartphone Samsung Galaxy J5 Duos J500 Dourado 16gb Tela 5.0 Â´ Dual Chip 4g Camera 13mp Processador Quad Core 1.2 Ghz RAM 1,5 Gb Celular cod. 693812",
+            "price": {
+                "parcel": {
+                    "number": 9,
+                    "interest": 0,
+                    "value": "103.22"
+                },
+                "currency": {
+                    "abbreviation": "BRL"
+                },
+                "value": "929.00"
+            },
+            "links": [{
+                "link": {
+                    "type": "offer",
+                    "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0"
+                }
+            }],
+            "offershortname": "Samsung J5 ",
+            "id": 197427600,
+            "sku": "693812",
+            "categoryid": 77
+        }
+    }, {
+        "offer": {
+            "seller": {
+                "thumbnail": {
+                    "url": "http://imagem.buscape.com.br/vitrine/logo1108572.gif"
+                },
+                "coupon": {
+                    "description": "Frete GrÃ¡tis para algumas regiÃµes",
+                    "id": 51929,
+                    "type": "frete"
+                },
+                "rating": {
+                    "ebitrating": {
+                        "ratingid": "30",
+                        "rating": "Ouro",
+                        "ratingnew": "e-bit Ã“tima",
+                        "numcomments": 2263,
+                        "ebitid": 9485
+                    },
+                    "useraveragerating": {
+                        "rating": "0.0",
+                        "numcomments": 2263
+                    }
+                },
+                "oneclickbuyvalue": 0,
+                "advertiserid": 0,
+                "istrustedstore": false,
+                "pagamentodigital": false,
+                "extra": "Vende pela Internet para , alguns estados",
+                "cpcdifferentiated": false,
+                "links": [{
+                    "link": {
+                        "type": "seller",
+                        "url": "http://www.angeloni.com.br"
+                    }
+                }],
+                "sellername": "Angeloni",
+                "oneclickbuy": false,
+                "id": 1108572,
+                "contacts": [{
+                    "contact": {
+                        "label": "Televendas",
+                        "value": "00-40026060"
+                    }
+                }]
+            },
+            "thumbnail": {
+                "url": "http://thumbs.buscape.com.br/T100x100/__2.1108572-c0ee26d.jpg"
+            },
+            "productid": 614591,
+            "offername": "Smartphone Samsung Galaxy J5 Dual Chip Tela 5 Â´ MemÃ³ria 16GB Quad Core 1.2GHz CÃ¢mera 13MP 4G Wi - Fi Android 5.1.1 Dourado SM - J500",
+            "price": {
+                "parcel": {
+                    "number": 10,
+                    "interest": 0,
+                    "value": "99.90"
+                },
+                "currency": {
+                    "abbreviation": "BRL"
+                },
+                "value": "999.00"
+            },
+            "links": [{
+                "link": {
+                    "type": "offer",
+                    "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0"
+                }
+            }],
+            "offershortname": "Samsung J5 ",
+            "id": 202302061,
+            "categoryid": 77
+        }
+    }, {
+        "offer": {
+            "seller": {
+                "istrustedstore": false,
+                "pagamentodigital": false,
+                "thumbnail": {
+                    "url": "http://imagem.buscape.com.br/vitrine/logo30.gif"
+                },
+                "rating": {
+                    "ebitrating": {
+                        "ratingid": "30",
+                        "rating": "Ouro",
+                        "ratingnew": "e-bit Ã“tima",
+                        "numcomments": 40073,
+                        "ebitid": 829
+                    },
+                    "useraveragerating": {
+                        "rating": "0.0",
+                        "numcomments": 40073
+                    }
+                },
+                "cpcdifferentiated": false,
+                "links": [{
+                    "link": {
+                        "type": "seller",
+                        "url": "http://www.colombo.com.br"
+                    }
+                }],
+                "sellername": "Lojas Colombo",
+                "oneclickbuy": false,
+                "oneclickbuyvalue": 0,
+                "id": 30,
+                "contacts": [{
+                    "contact": {
+                        "label": "SAC",
+                        "value": "0800-6423333"
+                    }
+                }, {
+                    "contact": {
+                        "label": "Televendas",
+                        "value": "0800-6424242"
+                    }
+                }],
+                "advertiserid": 0
+            },
+            "thumbnail": {
+                "url": "http://thumbs.buscape.com.br/T100x100/__2.30-b893bad.jpg"
+            },
+            "productid": 614591,
+            "offername": "Smartphone Samsung Galaxy J5 Duos, 4G, Android 5.1, 16GB, 13MP, BCO - J500M / DS",
+            "price": {
+                "parcel": {
+                    "number": 10,
+                    "interest": 1.41,
+                    "value": "107.90"
+                },
+                "currency": {
+                    "abbreviation": "BRL"
+                },
+                "value": "999.90"
+            },
+            "links": [{
+                "link": {
+                    "type": "offer",
+                    "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0"
+                }
+            }],
+            "offershortname": "Samsung J5 ",
+            "id": 193543085,
+            "sku": "771508",
+            "categoryid": 77
+        }
+    }, {
+        "offer": {
+            "seller": {
+                "istrustedstore": false,
+                "pagamentodigital": false,
+                "thumbnail": {
+                    "url": "http://imagem.buscape.com.br/vitrine/logo155.gif"
+                },
+                "rating": {
+                    "ebitrating": {
+                        "ratingid": "40",
+                        "rating": "Diamante",
+                        "ratingnew": "e-bit Excelente",
+                        "numcomments": 214600,
+                        "ebitid": 648
+                    },
+                    "useraveragerating": {
+                        "rating": "8.0",
+                        "numcomments": 214600
+                    }
+                },
+                "cpcdifferentiated": false,
+                "links": [{
+                    "link": {
+                        "type": "seller",
+                        "url": "http://www.livrariasaraiva.com.br/?PAC_ID=25371"
+                    }
+                }],
+                "sellername": "Saraiva.com.br",
+                "oneclickbuy": false,
+                "oneclickbuyvalue": 0,
+                "id": 155,
+                "contacts": [{
+                    "contact": {
+                        "label": "SAC",
+                        "value": "11-39334000"
+                    }
+                }, {
+                    "contact": {
+                        "label": "Televendas",
+                        "value": "4003-3390"
+                    }
+                }],
+                "advertiserid": 0
+            },
+            "thumbnail": {
+                "url": "http://thumbs.buscape.com.br/T100x100/__2.155-bc33119.jpg"
+            },
+            "productid": 614591,
+            "offername": "Smartphone Samsung Galaxy J5 Duos Branco 4G Tela 5 Â´ Android 5 CÃ¢mera 13Mp 16Gb - Cod: 9017169",
+            "price": {
+                "currency": {
+                    "abbreviation": "BRL"
+                },
+                "value": "1019.15"
+            },
+            "links": [{
+                "link": {
+                    "type": "offer",
+                    "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0"
+                }
+            }],
+            "offershortname": "Samsung J5 ",
+            "id": 197341465,
+            "sku": "9017169",
+            "categoryid": 77
+        }
+    }, {
+        "offer": {
+            "seller": {
+                "istrustedstore": false,
+                "pagamentodigital": false,
+                "thumbnail": {
+                    "url": "http://imagem.buscape.com.br/vitrine/logo1110734.gif"
+                },
+                "rating": {
+                    "useraveragerating": {
+                        "rating": "0.0",
+                        "numcomments": 3089
+                    }
+                },
+                "cpcdifferentiated": false,
+                "links": [{
+                    "link": {
+                        "type": "seller",
+                        "url": "http://www.onofreagora.com.br/eletro/home?utm_source=buscape&utm_medium=comparadores"
+                    }
+                }],
+                "sellername": "Onofre Eletro",
+                "oneclickbuy": false,
+                "oneclickbuyvalue": 0,
+                "id": 1110734,
+                "contacts": [{
+                    "contact": {
+                        "label": "Televendas",
+                        "value": "11-31166533"
+                    }
+                }],
+                "advertiserid": 0
+            },
+            "thumbnail": {
+                "url": "http://thumbs.buscape.com.br/T100x100/__2.1110734-cc835a5.jpg"
+            },
+            "productid": 614591,
+            "offername": "Smartphone Galaxy J5 Duos Dourado Samsung + Pulseira Swarovski",
+            "price": {
+                "parcel": {
+                    "number": 12,
+                    "interest": 1.79,
+                    "value": "85.96"
+                },
+                "currency": {
+                    "abbreviation": "BRL"
+                },
+                "value": "920.90"
+            },
+            "links": [{
+                "link": {
+                    "type": "offer",
+                    "url": "http://origimgbm.buscape.com.br/sandbox/developer/offer/?app=4130577772346e466a48673d%20(minichallengetvos)&src=9262544&ptr=0"
+                }
+            }],
+            "offershortname": "Samsung J5 ",
+            "id": 214447525,
+            "sku": "665630",
+            "categoryid": 77
+        }
+    }],
+
+
+    "product": [{
+        "product": {
+            "id": 614591,
+            "categoryid": 77,
+            "productname": "Smartphone Samsung Galaxy J5 SM-J500M",
+            "productshortname": "Samsung J5 SM-J500M",
+            "fulldescription": true,
+            "pricemin": "791.12",
+            "pricemax": "1356.90",
+
+            "hasmetasearch": false,
+            "eco": false,
+            "quantity": 0,
+            "numoffers": 126,
+            "totalsellers": 29,
+
+            "thumbnail": {
+                "formats": [{
+                    "formats": {
+                        "width": 100,
+                        "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j5-sm-j500m_100x100-PU960bf_1.jpg",
+                        "height": 100
+                    }
+                }, {
+                    "formats": {
+                        "width": 300,
+                        "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j5-sm-j500m_300x300-PU960bf_1.jpg",
+                        "height": 300
+                    }
+                }, {
+                    "formats": {
+                        "width": 600,
+                        "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j5-sm-j500m_600x600-PU960bf_1.jpg",
+                        "height": 600
+                    }
+                }],
+                "width": 200,
+                "url": "http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-samsung-galaxy-j5-sm-j500m_200x200-PU960bf_1.jpg",
+                "height": 200
+            },
+
+            "rating": {
+                "useraveragerating": {
+                    "rating": "9.2",
+                    "links": [{
+                        "link": {
+                            "type": "xml",
+                            "url": "http://sandbox.buscape.com.br/service/viewUserRatings/4130577772346e466a48673d/br/?productId=614591&partnerId=0&sourceId=9262544"
+                        }
+                    }],
+                    "numcomments": 501
+                }
+            },
+
+            "specification": {
+                "item": [{
+                    "item": {
+                        "label": "Chips",
+                        "value": ["Dual Chip"]
+                    }
+                }, {
+                    "item": {
+                        "label": "CÃ¢mera Traseira",
+                        "value": ["13.0 Megapixels"]
+                    }
+                }, {
+                    "item": {
+                        "label": "Tamanho da Tela",
+                        "value": ["5.0 polegadas"]
+                    }
+                }, {
+                    "item": {
+                        "label": "Sistema Operacional",
+                        "value": ["Android"]
+                    }
+                }],
+                "links": [{
+                    "link": {
+                        "type": "xml",
+                        "url": "http://sandbox.buscape.com.br/service/viewProductDetails/4130577772346e466a48673d/br/?productId=614591&partnerId=0&sourceId=9262544"
+                    }
+                }]
+            },
+            "links": [{
+                "link": {
+                    "type": "product",
+                    "url": "http://www.buscape.com.br/prod_unico?idu=614591&pr=0&mdsrc=9262544&mdapp=7984&mddtn=51922611"
+                }
+            }, {
+                "link": {
+                    "type": "xml",
+                    "url": "http://sandbox.buscape.com.br/service/findOfferList/4130577772346e466a48673d/br/?productId=614591&partnerId=0&sourceId=9262544"
+                }
+            }],
+            "currency": {
+                "abbreviation": "BRL"
+            }
+        }
+    }],
+
+    "details": {
+        "applicationpath": "",
+        "date": {
+            "valid": true,
+            "eonandyear": {
+                "lowestsetbit": 5
+            },
+            "hour": 15,
+            "month": 5,
+            "year": 2016,
+            "timezone": -180,
+            "millisecond": 952,
+            "xmlschematype": {
+                "prefix": "",
+                "localpart": "dateTime",
+                "namespaceuri": "http://www.w3.org/2001/XMLSchema"
+            },
+            "day": 13,
+            "minute": 5,
+            "second": 55
+        },
+        "code": 0,
+        "applicationversion": "1.0",
+        "elapsedtime": 12,
+        "applicationid": "4130577772346e466a48673d",
+        "message": "success",
+        "status": "success"
+    },
+
+    "totallooseoffers": 0,
+    "match": "all",
+    "totalresultssellers": 29,
+
+    "totalpages": 8,
+    "page": 1,
+    "totalresultsavailable": 126,
+    "totalresultsreturned": 16,
+    
+    "category": {
+        "id": 77,
+        "parentcategoryid": 6420,
+        "name": "Celular e Smartphone",
+        "isfinal": true,
+        "hasoffer": false,
+        "concatenatecategoryname": false,
+        "thumbnail": {
+            "url": "http://imagem.buscape.com.br/bp5/categorias/77.jpg"
+        },
+        "links": [{
+            "link": {
+                "type": "category",
+                "url": "http://www.buscape.com.br/celular-e-smartphone.html?pr=0&mdsrc=9262544&mdapp=7984&mddtn=51922611"
+            }
+        }, {
+            "link": {
+                "type": "xml",
+                "url": "http://sandbox.buscape.com.br/service/findProductList/4130577772346e466a48673d/br/?categoryId=77&partnerId=0&sourceId=9262544"
+            }
+        }]
+    }
+}
