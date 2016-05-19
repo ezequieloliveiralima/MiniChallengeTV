@@ -1,30 +1,29 @@
 //
-//  FavoritesVC.swift
+//  FiltersOptionsVC.swift
 //  MiniChallengeTV
 //
-//  Created by Ezequiel de Oliveira Lima on 17/05/16.
+//  Created by Ezequiel de Oliveira Lima on 18/05/16.
 //  Copyright © 2016 BEPiD. All rights reserved.
 //
 
 import UIKit
 
-class FavoritesVC: UITableViewController {
+class FiltersOptionsVC: UITableViewController {
 
-    var favoritesList: [String]!
+    var options: [(String, [String])]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        options = []
+        options.append(("Palavras-chave", []))
+        options.append(("Avaliação", [ "Atributo 1", "Atributo 2" ]))
+        options.append(("Variação de preço", [ "Menor preço", "Maior preço" ]))
 
-        favoritesList = []
-        favoritesList.append("Oi")
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        let productCell = UINib(nibName: "DefaultTableCell", bundle: nil)
-        tableView.registerNib(productCell, forCellReuseIdentifier: "product-cell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,53 +35,35 @@ class FavoritesVC: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return options.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return favoritesList.count
+        return options[section].1.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("product-cell", forIndexPath: indexPath) as! DefaultTableCell
+//        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = UITableViewCell(style: .Default, reuseIdentifier: "reuseIdentifier")
 
-        cell.productName.text = favoritesList[indexPath.row]
-        let gest = UITapGestureRecognizer(target: self, action: #selector(FavoritesVC.editCell(_:)))
-        gest.allowedPressTypes = [ NSNumber(integer: UIPressType.PlayPause.rawValue) ]
-        cell.addGestureRecognizer(gest)
-        cell.tag = indexPath.row
+        cell.textLabel?.text = options[indexPath.section].1[indexPath.row]
         // Configure the cell...
 
         return cell
     }
     
-    func editCell(sender: UITapGestureRecognizer) {
-        let index = sender.view!.tag
-
-        let alert = UIAlertController(title: "Editar favorito"
-            , message: "O que deseja fazer com este item?"
-            , preferredStyle: .ActionSheet)
-
-        alert.addAction(UIAlertAction(title: "Remover", style: .Destructive, handler: { (action) -> Void in
-            self.favoritesList.removeAtIndex(index)
-            dispatch_async(dispatch_get_main_queue(), {
-                self.tableView.reloadData()
-            })
-        }))
-
-        alert.addAction(UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil))
-
-        self.presentViewController(alert, animated: true, completion: nil)
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return options[section].0
     }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("Select Product", sender: self)
+
+    /*
+    // Override to support conditional editing of the table view.
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
     }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 150.0
-    }
+    */
 
     /*
     // Override to support editing the table view.
