@@ -10,12 +10,4 @@ import UIKit
 
 class CollectionCellWithImage: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
-    
-    override func didUpdateFocusInContext(context: UIFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
-        if context.nextFocusedView == self {
-            self.transform = CGAffineTransformMakeScale(1.02, 1.02)
-        } else {
-            self.transform = CGAffineTransformMakeScale(1, 1)
-        }
-    }
 }

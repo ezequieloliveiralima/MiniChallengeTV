@@ -1,5 +1,5 @@
 //
-//  DefaultTableCell.swift
+//  ProductTableViewCell.swift
 //  MiniChallengeTV
 //
 //  Created by Ezequiel de Oliveira Lima on 17/05/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DefaultTableCell: UITableViewCell {
+class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
 }
