@@ -16,14 +16,13 @@ class FavoritesVC: UITableViewController {
         super.viewDidLoad()
 
         favoritesList = []
-        favoritesList.append("Oi")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        let productCell = UINib(nibName: "DefaultTableCell", bundle: nil)
+        let productCell = UINib(nibName: "ProductTableViewCell", bundle: nil)
         tableView.registerNib(productCell, forCellReuseIdentifier: "product-cell")
     }
 
@@ -45,7 +44,7 @@ class FavoritesVC: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("product-cell", forIndexPath: indexPath) as! DefaultTableCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("product-cell", forIndexPath: indexPath) as! ProductTableViewCell
 
         cell.productName.text = favoritesList[indexPath.row]
         let gest = UITapGestureRecognizer(target: self, action: #selector(FavoritesVC.editCell(_:)))
@@ -77,7 +76,7 @@ class FavoritesVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("Select Product", sender: self)
+        self.performSegueWithIdentifier("", sender: self)
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

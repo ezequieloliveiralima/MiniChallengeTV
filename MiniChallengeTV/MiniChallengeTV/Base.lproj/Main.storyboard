@@ -172,7 +172,7 @@
         <scene sceneID="Q0s-kR-lto">
             <objects>
                 <navigationController id="aZF-3I-vh5" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bgw-Bo-XKx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bgw-Bo-XKx">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -192,7 +192,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1285" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PCb-XV-m37">
+                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" id="PCb-XV-m37">
                                 <rect key="frame" x="0.0" y="199" width="1245" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PCb-XV-m37" id="blr-Kc-6tk">
@@ -264,7 +264,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="634" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IE1-b7-dDp">
+                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" id="IE1-b7-dDp">
                                 <rect key="frame" x="0.0" y="199" width="594" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IE1-b7-dDp" id="k1g-6x-VKY">
@@ -288,7 +288,7 @@
         <scene sceneID="ebs-eq-1oK">
             <objects>
                 <navigationController id="Ypw-O1-4mh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pco-dM-OeT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Pco-dM-OeT">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -356,7 +356,7 @@
                                 <rect key="frame" x="20" y="531" width="1245" height="529"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="6BN-Uz-dh8">
+                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="6BN-Uz-dh8">
                                         <rect key="frame" x="0.0" y="54" width="1245" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6BN-Uz-dh8" id="nwN-sl-oWP">
@@ -452,7 +452,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="euE-lc-tJM">
+                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" id="euE-lc-tJM">
                                 <rect key="frame" x="0.0" y="199" width="1880" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="euE-lc-tJM" id="y7A-KA-0P3">
@@ -521,7 +521,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qBM-2h-KRc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uf2-Cw-Aqe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uf2-Cw-Aqe">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
