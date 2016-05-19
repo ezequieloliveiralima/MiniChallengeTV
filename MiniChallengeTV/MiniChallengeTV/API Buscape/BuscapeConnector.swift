@@ -38,8 +38,78 @@ class BuscapeConnector {
             }
         }).resume()
     }
+
+    func getTopProducts(callback: (BList<BProduct>) -> Void) {
+        let uri = BuscapeAPI(searchType: .TopProducts).addParameters(.Format(.JSON)).getURI()
+            openConnection(uri) { (json, response, error) in
+                guard let json = json, products = json["product"] as? [Payload] else {
+                    print("TODO error getting Top Products")
+                    return
+                }
+                
+                let detail = self.parseListDetail(json)!
+                let list = products.flatMap({ self.parseProduct($0) })
+                let top = BList<BProduct>(detail: detail, list: list)
+                callback(top)
+        }
+    }
     
-    private func changeKeyToLower(inout payload: Payload) -> Payload {
+    
+    func getTopCategories(callback: (BList<BCategory>) -> Void) {
+        let uri = BuscapeAPI(searchType: .TopCategories).addParameters(.Format(.JSON)).getURI()
+        openConnection(uri) { (json, response, error) in
+            guard let json = json, categories = json["subcategory"] as? [Payload] else {
+                print("TODO error getting Top Categories")
+                return
+            }
+            
+            let detail = self.parseListDetail(json)!
+            let list = categories.flatMap({ self.parseCategory($0) })
+            let top = BList<BCategory>(detail: detail, list: list)
+            callback(top)
+        }
+    }
+    
+    func getTopOffers(callback: (BList<BOffer>) -> Void) {
+        let uri = BuscapeAPI(searchType: .TopOffers).addParameters(.Format(.JSON)).getURI()
+        openConnection(uri) { (json, response, error) in
+            guard let json = json, offers = json["offer"] as? [Payload] else {
+                print("TODO error getting Top Offers")
+                return
+            }
+            let detail = self.parseListDetail(json)!
+            let list = offers.flatMap({ self.parseOffer($0) })
+            let top = BList<BOffer>(detail: detail, list: list)
+            callback(top)
+        }
+    }
+    
+    func getProductOffers(id: Int, callback: (BProductOffers) -> Void) {
+        let uri = BuscapeAPI(searchType: .Offer).addParameters(.Format(.JSON), .ProductId(id)).getURI()
+        openConnection(uri) { (json, response, error) in
+            guard let json = json, offersJson = json["offer"] as? [Payload], productJson = json["product"]?[0]?["product"] as? Payload
+                , categoryJson = json["category"] as? Payload else {
+                    print("TODO error getting Product by Id")
+                    return
+            }
+            
+            let detail = self.parseListDetail(json)!
+            let product = self.parseProduct(productJson)!
+            let category = self.parseCategory(categoryJson)!
+            let offers = offersJson.flatMap({ self.parseOffer($0) })
+            let result = BProductOffers(detail: detail, product: product, category: category, offers: offers)
+            callback(result)
+        }
+    }
+    
+    func find(product: Int, callback: (BList<BProduct>) -> Void) {
+        
+    }
+}
+
+private extension BuscapeConnector {
+    
+    func changeKeyToLower(inout payload: Payload) -> Payload {
         for (key, value) in payload {
             if let v = value as? [Payload] {
                 payload[key] = v.map({ (vv) -> Payload in
@@ -56,245 +126,200 @@ class BuscapeConnector {
         }
         return payload
     }
-
-    func getTopProducts(callback: (BTopProducts) -> Void) {
-        let uri = BuscapeAPI(searchType: .TopProducts).addParameters(.Format(.JSON)).getURI()
-            openConnection(uri) { (json, response, error) in
-                guard let json = json, products = json["product"] as? [Payload] else {
-                    print("TODO error getting Top Products")
-                    return
-                }
-                let top = BTopProducts()
-                top.detail = self.parseListDetail(json)
-                top.products = products.map({ self.parseProduct($0) })
-                callback(top)
+    
+    func parseListDetail(json: Payload) -> BListDetail? {
+        guard let page = json["page"] as? Int
+            , totalPages = json["totalpages"] as? Int
+            , totalResultsReturned = json["totalresultsreturned"] as? Int
+            , totalResultsAvailable = json["totalresultsavailable"] as? Int else {
+                return nil
         }
+        return BListDetail(page: page, totalPages: totalPages, totalResultsReturned: totalResultsReturned, totalResultsAvailable: totalResultsAvailable)
     }
     
+    func parseCategory(json: Payload) -> BCategory? {
+        guard let id        = json["id"] as? Int
+            , idParent      = json["parentcategoryid"] as? Int
+            , name          = json["name"] as? String
+            , isFinal       = json["isfinal"] as? Bool
+            , links         = parseLinks(json)
+            else {
+            print("Category didn't parse properly")
+            return nil
+        }
+        
+        let thumbnail = parseThumbnail(json)
+        let productUrl    = links.filter({ $0.0 == "list_product" }).first?.0
+        let offerUrl      = links.filter({ $0.0 == "list_offer" }).first?.0
+        return BCategory(id: id, idParent: idParent, name: name, isFinal: isFinal, productsUrl: productUrl, offersUrl: offerUrl, thumbnail: thumbnail)
+    }
     
-    func getTopCategories(callback: (BTopCategories) -> Void) {
-        let uri = BuscapeAPI(searchType: .TopCategories).addParameters(.Format(.JSON)).getURI()
-        openConnection(uri) { (json, response, error) in
-            guard let json = json, categories = json["subcategory"] as? [Payload] else {
-                print("TODO error getting Top Categories")
-                return
+    func parseProduct(json: Payload) -> BProduct? {
+        let json = nestedValue(json, key: "product")
+        guard let id        = json["id"] as? Int
+            , idCategory    = json["categoryid"] as? Int
+            , name          = json["productname"] as? String
+            , nameShort     = json["productshortname"] as? String
+            , price         = parsePrice(json)
+            , links         = parseLinks(json)
+            , url           = links.filter({ $0.0 == "product"}).first?.1
+            , detailUrl     = links.filter({ $0.0 == "xml" }).first?.1
+            , rating        = parseRating(json) else {
+            //fulldescription
+            //hasmetasearch
+            //eco
+            //numoffers
+            //totalsellers
+            print("Product didn't parse properly")
+            return nil
+        }
+        
+        let thumbnails = parseThumbnails(json)
+        let specification = parseSpecification(json)
+        
+        return BProduct(id: id, idCategory: idCategory, name: name, nameShort: nameShort, price: price, rating: rating, url: url, detail: detailUrl, thumbnails: thumbnails, specification: specification)
+    }
+    
+    func parseOffer(json: Payload) -> BOffer? {
+        let json = nestedValue(json, key: "offer")
+        guard let id        = json["id"] as? Int
+            , idProduct     = json["productid"] as? Int
+            , idCategory    = json["categoryid"] as? Int
+            , name          = json["offername"] as? String
+            , price         = parsePrice(json)
+            , links         = parseLinks(json)
+            , url           = links.filter({ $0.0 == "offer" }).first?.1
+            , vendor        = parseVendor(json)
+            else {
+            print("Offer didn't parse properly")
+            return nil
+        }
+        
+        let thumbnail = parseThumbnail(json)
+        
+        return BOffer(id: id, idCategory: idCategory, idProduct: idProduct, name: name, price: price, url: url, thumbnail: thumbnail, vendor: vendor)
+    }
+    
+    func parseVendor(json: Payload) -> BVendor? {
+        guard let vendor    = json["seller"] as? Payload
+            , id            = vendor["id"] as? Int
+            , name          = vendor["sellername"] as? String
+            , rating        = parseRating(vendor)
+            else {
+            print("Vendor didn't parse properly")
+            return nil
+        }
+        
+        let thumbnail   = parseThumbnail(vendor)
+        let links       = parseLinks(vendor)
+        let url         = links?.filter({ $0.0 == "seller" }).first?.1
+        
+        return BVendor(id: id, name: name, rating: rating, url: url, thumbnail: thumbnail)
+    }
+    
+    func parsePrice(json: Payload) -> Price? {
+        if let minStr = json["pricemin"] as? String, maxStr = json["pricemax"] as? String {
+            if let  min = Double(minStr), max = Double(maxStr) {
+                return Price.Range(min: min, max: max)
+            }
+        } else if let value = json["pricevalue"] as? NSNumber, fromValue = json["pricefromvalue"] as? NSNumber, discount = json["discountpercent"] as? NSNumber {
+            return Price.Discount(value: value.doubleValue, originalValue: fromValue.doubleValue, discountPercent: discount.doubleValue)
+        } else if let price = json["price"] as? Payload {
+            if let parcel = price["parcel"] as? Payload
+                , valueStr = price["value"] as? String, parcelValueStr = parcel["value"] as? String, interest = parcel["interest"] as? Int, parcelNum = parcel["number"] as? Int {
+                if let value = Double(valueStr), parcelValue = Double(parcelValueStr) {
+                    return Price.Parcel(value: value, parcelValue: parcelValue, interest: Double(interest), parcel: parcelNum)
+                }
+            } else if let valueStr = price["value"] as? String, value = Double(valueStr) {
+                return Price.Value(value: value)
+            }
+        }
+        print("Price didn't parse properly")
+        return nil
+    }
+    
+    func parseThumbnails(json: Payload) -> [Thumbnail]? {
+        if let thumbnail = json["thumbnail"] as? Payload {
+            var list = [Thumbnail]()
+            
+            if let t = parseThumbnail(thumbnail) {
+                list.append(t)
             }
             
-            let top = BTopCategories()
-            top.detail = self.parseListDetail(json)
-            top.categories = categories.map({ self.parseCategory($0) })
-            callback(top)
-        }
-    }
-    
-    func getTopOffers(callback: (BTopOffers) -> Void) {
-        let uri = BuscapeAPI(searchType: .TopOffers).addParameters(.Format(.JSON)).getURI()
-        openConnection(uri) { (json, response, error) in
-            guard let json = json, offers = json["offer"] as? [Payload] else {
-                print("TODO error getting Top Offers")
-                return
-            }
-            let top = BTopOffers()
-            top.detail = self.parseListDetail(json)
-            top.offers = offers.map({ self.parseOffer($0) })
-            callback(top)
-        }
-    }
-    
-    func getProduct(id: Int, callback: (BFindProduct) -> Void) {
-        let uri = BuscapeAPI(searchType: .Product).addParameters(.Format(.JSON), .ProductId(id)).getURI()
-        openConnection(uri) { (json, response, error) in
-            guard let json = json, offers = json["offer"] as? [Payload], product = json["product"]?[0]?["product"] as? Payload
-                , category = json["category"] as? Payload else {
-                print("TODO error getting Product by Id")
-                return
-            }
-            
-            let find = BFindProduct()
-            find.detail = self.parseListDetail(json)
-            find.offers = offers.map({ self.parseOffer($0["offer"] as! Payload) })
-            find.product = self.parseProduct(product)
-            find.category = self.parseCategory(category)
-            callback(find)
-        }
-    }
-    
-    
-}
-
-private extension BuscapeConnector {
-    func parseListDetail(json: Payload) -> BListDetail {
-        var detail = BListDetail()
-        detail.page                    = json["page"] as! Int
-        detail.totalPages              = json["totalpages"] as! Int
-        detail.totalResultsReturned    = json["totalresultsreturned"] as! Int
-        detail.totalResultsAvailable   = json["totalresultsavailable"] as! Int
-        return detail
-    }
-    
-    func parseCategory(json: Payload) -> BCategory {
-        let category = BCategory(id: json["id"] as! Int)
-        category.idParent   = json["parentcategoryid"] as! Int
-        category.name       = json["name"] as! String
-        category.isFinal    = json["isfinal"] as! Bool
-        category.hasOffer   = json["hasoffer"] as! Bool
-        category.hasProduct = json["hasproduct"] as? Bool ?? false
-        
-        if let thumbnail = json["thumbnail"] as? Payload {
-            category.thumbnailUrl = thumbnail["url"] as? String
-        }
-        if let links = json["links"]?["link"] as? [Payload] {
-            links.forEach({ (link) in
-                switch link["type"] as! String {
-                case "list_product": category.productsUrl = link["url"] as! String
-                case "list_offer": category.offersUrl = link["url"] as! String
-                default: break
-                }
-            })
-        }
-        return category
-    }
-    
-    func parseProduct(json: Payload) -> BProduct {
-        let product = BProduct(id: json["id"] as! Int)
-        product.name        = json["productname"] as! String
-        product.nameShort   = json["productshortname"] as! String
-        product.price       = Price.Range(min: Double(json["pricemin"] as! String)!, max: Double(json["pricemax"] as! String)!)
-        //fulldescription
-        //hasmetasearch
-        //eco
-        //numoffers
-        //totalsellers
-        
-        if let links = json["links"]?["link"] as? [Payload] {
-            links.forEach({ (link) in
-                switch link["type"] as! String {
-                case "product":
-                    product.url = link["url"] as! String
-                case "xml":
-                    product.detailUrl = link["url"] as! String
-                default: break
-                }
-            })
-        }
-        
-        if let thumbnail = json["thumbnail"] as? Payload {
-            product.thumbnailUrl = thumbnail["url"] as? String
             if let formats = thumbnail["formats"] as? [Payload] {
-                formats.forEach({ (format) in
-                    var format = format
-                    if format.contains({ $0.0 == "formats" }) {
-                        format = format["formats"] as! Payload
-                    }
-                    
-                    switch format["width"] as! Int {
-                    case 600: product.imageUrl = format["format"]?["url"] as? String
-                    default: break
-                    }
-                })
+                list.appendContentsOf(formats.flatMap({ (format) -> Thumbnail? in
+                    //checking if is double nested
+                    let format = nestedValue(format, key: "formats")
+                    return parseThumbnail(format)
+                }))
             }
+            return list
         }
-        
-        if let rating = json["rating"] as? Payload {
-            if let user = rating["useraveragerating"] as? Payload {
-                product.userRating = Rating(value: user["rating"] as! String
-                    , numComments: user["numcomments"] as! Int
-                    , url: (user["links"] as? [Payload])?[0]["url"] as? String)
-            }
-        }
-        
-        if let specification = json["specification"] as? Payload {
-            var spec = Specification()
-            if let links = specification["links"]?["link"] as? [Payload] {
-                spec.url = links[0]["url"] as? String
-            }
-            if let items = specification["items"] as? [Payload] {
-                spec.items = items.map({ (item) -> (String, [String]) in
-                    let label = item["label"] as! String
-                    let value = item["value"] as! [String]
-                    return (label, value)
-                })
-            }
-        }
-        
-        return product
+        return nil
     }
     
-    func parseOffer(json: Payload) -> BOffer {
-        let offer = BOffer(id: json["id"] as! Int)
-        offer.idProduct     = json["productid"] as! Int
-        offer.idCategory    = json["categoryid"] as! Int
-        offer.name          = json["offername"] as! String
-        
-        offer.thumbnailUrl  = json["thumbnail"]?["url"] as? String
-        
-        if let price = json["price"] as? Payload, parcel = price["parcel"] as? Payload {
-            offer.price = Price.Parcel(value: Double(price["value"] as! String)!
-                , parcelValue: Double(parcel["value"] as! String)!
-                , interest: Double(parcel["interest"] as! Int)
-                , parcel: parcel["number"] as! Int)
-        } else if let value = json["pricevalue"] as? String, fromValue = json["pricefromvalue"] as? String, discount = json["discountpercent"] as? String {
-            offer.price = Price.Discount(value: Double(value)!
-                , originalValue: Double(fromValue)!
-                , discountPercent: Double(discount)!)
+    func parseThumbnail(json: Payload) -> Thumbnail? {
+        guard let url = json["url"] as? String else {
+            return nil
         }
-        
-        if let links = json["links"]?["link"] as? [Payload] {
-            links.forEach({ (json) in
-                switch json["type"] as! String {
-                case "offer":
-                    offer.url = json["url"] as! String
-                    break
-                default: break
-                }
-            })
-        }
-        
-        if let seller = json["seller"] as? Payload {
-            offer.vendor = parseVendor(seller)
-        }
-        
-        return offer
+        let width = json["width"] as? Int
+        let height = json["height"] as? Int
+        return Thumbnail(url: url, width: width, height: height)
     }
     
-    func parseVendor(json: Payload) -> BVendor {
-        let vendor = BVendor(id: json["id"] as! Int)
-        vendor.name = json["sellername"] as! String
-        vendor.thumbnailUrl = json["thumbnail"]?["url"] as? String
+    func parseLinks(json: Payload) -> [(String, String)]? {
+        var links: [Payload]?
+        if let l = json["links"] as? [Payload] {
+            links = l
+        } else if let l = json["links"]?["link"] as? [Payload] {
+            links = l
+        }
         
-        if let links = json["links"] as? [Payload] {
-            links.forEach({ (json) in
-                let link = json["link"] as! Payload
-                switch link["type"] as! String {
-                case "seller": vendor.url = link["url"] as! String
-                default: break
+        if let links = links {
+            return links.flatMap({ (link) -> (String, String)? in
+                let link = nestedValue(link, key: "link")
+                if let type = link["type"] as? String, url = link["url"] as? String {
+                    return (type, url)
                 }
+                return nil
             })
         }
-        
-        if let contacts = json["contacts"] as? [Payload] {
-            vendor.contacts = contacts.map({ (json) -> (String, String) in
-                let contact = json["contact"] as! Payload
-                return (contact["label"] as! String, contact["value"] as! String)
-            })
-        }
-        
-        return vendor
+        return nil
     }
     
     func parseRating(json: Payload) -> Rating? {
-        if let user = json["useraveragerating"] as? Payload {
-            var url: String?
-            if let links = user["links"]?["link"] as? [Payload] {
-                links.forEach({ (link) in
-                    switch link["type"] as! String {
-                    case "xml": url = link["url"] as? String
-                    default: break
-                    }
-                })
-            }
-            return Rating(value: user["rating"] as! String, numComments: user["numcomments"] as! Int, url: url)
+        guard let rating = json["rating"] as? Payload
+            , user = rating["useraveragerating"] as? Payload
+            , value = user["rating"] as? String, numComments = user["numcomments"] as? Int else {
+            print("Rating didn't parse properly")
+            return nil
         }
-        return nil
+        let links   = parseLinks(user)
+        let url     = links?.filter({ $0.0 == "xml" }).first?.1
+        return Rating(value: value, numComments: numComments, url: url)
+    }
+    
+    func parseSpecification(json: Payload) -> Specification? {
+        guard let specification = json["specification"] as? Payload else {
+            print("Specification didn't parse properly")
+            return nil
+        }
+        let url = parseLinks(specification)?.filter({ $0.0 == "xml" }).first?.1
+        let items = (specification["items"] as? [Payload])?.flatMap({ parseSpecificationItem($0) })
+        return Specification(url: url, items: items)
+    }
+    
+    func parseSpecificationItem(json: Payload) -> SpecificationItem? {
+        guard let label = json["label"] as? String, value = json["value"] as? [String] else {
+            return nil
+        }
+        return SpecificationItem(name: label, value: value)
+    }
+    
+    func nestedValue(json: Payload, key:String) -> Payload {
+        if let nest = json[key] as? Payload {
+            return nest
+        }
+        return json
     }
 }

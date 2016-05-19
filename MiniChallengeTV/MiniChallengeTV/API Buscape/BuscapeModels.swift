@@ -8,174 +8,99 @@
 
 import Foundation
 
-
-class BTopProducts : CustomStringConvertible {
-    
-    var detail: BListDetail!
-    var products: [BProduct]!
-    
-    var description: String {
-        return "{BTopProducts products: \(products.count), detail: \(detail)}"
-    }
-    
-    init() {}
-    
-}
-
-class BTopOffers : CustomStringConvertible {
-    var detail: BListDetail!
-    var offers: [BOffer]!
-    
-    var description: String {
-        return "{BTopOffers products: \(offers.count), detail: \(detail)}"
-    }
-    
-    init() {}
-}
-
-class BTopCategories : CustomStringConvertible {
-    var detail: BListDetail!
-    var categories: [BCategory]!
-    
-    var description: String {
-        return "{BTopCategories products: \(categories.count), detail: \(detail)}"
-    }
-    
-    init() {}
-}
-
-class BFindProduct : CustomStringConvertible {
-    
-    var detail: BListDetail!
-    var offers: [BOffer]!
-    var product: BProduct!
-    var category: BCategory!
-    
-    var description: String {
-        return "{BFindProduct offers: \(offers.count), detail: \(detail), product: \(product)}"
-    }
-}
-
-////////////////////////////////////
-struct BListDetail : CustomStringConvertible {
-    
-    var page: Int!
-    var totalPages: Int!
-    var totalResultsAvailable: Int!
-    var totalResultsReturned: Int!
-    
-    var description: String {
-        return "{page: \(page), total: \(totalPages), totalResults: \(totalResultsReturned), totalResultsAvailable: \(totalResultsAvailable)}"
-    }
+protocol BuscapeModel {
     
 }
 
 ////////////////////////////////////
-class BProduct {
+class BProduct: BuscapeModel {
     
     let id          : Int
-    var idCategory  : Int!
-    var name        : String!
-    var nameShort   : String!
-    var price       : Price!
-    var userRating  : Rating!
+    let idCategory  : Int
+    let name        : String
+    let nameShort   : String
+    let price       : Price
+    let userRating  : Rating
     
-    var url         : String!
-    var detailUrl   : String!
+    let url         : String
+    let detailUrl   : String
     
-    var thumbnailUrl    : String? //600x600
-    var imageUrl        : String?
-    var specification   : BSpecification?
+    let thumbnails      : [Thumbnail]?
+    let specification   : Specification?
     
-    init(id: Int) {
-        self.id = id
+    init(id: Int, idCategory: Int, name: String, nameShort: String, price: Price, rating: Rating, url: String, detail: String, thumbnails: [Thumbnail]?, specification: Specification?) {
+        self.id             = id
+        self.idCategory     = idCategory
+        self.name           = name
+        self.nameShort      = nameShort
+        self.price          = price
+        self.userRating     = rating
+        self.url            = url
+        self.detailUrl      = detail
+        self.thumbnails     = thumbnails
+        self.specification  = specification
     }
+    
 }
 
-class BOffer {
+class BCategory: BuscapeModel {
     
     let id              : Int
-    var idCategory      : Int!
-    var idProduct       : Int!
-    var name            : String!
-    var price           : Price!
+    let idParent        : Int
+    let name            : String
+    let isFinal         : Bool
+    let productsUrl     : String?
+    let offersUrl       : String?
+    let thumbnail       : Thumbnail?
     
-    var url             : String!
-    var thumbnailUrl    : String?
-    
-    var vendor          : BVendor!
-    
-    init(id: Int) {
-        self.id = id
-    }
-    
-}
-
-class BVendor {
-    
-    let id: Int
-    
-    var name        : String!
-    var userRating  : Rating!
-    var url         : String!
-    
-    var thumbnailUrl : String?
-    var contacts: [(name: String, value: String)]?
-    
-    init(id: Int) {
-        self.id = id
+    init(id: Int, idParent: Int, name: String, isFinal: Bool, productsUrl: String?, offersUrl: String?, thumbnail: Thumbnail?) {
+        self.id             = id
+        self.idParent       = idParent
+        self.name           = name
+        self.isFinal        = isFinal
+        self.productsUrl    = productsUrl
+        self.offersUrl      = offersUrl
+        self.thumbnail      = thumbnail
     }
 }
 
-class BCategory {
+class BOffer: BuscapeModel {
     
     let id              : Int
-    var idParent        : Int!
-    var name            : String!
-    var isFinal         : Bool!
-    var hasOffer        : Bool!
-    var hasProduct      : Bool!
-    var productsUrl     : String!
-    var offersUrl       : String!
+    let idCategory      : Int
+    let idProduct       : Int
+    let name            : String
+    let price           : Price
+    let url             : String
+    let thumbnail       : Thumbnail?
+    let vendor          : BVendor
     
-    var thumbnailUrl    : String?
-    
-    init(id: Int) {
-        self.id = id
+    init(id: Int, idCategory: Int, idProduct: Int, name: String, price: Price, url: String, thumbnail: Thumbnail?, vendor: BVendor) {
+        self.id         = id
+        self.idCategory = idCategory
+        self.idProduct  = idProduct
+        self.name       = name
+        self.price      = price
+        self.url        = url
+        self.thumbnail  = thumbnail
+        self.vendor     = vendor      
     }
+    
 }
 
-////////////////////////////////////
-struct BProductDescription {
-    let name: String
-    let value: [String]
+class BVendor: BuscapeModel {
     
-    init(name: String, value: [String]) {
-        self.name = name
-        self.value = value
+    let id          : Int
+    let name        : String
+    let userRating  : Rating
+    let url         : String?
+    let thumbnail   : Thumbnail?
+    
+    init(id: Int, name: String, rating: Rating, url: String?, thumbnail: Thumbnail?) {
+        self.id           = id
+        self.name         = name
+        self.userRating   = rating
+        self.url          = url
+        self.thumbnail    = thumbnail
     }
-}
-
-struct BSpecification {
-    var url: String?
-    var items: [(name: String, value: [String])]?
-}
-
-struct Rating {
-    
-    let value       : String
-    let numComments : Int
-    var url         : String?
-    
-    init(value: String, numComments: Int, url: String?) {
-        self.value = value
-        self.numComments = numComments
-        self.url = url
-    }
-}
-
-enum Price {
-    case Range(min: Double, max: Double)
-    case Parcel(value: Double, parcelValue: Double, interest: Double, parcel: Int)
-    case Discount(value: Double, originalValue: Double, discountPercent: Double)
 }

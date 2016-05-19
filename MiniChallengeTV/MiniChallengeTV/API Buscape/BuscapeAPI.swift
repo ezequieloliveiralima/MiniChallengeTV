@@ -14,53 +14,6 @@ enum BuscapeSearchType {
     , Vendor, UserRatings
 }
 
-enum BuscapeSearchParameter {
-    case ProductId(Int)
-    , CategoryId(Int)
-    , OfferId(Int)
-    , SourceId(Int)
-    , Keyword(String)
-    , PriceMin(Double)
-    , PriceMax(Double)
-    , Page(Int)
-    , Results(Int)
-    , Sort(SortType)
-    , Medal(VendorMedalType)
-    , Format(FormatType)
-    
-    func equals(other: BuscapeSearchParameter) -> Bool {
-        switch (self, other) {
-        case (.ProductId(_)     , .ProductId(_))    : return true
-        case (.CategoryId(_)    , .CategoryId(_))   : return true
-        case (.OfferId(_)       , .OfferId(_))      : return true
-        case (.SourceId(_)      , .SourceId(_))     : return true
-        case (.Keyword(_)       , .Keyword(_))      : return true
-        case (.PriceMin(_)      , .PriceMin(_))     : return true
-        case (.PriceMax(_)      , .PriceMax(_))     : return true
-        case (.Page(_)          , .Page(_))         : return true
-        case (.Results(_)       , .Results(_))      : return true
-        case (.Sort(_)          , .Sort(_))         : return true
-        case (.Medal(_)         , .Medal(_))        : return true
-        case (.Format(_)        , .Format(_))       : return true
-        default: return false
-        }
-    }
-    
-    enum SortType: String {
-        case Price = "price", DPrice = "dprice", Rate = "rate", DRate = "drate"
-    }
-    
-    enum VendorMedalType: String {
-        case All = "all", Diamond = "diamond", Gold = "gold", Silver = "silver", Bronze = "bronze"
-    }
-    
-    enum FormatType: String {
-        case JSON = "json", XML = "xml"
-    }
-}
-
-
-
 private enum BuscapeEnviromentType {
     case Sandbox, Production
 }
@@ -74,7 +27,7 @@ class BuscapeAPI {
     private var enviromentType = BuscapeEnviromentType.Sandbox
     
     private var searchType  : BuscapeSearchType
-    private var parameters  = [BuscapeSearchParameter]()
+    private var parameters  = [SearchParameter]()
     
     init(searchType: BuscapeSearchType) {
         self.searchType = searchType
@@ -85,12 +38,12 @@ class BuscapeAPI {
         return self
     }
     
-    func setFormat(type: BuscapeSearchParameter.FormatType) -> BuscapeAPI {
+    func setFormat(type: SearchParameter.FormatType) -> BuscapeAPI {
         
         return self
     }
     
-    func addParameter(parameter: BuscapeSearchParameter) -> BuscapeAPI {
+    func addParameter(parameter: SearchParameter) -> BuscapeAPI {
         if let index = parameters.indexOf({ $0.equals(parameter) }) {
             parameters[index] = parameter
         } else {
@@ -99,12 +52,12 @@ class BuscapeAPI {
         return self
     }
     
-    func addParameters(params: BuscapeSearchParameter...) -> BuscapeAPI {
+    func addParameters(params: SearchParameter...) -> BuscapeAPI {
         params.forEach({ addParameter($0) })
         return self
     }
     
-    func removeParameter(parameter: BuscapeSearchParameter) -> BuscapeAPI {
+    func removeParameter(parameter: SearchParameter) -> BuscapeAPI {
         if let index = parameters.indexOf({ $0.equals(parameter) }) {
             parameters.removeAtIndex(index)
         }
@@ -124,7 +77,7 @@ class BuscapeAPI {
         case .TopProducts       : uri += "/v2/topProducts"
         case .TopCategories     : uri += "/v2/topCategories"
         case .UserRatings       : uri += "/viewUserRatings"
-        case .Product           : uri += "/findOfferList"
+        case .Product           : uri += "/findProductList"
         case .Category          : uri += "/findCategoryList"
         case .Offer             : uri += "/findOfferList"
         case .Vendor            : uri += "/viewSellerDetails"
@@ -144,8 +97,21 @@ class BuscapeAPI {
                 case .PriceMax  (let max)       : return "priceMax=\(max)"
                 case .Page      (let page)      : return "page=\(page)"
                 case .Results   (let results)   : return "results=\(results)"
-                case .Sort      (let type)      : return "sort=\(type.rawValue)"
-                case .Medal     (let type)      : return "medal=\(type.rawValue)"
+                case .Sort      (let type)      :
+                    switch type {
+                    case .Price : return "sort=price"
+                    case .DPrice: return "sort=dprice"
+                    case .Rate  : return "sort=rate"
+                    case .DRate : return "sort=drate"
+                    }
+                case .Medal     (let type)      :
+                    switch type {
+                    case .All       : return "medal=all"
+                    case .Bronze    : return "medal=bronze"
+                    case .Silver    : return "medal=silver"
+                    case .Gold      : return "medal=gold"
+                    case .Diamond   : return "medal=diamond"
+                    }
                 case .Format    (let type)      : return "format=\(type.rawValue)"
                 }
             }).joinWithSeparator("&")
