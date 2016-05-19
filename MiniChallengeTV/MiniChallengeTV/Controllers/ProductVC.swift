@@ -15,21 +15,12 @@ class ProductVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var rating: UIStackView!
     
-    var offersList: [String]!
+    var offersList: [Offer]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         offersList = []
-        offersList.append("aa")
-        offersList.append("aa")
-        offersList.append("aa")
-        offersList.append("aa")
-        offersList.append("aa")
-        offersList.append("aa")
-        offersList.append("aa")
-        offersList.append("aa")
-        
 
         // Do any additional setup after loading the view.
         let productCell = UINib(nibName: "DefaultTableCell", bundle: nil)
@@ -70,10 +61,12 @@ extension ProductVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("product-cell") as! DefaultTableCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("default-cell") as! GenericTableCell
         
-        cell.productName.text = "Ver link da compra"
-        cell.productImage.image = UIImage(data: NSData(contentsOfURL: NSURL(string: "https://www.walmartbrandcenter.com/uploadedImages/BrandCenter/Content/downloads/Logos/specifications/specifications-logo1.png?n=4208")!)!)
+        let offer = offersList[indexPath.row]
+        
+        cell.label.text = "Ver link da compra"
+        cell.imgView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: offer.vendor.thumbnail!.url)!)!)
         
         return cell
     }

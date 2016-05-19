@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="1618" y="796"/>
         </scene>
-        <!--OffersVC-->
+        <!--Top Products-->
         <scene sceneID="6k7-Ot-vkk">
             <objects>
-                <viewController id="ueO-9I-RSF" customClass="OffersVC" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ueO-9I-RSF" customClass="TopProducts" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yZp-9Y-HZG"/>
                         <viewControllerLayoutGuide type="bottom" id="9Iz-2c-Gbv"/>
@@ -138,10 +138,8 @@
                         </textField>
                     </navigationItem>
                     <connections>
-                        <outlet property="categoriesLoading" destination="DFI-GH-aWd" id="We7-th-I04"/>
-                        <outlet property="collectionCategories" destination="pWR-cd-wSF" id="CcM-Zw-0Am"/>
-                        <outlet property="collectionOffers" destination="rIG-zR-Upi" id="O4F-uy-XkL"/>
-                        <outlet property="offersLoading" destination="5mU-Tt-GrP" id="KsB-DA-4oR"/>
+                        <outlet property="collectionTopProducts" destination="rIG-zR-Upi" id="fJC-xw-slq"/>
+                        <outlet property="loadingTopProducts" destination="5mU-Tt-GrP" id="tYU-n8-RQf"/>
                         <segue destination="Ymq-7c-awy" kind="show" identifier="Filter" id="NjL-XU-nk3"/>
                     </connections>
                 </viewController>
@@ -149,10 +147,10 @@
             </objects>
             <point key="canvasLocation" x="3750" y="-340"/>
         </scene>
-        <!--Filters OptionsVC-->
+        <!--Filter OptionsVC-->
         <scene sceneID="UGN-mZ-AhL">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="hwJ-Wu-8Wa" customClass="FiltersOptionsVC" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="hwJ-Wu-8Wa" customClass="FilterOptionsVC" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="40" sectionFooterHeight="40" id="VD5-le-0zb">
                         <rect key="frame" x="0.0" y="0.0" width="634" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,7 +170,7 @@
         <scene sceneID="Q0s-kR-lto">
             <objects>
                 <navigationController id="aZF-3I-vh5" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bgw-Bo-XKx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bgw-Bo-XKx">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -184,15 +182,15 @@
             </objects>
             <point key="canvasLocation" x="7416" y="-908"/>
         </scene>
-        <!--Filters ResultsVC-->
+        <!--Filter ResultsVC-->
         <scene sceneID="JTJ-1e-2H7">
             <objects>
-                <tableViewController id="75q-vr-Poj" customClass="FiltersResultsVC" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="75q-vr-Poj" customClass="FilterResultsVC" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="40" sectionFooterHeight="40" id="PBp-f0-oEM">
                         <rect key="frame" x="0.0" y="0.0" width="1285" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" id="PCb-XV-m37">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PCb-XV-m37">
                                 <rect key="frame" x="0.0" y="199" width="1245" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PCb-XV-m37" id="blr-Kc-6tk">
@@ -264,7 +262,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="634" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" id="IE1-b7-dDp">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IE1-b7-dDp">
                                 <rect key="frame" x="0.0" y="199" width="594" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IE1-b7-dDp" id="k1g-6x-VKY">
@@ -288,7 +286,7 @@
         <scene sceneID="ebs-eq-1oK">
             <objects>
                 <navigationController id="Ypw-O1-4mh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Pco-dM-OeT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pco-dM-OeT">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -356,7 +354,7 @@
                                 <rect key="frame" x="20" y="531" width="1245" height="529"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="6BN-Uz-dh8">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="6BN-Uz-dh8">
                                         <rect key="frame" x="0.0" y="54" width="1245" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6BN-Uz-dh8" id="nwN-sl-oWP">
@@ -452,7 +450,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" id="euE-lc-tJM">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="euE-lc-tJM">
                                 <rect key="frame" x="0.0" y="199" width="1880" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="euE-lc-tJM" id="y7A-KA-0P3">
@@ -521,7 +519,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qBM-2h-KRc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uf2-Cw-Aqe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uf2-Cw-Aqe">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
