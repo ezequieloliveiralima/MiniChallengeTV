@@ -9,7 +9,12 @@
 import UIKit
 
 class CategoriesVC: UIViewController {
+    @IBOutlet weak var collectionTop: UICollectionView!
+    @IBOutlet weak var collectionAll: UICollectionView!
 
+    var topCategories: [String]! = []
+    var allCategories: [String]! = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,5 +36,4 @@ class CategoriesVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

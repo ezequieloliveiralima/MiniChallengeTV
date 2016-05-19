@@ -11,25 +11,25 @@
             <rect key="frame" x="0.0" y="0.0" width="1920" height="150"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FUX-Vo-weV" id="FwO-uw-ljx">
-                <rect key="frame" x="0.0" y="0.0" width="1844" height="150"/>
+                <rect key="frame" x="0.0" y="0.0" width="1860" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EDW-YX-dkj">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EDW-YX-dkj">
+                        <rect key="frame" x="28" y="0.0" width="150" height="150"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="150" id="98C-ex-tWl"/>
                             <constraint firstAttribute="width" constant="150" id="p3b-6E-Kd1"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33Y-Ji-Xz5">
-                        <rect key="frame" x="250" y="45" width="120" height="60"/>
+                        <rect key="frame" x="278" y="45" width="120" height="60"/>
                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="EDW-YX-dkj" firstAttribute="leading" secondItem="FwO-uw-ljx" secondAttribute="leadingMargin" constant="-8" id="WkD-Cs-rMb"/>
+                    <constraint firstItem="EDW-YX-dkj" firstAttribute="leading" secondItem="FwO-uw-ljx" secondAttribute="leadingMargin" constant="20" id="WkD-Cs-rMb"/>
                     <constraint firstItem="33Y-Ji-Xz5" firstAttribute="leading" secondItem="EDW-YX-dkj" secondAttribute="trailing" constant="100" id="ihS-VX-bPc"/>
                     <constraint firstItem="EDW-YX-dkj" firstAttribute="top" secondItem="FwO-uw-ljx" secondAttribute="topMargin" constant="-8" id="le6-6c-XZC"/>
                     <constraint firstItem="33Y-Ji-Xz5" firstAttribute="centerY" secondItem="FwO-uw-ljx" secondAttribute="centerY" id="w7y-hA-6XF"/>

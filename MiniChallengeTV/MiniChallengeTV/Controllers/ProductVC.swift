@@ -21,6 +21,15 @@ class ProductVC: UIViewController {
         super.viewDidLoad()
         
         offersList = []
+        offersList.append("aa")
+        offersList.append("aa")
+        offersList.append("aa")
+        offersList.append("aa")
+        offersList.append("aa")
+        offersList.append("aa")
+        offersList.append("aa")
+        offersList.append("aa")
+        
 
         // Do any additional setup after loading the view.
         let productCell = UINib(nibName: "DefaultTableCell", bundle: nil)
@@ -48,17 +57,6 @@ class ProductVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    @IBAction func onBuy(sender: UIButton) {
-        let alert = UIAlertController(title: "", message: "", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "Fechar", style: .Cancel, handler: nil))
-        
-        let imageView = UIImageView(frame: CGRect(x: 345, y: -400, width: 400, height: 400))
-        alert.view.addSubview(imageView)
-        imageView.image = QRCode(content: "http://www.google.com").generate()
-        
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
 
 }
 
@@ -74,9 +72,20 @@ extension ProductVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("product-cell") as! DefaultTableCell
         
-//        cell.productName =
-//        cell.productImage =
+        cell.productName.text = "Ver link da compra"
+        cell.productImage.image = UIImage(data: NSData(contentsOfURL: NSURL(string: "https://www.walmartbrandcenter.com/uploadedImages/BrandCenter/Content/downloads/Logos/specifications/specifications-logo1.png?n=4208")!)!)
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Fechar", style: .Cancel, handler: nil))
+        
+        let imageView = UIImageView(frame: CGRect(x: 345, y: -400, width: 400, height: 400))
+        alert.view.addSubview(imageView)
+        imageView.image = QRCode(content: "http://www.google.com").generate()
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }

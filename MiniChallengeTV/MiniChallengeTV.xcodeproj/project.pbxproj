@@ -34,6 +34,7 @@
 		E6CC77ED1CE66F700046DF18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6CC77EC1CE66F700046DF18 /* Assets.xcassets */; };
 		E6CC77F81CE66F700046DF18 /* MiniChallengeTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77F71CE66F700046DF18 /* MiniChallengeTVTests.swift */; };
 		E6CC78031CE66F700046DF18 /* MiniChallengeTVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC78021CE66F700046DF18 /* MiniChallengeTVUITests.swift */; };
+		E6E8ACC41CEE25DB006012E9 /* SpecificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E8ACC31CEE25DB006012E9 /* SpecificationsVC.swift */; };
 		E6F760901CEA543B0099B5A6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7608F1CEA543B0099B5A6 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		E6CC77FE1CE66F700046DF18 /* MiniChallengeTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniChallengeTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CC78021CE66F700046DF18 /* MiniChallengeTVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallengeTVUITests.swift; sourceTree = "<group>"; };
 		E6CC78041CE66F700046DF18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6E8ACC31CEE25DB006012E9 /* SpecificationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecificationsVC.swift; path = Controllers/SpecificationsVC.swift; sourceTree = "<group>"; };
 		E6F7608F1CEA543B0099B5A6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = MiniChallengeTV/CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,6 +196,15 @@
 			path = MiniChallengeTVUITests;
 			sourceTree = "<group>";
 		};
+		E6E8ACC21CEE25BA006012E9 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				E65B77141CECD31D0054526E /* ProductVC.swift */,
+				E6E8ACC31CEE25DB006012E9 /* SpecificationsVC.swift */,
+			);
+			name = Product;
+			sourceTree = "<group>";
+		};
 		E6F760881CEA383D0099B5A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,12 +229,12 @@
 		E6F7608A1CEA38490099B5A6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E6E8ACC21CEE25BA006012E9 /* Product */,
 				E65B771A1CECE4EF0054526E /* Filters */,
 				E65B77061CEBA78E0054526E /* FavoritesVC.swift */,
 				E65B77071CEBA78E0054526E /* QRCode.swift */,
 				E65B770A1CEBA8520054526E /* OffersVC.swift */,
 				E65B77121CECD0000054526E /* HistoricVC.swift */,
-				E65B77141CECD31D0054526E /* ProductVC.swift */,
 				E65B77161CECE2E30054526E /* CategoriesVC.swift */,
 			);
 			name = Controllers;
@@ -389,6 +400,7 @@
 				E65B77091CEBA78E0054526E /* QRCode.swift in Sources */,
 				57BF64FB1CEA600E00298EA2 /* BuscapeConnector.swift in Sources */,
 				57BF64FE1CEA602800298EA2 /* Constants.swift in Sources */,
+				E6E8ACC41CEE25DB006012E9 /* SpecificationsVC.swift in Sources */,
 				E65B76FD1CEB8BAF0054526E /* CollectionCellWithImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
