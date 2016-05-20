@@ -14,26 +14,30 @@ class ProductVC: UIViewController {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var rating: UIStackView!
+    @IBOutlet weak var btnFavorite: UIButton!
     
-    var offersList: [String]!
+    var offersList: [Offer]!
+    var product: testProduct!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         offersList = []
-        offersList.append("aa")
-        offersList.append("aa")
-        offersList.append("aa")
-        offersList.append("aa")
-        offersList.append("aa")
-        offersList.append("aa")
-        offersList.append("aa")
-        offersList.append("aa")
+        productImage.image = UIImage(data: NSData(contentsOfURL: NSURL(string: product.url)!)!)?.imageByMakingWhiteBackgroundTransparent()
         
-
         // Do any additional setup after loading the view.
         let productCell = UINib(nibName: "DefaultTableCell", bundle: nil)
         tableView.registerNib(productCell, forCellReuseIdentifier: "product-cell")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if TestLocalStorage.instance.isFavorite(product) {
+            btnFavorite.setTitle("Desfavoritar", forState: .Normal)
+        }
+        
+        TestLocalStorage.instance.addHistoric(product)
     }
     
     private func calcalateRating(value: Double) {
@@ -47,6 +51,15 @@ class ProductVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onFavorite(sender: UIButton) {
+        if TestLocalStorage.instance.isFavorite(product) {
+            TestLocalStorage.instance.removeFavorite(product)
+            btnFavorite.setTitle("Favoritar", forState: .Normal)
+        } else {
+            TestLocalStorage.instance.addFavorite(product)
+            btnFavorite.setTitle("Desfavoritar", forState: .Normal)
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -70,10 +83,12 @@ extension ProductVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("product-cell") as! DefaultTableCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("default-cell") as! GenericTableCell
         
-        cell.productName.text = "Ver link da compra"
-        cell.productImage.image = UIImage(data: NSData(contentsOfURL: NSURL(string: "https://www.walmartbrandcenter.com/uploadedImages/BrandCenter/Content/downloads/Logos/specifications/specifications-logo1.png?n=4208")!)!)
+        let offer = offersList[indexPath.row]
+        
+        cell.label.text = "Ver link da compra"
+        cell.imgView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: offer.vendor.thumbnail!.url)!)!)
         
         return cell
     }
