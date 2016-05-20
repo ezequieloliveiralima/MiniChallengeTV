@@ -44,6 +44,10 @@ class Product: BaseModel, CustomStringConvertible {
     var description: String {
         return ""
     }
+    
+    var imageUrl: String? {
+        return thumbnails?.maxElement({ $0.0.width > $0.1.width })?.url
+    }
 }
 
 class Offer: BaseModel, CustomStringConvertible {

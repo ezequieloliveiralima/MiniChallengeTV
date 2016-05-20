@@ -16,19 +16,22 @@ class ProductVC: UIViewController {
     @IBOutlet weak var rating: UIStackView!
     @IBOutlet weak var btnFavorite: UIButton!
     
-    var offersList: [Offer]!
-    var product: Product!
+    var offers  : List<Offer>?
+    var product : Product!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let productCell = UINib(nibName: "DefaultTableCell", bundle: nil)
-        tableView.registerNib(productCell, forCellReuseIdentifier: "product-cell")
-        offersList = []
-        
-        if let thumbnail = product.thumbnails?.maxElement({ $0.0.width > $0.1.width }) {
-            productImage.image = UIImage(data: NSData(contentsOfURL: NSURL(string: thumbnail.url)!)!)?.imageByMakingWhiteBackgroundTransparent()
+        tableView.registerNib(UINib(nibName: "DefaultTableCell", bundle: nil), forCellReuseIdentifier: "default-cell")
+
+        if let imageUrl = product.imageUrl {
+            productImage.image = UIImage(data: NSData(contentsOfURL: NSURL(string: imageUrl)!)!)?.imageByMakingWhiteBackgroundTransparent()
         } else {
             productImage.image = UIImage(named: "placeholder")
+        }
+        
+        MainController.getProductOffers(product, params: []) { (list) in
+            self.offers = list
+            self.tableView.reloadData()
         }
     }
     
@@ -41,18 +44,15 @@ class ProductVC: UIViewController {
 //        
 //        TestLocalStorage.instance.addHistoric(product)
     }
-    
-    private func calcalateRating(value: Double) {
-//        let filled = UIImageView(image: UIImage(named: "star_filled"))
-//        let nonFilled = UIImageView(image: UIImage(named: "non_star_filled"))
-//        let halfFilled = UIImageView(image: UIImage(named: "half_star_filled"))
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
+
+//Actions
+extension ProductVC {
     @IBAction func onFavorite(sender: UIButton) {
 //        if TestLocalStorage.instance.isFavorite(product) {
 //            TestLocalStorage.instance.removeFavorite(product)
@@ -62,35 +62,30 @@ class ProductVC: UIViewController {
 //            btnFavorite.setTitle("Desfavoritar", forState: .Normal)
 //        }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
+//Delegate
 extension ProductVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return offersList.count
+        return offers?.list.count ?? 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("default-cell") as! GenericTableCell
-        
-        let offer = offersList[indexPath.row]
+        let offer = offers!.list[indexPath.row]
         
         cell.label.text = "Ver link da compra"
-        cell.imgView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: offer.vendor.thumbnail!.url)!)!)
+        
+        if let imageUrl = offer.vendor.thumbnail?.url {
+            cell.imgView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: imageUrl)!)!)
+        } else {
+            cell.imgView.image = UIImage(named: "placeholder")
+        }
+        
         
         return cell
     }
@@ -104,5 +99,14 @@ extension ProductVC: UITableViewDelegate, UITableViewDataSource {
         imageView.image = QRCode(content: "http://www.google.com").generate()
         
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+}
+
+//Private
+private extension ProductVC {
+    func calcalateRating(value: Double) {
+//        let filled = UIImageView(image: UIImage(named: "star_filled"))
+//        let nonFilled = UIImageView(image: UIImage(named: "non_star_filled"))
+//        let halfFilled = UIImageView(image: UIImage(named: "half_star_filled"))
     }
 }

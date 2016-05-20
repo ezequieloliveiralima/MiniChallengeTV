@@ -9,6 +9,7 @@
 import UIKit
 
 class CategoriesVC: UIViewController {
+    
     @IBOutlet weak var collectionTop: UICollectionView!
     @IBOutlet weak var collectionAll: UICollectionView!
     @IBOutlet weak var textSearch: UITextField!
