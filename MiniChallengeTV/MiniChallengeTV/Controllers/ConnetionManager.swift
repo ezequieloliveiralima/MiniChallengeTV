@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ConnectionManager {
     
@@ -18,9 +19,12 @@ class ConnectionManager {
         return NSURLSession(configuration: config)
     }()
     
-    class func openConnection(uri: String, completionHandler:((NSData?, NSURLResponse?, NSError?) -> Void)) {
+    private static var activeSessions = [Int : NSURLSessionDataTask]()
+    
+    class func openConnection(uri: String, completionHandler:(NSData?, NSURLResponse?, NSError?) -> Void) {
         print(uri)
         guard let url = NSURL(string: uri) else {
+            completionHandler(nil, nil, nil)
             return
         }
         let request = NSURLRequest(URL: url, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30.0)
@@ -30,4 +34,21 @@ class ConnectionManager {
             })
         }).resume()
     }
+    
+    class func getImage(uri: String, completionHandler: (UIImage?) -> Void) {
+        guard let url = NSURL(string: uri) else {
+            return
+        }
+        let request = NSURLRequest(URL: url, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30.0)
+        session.dataTaskWithRequest(request) { (data, response, error) in
+            var image: UIImage?
+            if let data = data {
+                image = UIImage(data: data)
+            }
+            dispatch_async(dispatch_get_main_queue(), {
+                completionHandler(image)
+            })
+        }.resume()
+    }
+    
 }
