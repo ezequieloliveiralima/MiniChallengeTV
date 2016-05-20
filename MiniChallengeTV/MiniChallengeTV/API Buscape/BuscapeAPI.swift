@@ -86,6 +86,7 @@ class BuscapeAPI {
         if !parameters.isEmpty {
             uri += "?" + parameters.map({ (p) -> String in
                 switch p {
+                case .None                      : return ""
                 case .ProductId (let id)        : return "productId=\(id)"
                 case .CategoryId(let id)        : return "categoryId=\(id)"
                 case .OfferId   (let id)        : return "offerId=\(id)"

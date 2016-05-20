@@ -32,7 +32,10 @@ class BuscapeConnector {
                 var json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? Payload
                 json = BuscapeParser.changeKeyToLower(&json!)
 //                print(json)
-                completionHandler(json, response, error)
+                
+                dispatch_async(dispatch_get_main_queue(), { 
+                    completionHandler(json, response, error)
+                })
             } catch _ {
                 print("JSON Serialization Error")
             }
@@ -40,7 +43,9 @@ class BuscapeConnector {
     }
     
     func openConnection(type type: SearchType, parameters: [SearchParameter], completionHandler:((Payload?, NSURLResponse?, NSError?) -> Void)) {
-        let uri = BuscapeAPI(searchType: type).addParameters([SearchParameter.Format(.JSON)].appendContentsOf(parameters)).getURI()
+        var p = parameters
+        p.append(.Format(.JSON))
+        let uri = BuscapeAPI(searchType: type).addParameters(p).getURI()
         openConnection(uri, completionHandler: completionHandler)
     }
     

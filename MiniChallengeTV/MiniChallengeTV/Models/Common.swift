@@ -15,7 +15,8 @@ enum SearchType {
 }
 
 enum SearchParameter {
-    case ProductId(Int)
+    case None
+    , ProductId(Int)
     , CategoryId(Int)
     , OfferId(Int)
     , SourceId(Int)
@@ -30,6 +31,7 @@ enum SearchParameter {
     
     func equals(other: SearchParameter) -> Bool {
         switch (self, other) {
+        case (.None             , .None)            : return true
         case (.ProductId(_)     , .ProductId(_))    : return true
         case (.CategoryId(_)    , .CategoryId(_))   : return true
         case (.OfferId(_)       , .OfferId(_))      : return true

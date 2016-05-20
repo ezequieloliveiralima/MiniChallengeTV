@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		577C25101CED077D00360149 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577C250F1CED077D00360149 /* Common.swift */; };
+		578A2BC91CEF8C3C0034180F /* MainViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578A2BC81CEF8C3C0034180F /* MainViewControllerDelegate.swift */; };
 		578FDA9A1CEE28A50068A6DC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FDA991CEE28A50068A6DC /* Models.swift */; };
 		578FDA9C1CEE2D550068A6DC /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FDA9B1CEE2D550068A6DC /* MainController.swift */; };
 		578FDA9E1CEE3DC00068A6DC /* BuscapeGroupModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FDA9D1CEE3DC00068A6DC /* BuscapeGroupModels.swift */; };
@@ -17,9 +18,6 @@
 		57BF64FA1CEA600E00298EA2 /* BuscapeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF64F61CEA600E00298EA2 /* BuscapeAPI.swift */; };
 		57BF64FB1CEA600E00298EA2 /* BuscapeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF64F71CEA600E00298EA2 /* BuscapeConnector.swift */; };
 		57EC6A1E1CEE553800ED0EA6 /* BuscapeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC6A1D1CEE553800ED0EA6 /* BuscapeParser.swift */; };
-		E65B76FD1CEB8BAF0054526E /* CollectionCellWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65B76FC1CEB8BAF0054526E /* CollectionCellWithImage.swift */; };
-		E65B76FF1CEB8BDD0054526E /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65B76FE1CEB8BDD0054526E /* ProductTableViewCell.swift */; };
-		E65B77051CEB92630054526E /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E65B77041CEB92630054526E /* ProductTableViewCell.xib */; };
 		E63D42CD1CEF7F1D00D574C9 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63D42CC1CEF7F1D00D574C9 /* LocalStorage.swift */; };
 		E65B77051CEB92630054526E /* DefaultTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E65B77041CEB92630054526E /* DefaultTableCell.xib */; };
 		E65B77081CEBA78E0054526E /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65B77061CEBA78E0054526E /* FavoritesVC.swift */; };
@@ -63,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		577C250F1CED077D00360149 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = Models/Common.swift; sourceTree = "<group>"; };
+		578A2BC81CEF8C3C0034180F /* MainViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewControllerDelegate.swift; path = Controllers/MainViewControllerDelegate.swift; sourceTree = "<group>"; };
 		578FDA991CEE28A50068A6DC /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Models/Models.swift; sourceTree = "<group>"; };
 		578FDA9B1CEE2D550068A6DC /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainController.swift; path = Controllers/MainController.swift; sourceTree = "<group>"; };
 		578FDA9D1CEE3DC00068A6DC /* BuscapeGroupModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeGroupModels.swift; sourceTree = "<group>"; };
@@ -72,9 +71,6 @@
 		57BF64F61CEA600E00298EA2 /* BuscapeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeAPI.swift; sourceTree = "<group>"; };
 		57BF64F71CEA600E00298EA2 /* BuscapeConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeConnector.swift; sourceTree = "<group>"; };
 		57EC6A1D1CEE553800ED0EA6 /* BuscapeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeParser.swift; sourceTree = "<group>"; };
-		E65B76FC1CEB8BAF0054526E /* CollectionCellWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionCellWithImage.swift; path = Views/CollectionCellWithImage.swift; sourceTree = "<group>"; };
-		E65B76FE1CEB8BDD0054526E /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductTableViewCell.swift; path = Views/ProductTableViewCell.swift; sourceTree = "<group>"; };
-		E65B77041CEB92630054526E /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductTableViewCell.xib; path = Views/ProductTableViewCell.xib; sourceTree = "<group>"; };
 		E63D42CC1CEF7F1D00D574C9 /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalStorage.swift; path = Controllers/LocalStorage.swift; sourceTree = "<group>"; };
 		E65B77041CEB92630054526E /* DefaultTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DefaultTableCell.xib; path = Views/DefaultTableCell.xib; sourceTree = "<group>"; };
 		E65B77061CEBA78E0054526E /* FavoritesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesVC.swift; path = Controllers/FavoritesVC.swift; sourceTree = "<group>"; };
@@ -251,6 +247,7 @@
 				E6EF355F1CEE496D00131D96 /* CategoriesVC.swift */,
 				E6EF35611CEE49EA00131D96 /* TopProducts.swift */,
 				E63D42CC1CEF7F1D00D574C9 /* LocalStorage.swift */,
+				578A2BC81CEF8C3C0034180F /* MainViewControllerDelegate.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -408,6 +405,7 @@
 				57BC8BDA1CEBA9D7001AB292 /* GroupModels.swift in Sources */,
 				E6EF355E1CEE496400131D96 /* ProductVC.swift in Sources */,
 				578FDA9C1CEE2D550068A6DC /* MainController.swift in Sources */,
+				578A2BC91CEF8C3C0034180F /* MainViewControllerDelegate.swift in Sources */,
 				E6CC77E31CE66F700046DF18 /* AppDelegate.swift in Sources */,
 				578FDA9E1CEE3DC00068A6DC /* BuscapeGroupModels.swift in Sources */,
 				E6EF35681CEE4E0300131D96 /* FilterOptionsVC.swift in Sources */,

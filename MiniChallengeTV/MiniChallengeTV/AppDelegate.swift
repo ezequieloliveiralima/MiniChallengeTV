@@ -13,14 +13,15 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var main: MainViewControllerDelegate?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-//        BuscapeConnector().getTopProducts { (list) in print(list) }
-//        BuscapeConnector().getTopCategories { (list) in print(list) }
-//        BuscapeConnector().getProductOffers(614591) { (find) in print(find) }
         
+        main = MainViewControllerDelegate()
+        if let tbc = window?.rootViewController as? UITabBarController {
+            tbc.delegate = main
+        }
         return true
     }
     

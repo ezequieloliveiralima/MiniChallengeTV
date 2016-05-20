@@ -17,27 +17,29 @@ class ProductVC: UIViewController {
     @IBOutlet weak var btnFavorite: UIButton!
     
     var offersList: [Offer]!
-    var product: testProduct!
+    var product: Product!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        offersList = []
-        productImage.image = UIImage(data: NSData(contentsOfURL: NSURL(string: product.url)!)!)?.imageByMakingWhiteBackgroundTransparent()
-        
-        // Do any additional setup after loading the view.
         let productCell = UINib(nibName: "DefaultTableCell", bundle: nil)
         tableView.registerNib(productCell, forCellReuseIdentifier: "product-cell")
+        offersList = []
+        
+        if let thumbnail = product.thumbnails?.maxElement({ $0.0.width > $0.1.width }) {
+            productImage.image = UIImage(data: NSData(contentsOfURL: NSURL(string: thumbnail.url)!)!)?.imageByMakingWhiteBackgroundTransparent()
+        } else {
+            productImage.image = UIImage(named: "placeholder")
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if TestLocalStorage.instance.isFavorite(product) {
-            btnFavorite.setTitle("Desfavoritar", forState: .Normal)
-        }
-        
-        TestLocalStorage.instance.addHistoric(product)
+//        if TestLocalStorage.instance.isFavorite(product) {
+//            btnFavorite.setTitle("Desfavoritar", forState: .Normal)
+//        }
+//        
+//        TestLocalStorage.instance.addHistoric(product)
     }
     
     private func calcalateRating(value: Double) {
@@ -52,13 +54,13 @@ class ProductVC: UIViewController {
     }
     
     @IBAction func onFavorite(sender: UIButton) {
-        if TestLocalStorage.instance.isFavorite(product) {
-            TestLocalStorage.instance.removeFavorite(product)
-            btnFavorite.setTitle("Favoritar", forState: .Normal)
-        } else {
-            TestLocalStorage.instance.addFavorite(product)
-            btnFavorite.setTitle("Desfavoritar", forState: .Normal)
-        }
+//        if TestLocalStorage.instance.isFavorite(product) {
+//            TestLocalStorage.instance.removeFavorite(product)
+//            btnFavorite.setTitle("Favoritar", forState: .Normal)
+//        } else {
+//            TestLocalStorage.instance.addFavorite(product)
+//            btnFavorite.setTitle("Desfavoritar", forState: .Normal)
+//        }
     }
 
     /*
