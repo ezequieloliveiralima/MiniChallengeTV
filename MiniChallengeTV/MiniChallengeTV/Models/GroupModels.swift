@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TopList<Element : BaseModel> : CustomStringConvertible {
+class List<Element : BaseModel> : CustomStringConvertible {
     
     var page: Int
     var totalPages: Int
@@ -21,11 +21,12 @@ class TopList<Element : BaseModel> : CustomStringConvertible {
         self.totalPages = list.detail.totalPages
         self.totalResultsReturned = list.detail.totalResultsReturned
         self.totalResultsAvailable = list.detail.totalResultsAvailable
-        self.list = list.list.flatMap({ (Element.self as Element.Type).init(data: $0) })
+        self.list = list.list.flatMap({ Element.init(data: $0) })
     }
     
     var description: String {
         return "{page: \(page), total: \(totalPages), totalResults: \(totalResultsReturned), totalResultsAvailable: \(totalResultsAvailable), list:\(list)}"
     }
+    
 }
 

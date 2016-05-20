@@ -8,16 +8,9 @@
 
 import Foundation
 
-enum BuscapeSearchType {
-    case TopOffers, TopCategories, TopProducts
-    , Offer, Category, Product
-    , Vendor, UserRatings
-}
-
 private enum BuscapeEnviromentType {
     case Sandbox, Production
 }
-
 
 class BuscapeAPI {
     
@@ -26,14 +19,14 @@ class BuscapeAPI {
     
     private var enviromentType = BuscapeEnviromentType.Sandbox
     
-    private var searchType  : BuscapeSearchType
+    private var searchType  : SearchType
     private var parameters  = [SearchParameter]()
     
-    init(searchType: BuscapeSearchType) {
+    init(searchType: SearchType) {
         self.searchType = searchType
     }
     
-    func setSearch(searchType: BuscapeSearchType) -> BuscapeAPI {
+    func setSearch(searchType: SearchType) -> BuscapeAPI {
         self.searchType = searchType
         return self
     }
@@ -52,8 +45,13 @@ class BuscapeAPI {
         return self
     }
     
+    func addParameters(params: [SearchParameter]) -> BuscapeAPI {
+        self.parameters.appendContentsOf(params)
+        return self
+    }
+    
     func addParameters(params: SearchParameter...) -> BuscapeAPI {
-        params.forEach({ addParameter($0) })
+        self.parameters.appendContentsOf(params)
         return self
     }
     

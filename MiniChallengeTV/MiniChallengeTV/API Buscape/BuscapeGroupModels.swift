@@ -9,7 +9,7 @@
 import Foundation
 
 
-class BList<Element> : BuscapeModel, CustomStringConvertible {
+class BList<Element : BuscapeModel> : CustomStringConvertible {
     
     let detail  : BListDetail
     let list    : [Element]

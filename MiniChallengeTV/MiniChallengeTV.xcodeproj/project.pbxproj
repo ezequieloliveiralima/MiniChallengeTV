@@ -11,11 +11,12 @@
 		578FDA9A1CEE28A50068A6DC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FDA991CEE28A50068A6DC /* Models.swift */; };
 		578FDA9C1CEE2D550068A6DC /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FDA9B1CEE2D550068A6DC /* MainController.swift */; };
 		578FDA9E1CEE3DC00068A6DC /* BuscapeGroupModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FDA9D1CEE3DC00068A6DC /* BuscapeGroupModels.swift */; };
-		57BC8BD21CEBA90C001AB292 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC8BD11CEBA90C001AB292 /* ProductManager.swift */; };
+		57A54A6A1CEE4E9F006F333F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A54A691CEE4E9F006F333F /* Extensions.swift */; };
 		57BC8BDA1CEBA9D7001AB292 /* GroupModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC8BD91CEBA9D7001AB292 /* GroupModels.swift */; };
 		57BF64F91CEA600E00298EA2 /* BuscapeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF64F51CEA600E00298EA2 /* BuscapeModels.swift */; };
 		57BF64FA1CEA600E00298EA2 /* BuscapeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF64F61CEA600E00298EA2 /* BuscapeAPI.swift */; };
 		57BF64FB1CEA600E00298EA2 /* BuscapeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF64F71CEA600E00298EA2 /* BuscapeConnector.swift */; };
+		57EC6A1E1CEE553800ED0EA6 /* BuscapeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC6A1D1CEE553800ED0EA6 /* BuscapeParser.swift */; };
 		E65B76FD1CEB8BAF0054526E /* CollectionCellWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65B76FC1CEB8BAF0054526E /* CollectionCellWithImage.swift */; };
 		E65B76FF1CEB8BDD0054526E /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65B76FE1CEB8BDD0054526E /* ProductTableViewCell.swift */; };
 		E65B77051CEB92630054526E /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E65B77041CEB92630054526E /* ProductTableViewCell.xib */; };
@@ -54,11 +55,12 @@
 		578FDA991CEE28A50068A6DC /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Models/Models.swift; sourceTree = "<group>"; };
 		578FDA9B1CEE2D550068A6DC /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainController.swift; path = Controllers/MainController.swift; sourceTree = "<group>"; };
 		578FDA9D1CEE3DC00068A6DC /* BuscapeGroupModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeGroupModels.swift; sourceTree = "<group>"; };
-		57BC8BD11CEBA90C001AB292 /* ProductManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductManager.swift; path = Controllers/ProductManager.swift; sourceTree = "<group>"; };
+		57A54A691CEE4E9F006F333F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		57BC8BD91CEBA9D7001AB292 /* GroupModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupModels.swift; path = Models/GroupModels.swift; sourceTree = "<group>"; };
 		57BF64F51CEA600E00298EA2 /* BuscapeModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeModels.swift; sourceTree = "<group>"; };
 		57BF64F61CEA600E00298EA2 /* BuscapeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeAPI.swift; sourceTree = "<group>"; };
 		57BF64F71CEA600E00298EA2 /* BuscapeConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeConnector.swift; sourceTree = "<group>"; };
+		57EC6A1D1CEE553800ED0EA6 /* BuscapeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeParser.swift; sourceTree = "<group>"; };
 		E65B76FC1CEB8BAF0054526E /* CollectionCellWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionCellWithImage.swift; path = Views/CollectionCellWithImage.swift; sourceTree = "<group>"; };
 		E65B76FE1CEB8BDD0054526E /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductTableViewCell.swift; path = Views/ProductTableViewCell.swift; sourceTree = "<group>"; };
 		E65B77041CEB92630054526E /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductTableViewCell.xib; path = Views/ProductTableViewCell.xib; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				578FDA9D1CEE3DC00068A6DC /* BuscapeGroupModels.swift */,
 				57BF64F61CEA600E00298EA2 /* BuscapeAPI.swift */,
 				57BF64F71CEA600E00298EA2 /* BuscapeConnector.swift */,
+				57EC6A1D1CEE553800ED0EA6 /* BuscapeParser.swift */,
 			);
 			path = "API Buscape";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				E6CC77EC1CE66F700046DF18 /* Assets.xcassets */,
 				E6CC77EE1CE66F700046DF18 /* Info.plist */,
 				E6CC77E61CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld */,
+				57A54A691CEE4E9F006F333F /* Extensions.swift */,
 				E6F760881CEA383D0099B5A6 /* Models */,
 				E6F760891CEA38440099B5A6 /* Views */,
 				E6F7608A1CEA38490099B5A6 /* Controllers */,
@@ -176,7 +180,6 @@
 		E6E8ACC21CEE25BA006012E9 /* Product */ = {
 			isa = PBXGroup;
 			children = (
-				E65B77141CECD31D0054526E /* ProductVC.swift */,
 				E6E8ACC31CEE25DB006012E9 /* SpecificationsVC.swift */,
 			);
 			name = Product;
@@ -207,14 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				E6E8ACC21CEE25BA006012E9 /* Product */,
-				E65B771A1CECE4EF0054526E /* Filters */,
-				E65B77061CEBA78E0054526E /* FavoritesVC.swift */,
 				E65B77071CEBA78E0054526E /* QRCode.swift */,
-				E65B770A1CEBA8520054526E /* OffersVC.swift */,
-				E65B77121CECD0000054526E /* HistoricVC.swift */,
-				E65B77161CECE2E30054526E /* CategoriesVC.swift */,
 				E65B77061CEBA78E0054526E /* FavoritesVC.swift */,
-				57BC8BD11CEBA90C001AB292 /* ProductManager.swift */,
 				578FDA9B1CEE2D550068A6DC /* MainController.swift */,
 			);
 			name = Controllers;
@@ -359,19 +356,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BF64F91CEA600E00298EA2 /* BuscapeModels.swift in Sources */,
+				57A54A6A1CEE4E9F006F333F /* Extensions.swift in Sources */,
 				E6F760901CEA543B0099B5A6 /* CoreDataManager.swift in Sources */,
 				E6CC77E51CE66F700046DF18 /* ViewController.swift in Sources */,
 				577C25101CED077D00360149 /* Common.swift in Sources */,
 				57BF64FA1CEA600E00298EA2 /* BuscapeAPI.swift in Sources */,
 				E65B76FF1CEB8BDD0054526E /* ProductTableViewCell.swift in Sources */,
 				E6CC77E81CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld in Sources */,
+				57EC6A1E1CEE553800ED0EA6 /* BuscapeParser.swift in Sources */,
 				57BC8BDA1CEBA9D7001AB292 /* GroupModels.swift in Sources */,
 				578FDA9C1CEE2D550068A6DC /* MainController.swift in Sources */,
 				E6CC77E31CE66F700046DF18 /* AppDelegate.swift in Sources */,
 				578FDA9E1CEE3DC00068A6DC /* BuscapeGroupModels.swift in Sources */,
 				E65B77081CEBA78E0054526E /* FavoritesVC.swift in Sources */,
 				E65B77091CEBA78E0054526E /* QRCode.swift in Sources */,
-				57BC8BD21CEBA90C001AB292 /* ProductManager.swift in Sources */,
 				578FDA9A1CEE28A50068A6DC /* Models.swift in Sources */,
 				57BF64FB1CEA600E00298EA2 /* BuscapeConnector.swift in Sources */,
 				E6E8ACC41CEE25DB006012E9 /* SpecificationsVC.swift in Sources */,

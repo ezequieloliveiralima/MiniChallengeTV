@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum SearchType {
+    case TopOffers, TopCategories, TopProducts
+    , Offer, Category, Product
+    , Vendor, UserRatings
+}
+
 enum SearchParameter {
     case ProductId(Int)
     , CategoryId(Int)
