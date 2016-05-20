@@ -18,12 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uRQ-fJ-a33">
-                                <rect key="frame" x="20" y="305" width="1880" height="200"/>
+                                <rect key="frame" x="20" y="155" width="1880" height="200"/>
+                                <color key="backgroundColor" red="0.76075014910000005" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="ZFt-3b-Txv"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k2V-bM-N9P">
-                                    <size key="itemSize" width="200" height="200"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q3F-ON-7yF">
+                                    <size key="itemSize" width="100" height="44"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -35,7 +36,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nh0-eM-X7M">
-                                <rect key="frame" x="20" y="513" width="1880" height="547"/>
+                                <rect key="frame" x="20" y="363" width="1880" height="697"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dbo-5R-HOZ">
                                     <size key="itemSize" width="400" height="75"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -81,7 +82,7 @@
                             <constraint firstItem="nh0-eM-X7M" firstAttribute="trailing" secondItem="BAg-eM-vJR" secondAttribute="trailingMargin" id="Iik-sU-ew3"/>
                             <constraint firstItem="nh0-eM-X7M" firstAttribute="top" secondItem="uRQ-fJ-a33" secondAttribute="bottom" constant="8" id="Ijf-Uy-CNU"/>
                             <constraint firstItem="nh0-eM-X7M" firstAttribute="leading" secondItem="BAg-eM-vJR" secondAttribute="leadingMargin" id="SSc-ZC-IyD"/>
-                            <constraint firstItem="uRQ-fJ-a33" firstAttribute="top" secondItem="mey-dx-HyX" secondAttribute="bottom" constant="160" id="VR5-jp-6UA"/>
+                            <constraint firstItem="uRQ-fJ-a33" firstAttribute="top" secondItem="mey-dx-HyX" secondAttribute="bottom" constant="10" id="VR5-jp-6UA"/>
                             <constraint firstItem="uRQ-fJ-a33" firstAttribute="trailing" secondItem="BAg-eM-vJR" secondAttribute="trailingMargin" id="YPO-sS-qER"/>
                             <constraint firstItem="uRQ-fJ-a33" firstAttribute="leading" secondItem="BAg-eM-vJR" secondAttribute="leadingMargin" id="rWQ-Qs-xLd"/>
                         </constraints>

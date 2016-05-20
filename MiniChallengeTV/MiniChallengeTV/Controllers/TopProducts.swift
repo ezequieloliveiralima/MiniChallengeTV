@@ -28,6 +28,7 @@ class TopProducts: UIViewController {
         MainController.getListTopProducts([]) { (list) in
             self.list = list
             self.collectionTopProducts.reloadData()
+            self.loadingTopProducts.stopAnimating()
         }
     }
     

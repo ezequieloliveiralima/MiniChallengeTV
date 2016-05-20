@@ -19,37 +19,24 @@ class CategoriesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        MainController.getListTopCategories(SearchParameter.Page(1)) { (list) in
+        
+        collectionTop.registerNib(UINib(nibName: "DefaultCollectionCell", bundle: nil), forCellWithReuseIdentifier: "default-cell")
+        
+        MainController.getListTopCategories([]) { (list) in
+            self.topCategories = list
             dispatch_async(dispatch_get_main_queue(), { 
-                self.topCategories = list
                 self.collectionTop.reloadData()
             })
         }
         
-        let defaultCell = UINib(nibName: "DefaultCollectionCell", bundle: nil)
-        collectionTop.registerNib(defaultCell, forCellWithReuseIdentifier: "default-cell")
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        MainController.getListCategories([SearchParameter.CategoryId(6420)]) { (list) in
+            
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
-extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
