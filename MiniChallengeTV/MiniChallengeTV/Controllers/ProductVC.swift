@@ -14,17 +14,30 @@ class ProductVC: UIViewController {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var rating: UIStackView!
+    @IBOutlet weak var btnFavorite: UIButton!
     
     var offersList: [Offer]!
+    var product: testProduct!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         offersList = []
-
+        productImage.image = UIImage(data: NSData(contentsOfURL: NSURL(string: product.url)!)!)?.imageByMakingWhiteBackgroundTransparent()
+        
         // Do any additional setup after loading the view.
         let productCell = UINib(nibName: "DefaultTableCell", bundle: nil)
         tableView.registerNib(productCell, forCellReuseIdentifier: "product-cell")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if TestLocalStorage.instance.isFavorite(product) {
+            btnFavorite.setTitle("Desfavoritar", forState: .Normal)
+        }
+        
+        TestLocalStorage.instance.addHistoric(product)
     }
     
     private func calcalateRating(value: Double) {
@@ -38,6 +51,15 @@ class ProductVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onFavorite(sender: UIButton) {
+        if TestLocalStorage.instance.isFavorite(product) {
+            TestLocalStorage.instance.removeFavorite(product)
+            btnFavorite.setTitle("Favoritar", forState: .Normal)
+        } else {
+            TestLocalStorage.instance.addFavorite(product)
+            btnFavorite.setTitle("Desfavoritar", forState: .Normal)
+        }
+    }
 
     /*
     // MARK: - Navigation

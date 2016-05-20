@@ -16,6 +16,7 @@
 		57BF64F91CEA600E00298EA2 /* BuscapeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF64F51CEA600E00298EA2 /* BuscapeModels.swift */; };
 		57BF64FA1CEA600E00298EA2 /* BuscapeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF64F61CEA600E00298EA2 /* BuscapeAPI.swift */; };
 		57BF64FB1CEA600E00298EA2 /* BuscapeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF64F71CEA600E00298EA2 /* BuscapeConnector.swift */; };
+		E63D42CD1CEF7F1D00D574C9 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63D42CC1CEF7F1D00D574C9 /* LocalStorage.swift */; };
 		E65B77051CEB92630054526E /* DefaultTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E65B77041CEB92630054526E /* DefaultTableCell.xib */; };
 		E65B77081CEBA78E0054526E /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65B77061CEBA78E0054526E /* FavoritesVC.swift */; };
 		E65B77091CEBA78E0054526E /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65B77071CEBA78E0054526E /* QRCode.swift */; };
@@ -66,6 +67,7 @@
 		57BF64F51CEA600E00298EA2 /* BuscapeModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeModels.swift; sourceTree = "<group>"; };
 		57BF64F61CEA600E00298EA2 /* BuscapeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeAPI.swift; sourceTree = "<group>"; };
 		57BF64F71CEA600E00298EA2 /* BuscapeConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeConnector.swift; sourceTree = "<group>"; };
+		E63D42CC1CEF7F1D00D574C9 /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalStorage.swift; path = Controllers/LocalStorage.swift; sourceTree = "<group>"; };
 		E65B77041CEB92630054526E /* DefaultTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DefaultTableCell.xib; path = Views/DefaultTableCell.xib; sourceTree = "<group>"; };
 		E65B77061CEBA78E0054526E /* FavoritesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesVC.swift; path = Controllers/FavoritesVC.swift; sourceTree = "<group>"; };
 		E65B77071CEBA78E0054526E /* QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRCode.swift; path = Controllers/QRCode.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				E6EF355B1CEE492200131D96 /* HistoricVC.swift */,
 				E6EF355F1CEE496D00131D96 /* CategoriesVC.swift */,
 				E6EF35611CEE49EA00131D96 /* TopProducts.swift */,
+				E63D42CC1CEF7F1D00D574C9 /* LocalStorage.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				578FDA9E1CEE3DC00068A6DC /* BuscapeGroupModels.swift in Sources */,
 				E6EF35681CEE4E0300131D96 /* FilterOptionsVC.swift in Sources */,
 				E6EF35641CEE4A3000131D96 /* GenericCollectionCell.swift in Sources */,
+				E63D42CD1CEF7F1D00D574C9 /* LocalStorage.swift in Sources */,
 				E65B77081CEBA78E0054526E /* FavoritesVC.swift in Sources */,
 				E6EF355C1CEE492200131D96 /* HistoricVC.swift in Sources */,
 				E65B77091CEBA78E0054526E /* QRCode.swift in Sources */,

@@ -8,24 +8,30 @@
 
 import UIKit
 
+typealias testProduct = (id: Int, url: String)
+
 class TopProducts: UIViewController {
     @IBOutlet weak var collectionTopProducts: UICollectionView!
     @IBOutlet weak var loadingTopProducts: UIActivityIndicatorView!
     
-    var topList: [BProduct]! = []
+    var topList: [testProduct]! = []
+    var selectedProduct: testProduct?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let defaultCell = UINib(nibName: "DefaultCollectionCell", bundle: nil)
         collectionTopProducts.registerNib(defaultCell, forCellWithReuseIdentifier: "default-cell")
-        
-        BuscapeConnector().getTopProducts { (list) in
-            self.topList = list.list
-            dispatch_async(dispatch_get_main_queue(), {
-                self.collectionTopProducts.reloadData()
-                self.loadingTopProducts.stopAnimating()
-            })
+
+        let image = "https://vocedeapple.com/52-thickbox_default/iphone-4s-barato.jpg"
+        dispatch_after(0, dispatch_get_main_queue()) {
+            self.topList.append((id: 1, url: image))
+            self.topList.append((id: 2, url: image))
+            self.topList.append((id: 3, url: image))
+            self.topList.append((id: 4, url: image))
+            self.topList.append((id: 5, url: image))
+            self.topList.append((id: 6, url: image))
+            self.collectionTopProducts.reloadData()
         }
     }
 }
@@ -42,7 +48,7 @@ extension TopProducts: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let product = topList[indexPath.row]
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("default-cell", forIndexPath: indexPath) as! GenericCollectionCell
-        cell.imageView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: product.thumbnails![0].url)!)!)?.imageByMakingWhiteBackgroundTransparent()
+        cell.imageView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: product.url)!)!)?.imageByMakingWhiteBackgroundTransparent()
         return cell
     }
     
@@ -50,6 +56,21 @@ extension TopProducts: UICollectionViewDelegate, UICollectionViewDataSource {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         if offsetY > contentHeight - scrollView.frame.size.height {
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        selectedProduct = topList[indexPath.row]
+        self.performSegueWithIdentifier("Select Product", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        
+        if let split = segue.destinationViewController as? UISplitViewController {
+            if let nextVC = (split.viewControllers[1] as? UINavigationController)?.viewControllers[0] as? ProductVC {
+                nextVC.product = selectedProduct
+            }
         }
     }
 }

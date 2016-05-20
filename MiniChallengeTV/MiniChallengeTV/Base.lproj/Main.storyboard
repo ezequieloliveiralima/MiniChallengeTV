@@ -141,11 +141,20 @@
                         <outlet property="collectionTopProducts" destination="rIG-zR-Upi" id="fJC-xw-slq"/>
                         <outlet property="loadingTopProducts" destination="5mU-Tt-GrP" id="tYU-n8-RQf"/>
                         <segue destination="Ymq-7c-awy" kind="show" identifier="Filter" id="NjL-XU-nk3"/>
+                        <segue destination="Tem-to-mCy" kind="show" identifier="Select Product" id="MGD-s3-wi5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDR-oY-Tvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3750" y="-340"/>
+        </scene>
+        <!--Product-->
+        <scene sceneID="ShO-zT-R2T">
+            <objects>
+                <viewControllerPlaceholder referencedIdentifier="Product" id="Tem-to-mCy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mRa-bc-1JD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3750.5" y="-1070"/>
         </scene>
         <!--Filter OptionsVC-->
         <scene sceneID="UGN-mZ-AhL">
@@ -372,6 +381,9 @@
                                 <rect key="frame" x="20" y="415" width="230" height="86"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Favoritar"/>
+                                <connections>
+                                    <action selector="onFavorite:" destination="aBs-EW-ZLg" eventType="primaryActionTriggered" id="sw5-pa-gHu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -393,6 +405,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="mzu-Oy-Da3"/>
                     <connections>
+                        <outlet property="btnFavorite" destination="vYh-73-4T1" id="33W-3d-30p"/>
                         <outlet property="productImage" destination="EO7-Vg-Tqc" id="R1s-xh-2JR"/>
                         <outlet property="productName" destination="YzU-zT-bMT" id="rSV-tz-Yay"/>
                         <outlet property="productPrice" destination="doH-Gh-StL" id="Sjd-LU-S97"/>

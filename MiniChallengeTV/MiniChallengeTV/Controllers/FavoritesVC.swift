@@ -10,12 +10,13 @@ import UIKit
 
 class FavoritesVC: UITableViewController {
 
-    var favoritesList: [Product]!
+    var favoritesList: [testProduct]!
+    var selectedProduct: testProduct?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        favoritesList = []
+        favoritesList = TestLocalStorage.instance.favorits
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -45,7 +46,7 @@ class FavoritesVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("default-cell", forIndexPath: indexPath) as! GenericTableCell
 
-        cell.label.text = favoritesList[indexPath.row].name
+        cell.label.text = "\(favoritesList[indexPath.row].id)"
         let gest = UITapGestureRecognizer(target: self, action: #selector(FavoritesVC.editCell(_:)))
         gest.allowedPressTypes = [ NSNumber(integer: UIPressType.PlayPause.rawValue) ]
         cell.addGestureRecognizer(gest)
@@ -53,6 +54,16 @@ class FavoritesVC: UITableViewController {
         // Configure the cell...
 
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        
+        if let split = segue.destinationViewController as? UISplitViewController {
+            if let nextVC = (split.viewControllers[1] as? UINavigationController)?.viewControllers[0] as? ProductVC {
+                nextVC.product = selectedProduct
+            }
+        }
     }
     
     func editCell(sender: UITapGestureRecognizer) {
@@ -63,6 +74,7 @@ class FavoritesVC: UITableViewController {
             , preferredStyle: .ActionSheet)
 
         alert.addAction(UIAlertAction(title: "Remover", style: .Destructive, handler: { (action) -> Void in
+            TestLocalStorage.instance.removeFavorite(self.favoritesList[index])
             self.favoritesList.removeAtIndex(index)
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
@@ -75,7 +87,8 @@ class FavoritesVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("", sender: self)
+        selectedProduct = favoritesList[indexPath.row]
+        self.performSegueWithIdentifier("Select Product", sender: self)
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
