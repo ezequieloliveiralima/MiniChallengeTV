@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Categoria-->
+        <!--CategoriesVC-->
         <scene sceneID="I9j-VI-jSd">
             <objects>
                 <viewController id="NgR-R6-7dJ" customClass="CategoriesVC" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uRQ-fJ-a33">
-                                <rect key="frame" x="20" y="160" width="1880" height="200"/>
+                                <rect key="frame" x="20" y="305" width="1880" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="ZFt-3b-Txv"/>
                                 </constraints>
@@ -29,9 +29,13 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="NgR-R6-7dJ" id="VbQ-u6-amR"/>
+                                    <outlet property="delegate" destination="NgR-R6-7dJ" id="EaI-GE-wtw"/>
+                                </connections>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nh0-eM-X7M">
-                                <rect key="frame" x="20" y="368" width="1880" height="692"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nh0-eM-X7M">
+                                <rect key="frame" x="20" y="513" width="1880" height="547"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dbo-5R-HOZ">
                                     <size key="itemSize" width="400" height="75"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -39,16 +43,37 @@
                                     <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="kKB-MT-xdh">
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="category" id="kKB-MT-xdh" customClass="GenericCollectionCell" customModule="MiniChallengeTV" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="20" width="400" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3e-r9-BC5">
+                                                    <rect key="frame" x="8" y="8" width="384" height="59"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="L3e-r9-BC5" firstAttribute="bottom" secondItem="kKB-MT-xdh" secondAttribute="bottomMargin" id="5XJ-n2-IIY"/>
+                                            <constraint firstItem="L3e-r9-BC5" firstAttribute="leading" secondItem="kKB-MT-xdh" secondAttribute="leadingMargin" id="Obm-iB-dvQ"/>
+                                            <constraint firstItem="L3e-r9-BC5" firstAttribute="trailing" secondItem="kKB-MT-xdh" secondAttribute="trailingMargin" id="dEw-hg-aPH"/>
+                                            <constraint firstItem="L3e-r9-BC5" firstAttribute="top" secondItem="kKB-MT-xdh" secondAttribute="topMargin" id="ka2-aP-dhg"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="label" destination="L3e-r9-BC5" id="vgV-fu-UY0"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="NgR-R6-7dJ" id="Q3P-fB-2M9"/>
+                                    <outlet property="delegate" destination="NgR-R6-7dJ" id="jWt-rr-gag"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <constraints>
@@ -61,16 +86,41 @@
                             <constraint firstItem="uRQ-fJ-a33" firstAttribute="leading" secondItem="BAg-eM-vJR" secondAttribute="leadingMargin" id="rWQ-Qs-xLd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Categoria" id="cxR-iF-ZAo"/>
+                    <navigationItem key="navigationItem" id="Rhy-OI-osI">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buscar categorias" textAlignment="center" minimumFontSize="17" id="cXP-TU-hfx">
+                            <rect key="frame" x="576" y="75" width="768" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="NgR-R6-7dJ" id="7sU-aw-cNF"/>
+                            </connections>
+                        </textField>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionAll" destination="nh0-eM-X7M" id="Gvq-GA-SRQ"/>
+                        <outlet property="collectionTop" destination="uRQ-fJ-a33" id="H1P-ec-yef"/>
+                        <outlet property="textSearch" destination="cXP-TU-hfx" id="xRi-Og-eOM"/>
+                        <segue destination="rYs-Bb-xOX" kind="show" identifier="Select category" id="DMN-1w-Ire"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acv-x6-qYl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1618" y="796"/>
+            <point key="canvasLocation" x="3750" y="796"/>
+        </scene>
+        <!--Top Products-->
+        <scene sceneID="RLy-ZF-5uL">
+            <objects>
+                <viewControllerPlaceholder referencedIdentifier="Top Products" id="rYs-Bb-xOX" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z8V-2J-VwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4947.5" y="796"/>
         </scene>
         <!--Top Products-->
         <scene sceneID="6k7-Ot-vkk">
             <objects>
-                <viewController id="ueO-9I-RSF" customClass="TopProducts" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Top Products" id="ueO-9I-RSF" customClass="TopProducts" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yZp-9Y-HZG"/>
                         <viewControllerLayoutGuide type="bottom" id="9Iz-2c-Gbv"/>
@@ -135,6 +185,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="29"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="ueO-9I-RSF" id="ijd-Mg-wCx"/>
+                            </connections>
                         </textField>
                     </navigationItem>
                     <connections>
@@ -160,10 +213,83 @@
         <scene sceneID="UGN-mZ-AhL">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="hwJ-Wu-8Wa" customClass="FilterOptionsVC" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="40" sectionFooterHeight="40" id="VD5-le-0zb">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="40" sectionFooterHeight="40" id="VD5-le-0zb">
                         <rect key="frame" x="0.0" y="0.0" width="634" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <sections/>
+                        <sections>
+                            <tableViewSection headerTitle="Filtrar por" id="B3Z-qv-CcU">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="TZl-uh-shO" style="IBUITableViewCellStyleDefault" id="4Af-3e-Ef4">
+                                        <rect key="frame" x="0.0" y="199" width="634" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Af-3e-Ef4" id="LeZ-B7-xeb">
+                                            <rect key="frame" x="0.0" y="0.0" width="558" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Ordem alfabética" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TZl-uh-shO">
+                                                    <rect key="frame" x="20" y="0.0" width="538" height="66"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="f5d-Ve-kfC" style="IBUITableViewCellStyleDefault" id="Qgj-0r-L0k">
+                                        <rect key="frame" x="0.0" y="279" width="634" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qgj-0r-L0k" id="F0P-tU-ikx">
+                                            <rect key="frame" x="0.0" y="0.0" width="558" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Melhor avaliação" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f5d-Ve-kfC">
+                                                    <rect key="frame" x="20" y="0.0" width="538" height="66"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="7vg-O4-Mqv" style="IBUITableViewCellStyleDefault" id="xK4-Zc-Ec5">
+                                        <rect key="frame" x="0.0" y="359" width="634" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xK4-Zc-Ec5" id="wd3-zn-ufq">
+                                            <rect key="frame" x="0.0" y="0.0" width="558" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Menor preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7vg-O4-Mqv">
+                                                    <rect key="frame" x="20" y="0.0" width="538" height="66"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Ujs-Cu-MGj" style="IBUITableViewCellStyleDefault" id="ygK-m0-aGe">
+                                        <rect key="frame" x="0.0" y="439" width="634" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ygK-m0-aGe" id="pvj-dQ-rd0">
+                                            <rect key="frame" x="0.0" y="0.0" width="558" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Maior preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ujs-Cu-MGj">
+                                                    <rect key="frame" x="20" y="0.0" width="538" height="66"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="hwJ-Wu-8Wa" id="I1t-DG-DIe"/>
                             <outlet property="delegate" destination="hwJ-Wu-8Wa" id="9Ec-YK-Xhw"/>
@@ -200,7 +326,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PCb-XV-m37">
-                                <rect key="frame" x="0.0" y="199" width="1245" height="66"/>
+                                <rect key="frame" x="0.0" y="199" width="1285" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PCb-XV-m37" id="blr-Kc-6tk">
                                     <rect key="frame" x="0.0" y="0.0" width="1269" height="66"/>
@@ -213,13 +339,14 @@
                             <outlet property="delegate" destination="75q-vr-Poj" id="8fO-8L-yOp"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="ODu-SA-wIZ"/>
                     <connections>
                         <segue destination="QDO-hH-r2Y" kind="show" identifier="Select Product" id="HWV-C5-S65"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cg7-pS-DVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7741.5" y="228"/>
+            <point key="canvasLocation" x="9238.5" y="348"/>
         </scene>
         <!--Product-->
         <scene sceneID="TdF-Vl-2at">
@@ -227,7 +354,7 @@
                 <viewControllerPlaceholder referencedIdentifier="Product" id="QDO-hH-r2Y" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGm-wL-xWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8666.5" y="228"/>
+            <point key="canvasLocation" x="10223.5" y="348"/>
         </scene>
         <!--FiltersVC-->
         <scene sceneID="q7h-73-wsW">
@@ -235,7 +362,7 @@
                 <splitViewController id="Ymq-7c-awy" customClass="FiltersVC" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="aZF-3I-vh5" kind="relationship" relationship="masterViewController" id="l5p-mn-SZb"/>
-                        <segue destination="75q-vr-Poj" kind="relationship" relationship="detailViewController" id="W8y-Jy-sP1"/>
+                        <segue destination="Cbb-nc-pVG" kind="relationship" relationship="detailViewController" id="W8y-Jy-sP1"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sl3-av-vGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -254,7 +381,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="CEQ-z2-CdZ" kind="relationship" relationship="viewControllers" id="jNt-3A-hmf"/>
-                        <segue destination="NgR-R6-7dJ" kind="relationship" relationship="viewControllers" id="YFC-tu-JCG"/>
+                        <segue destination="7Kh-oU-K9e" kind="relationship" relationship="viewControllers" id="YFC-tu-JCG"/>
                         <segue destination="BQE-Bu-reC" kind="relationship" relationship="viewControllers" id="1oW-PQ-4qz"/>
                         <segue destination="NC4-Kr-QWW" kind="relationship" relationship="viewControllers" id="sQD-Yt-FDy"/>
                     </connections>
@@ -289,7 +416,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LaX-AG-fpW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8449" y="1397"/>
+            <point key="canvasLocation" x="8449" y="1613"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ebs-eq-1oK">
@@ -305,7 +432,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFy-gV-ptP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7593" y="1397"/>
+            <point key="canvasLocation" x="7593" y="1613"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="5lJ-m1-ote">
@@ -318,7 +445,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEl-BG-hqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6100" y="1965"/>
+            <point key="canvasLocation" x="5996" y="2461"/>
         </scene>
         <!--ProductVC-->
         <scene sceneID="ts9-Wx-gCs">
@@ -484,7 +611,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rzX-uU-GVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3858" y="3100"/>
+            <point key="canvasLocation" x="3750" y="3100"/>
         </scene>
         <!--FavoritesVC-->
         <scene sceneID="alk-QU-lw3">
@@ -506,7 +633,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqU-ip-b0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3858" y="1948"/>
+            <point key="canvasLocation" x="3750" y="1948"/>
         </scene>
         <!--Histórico-->
         <scene sceneID="F0j-pP-VzC">
@@ -545,8 +672,45 @@
             </objects>
             <point key="canvasLocation" x="7918.5" y="2780"/>
         </scene>
+        <!--Categoria-->
+        <scene sceneID="YFO-Je-Jxy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Kh-oU-K9e" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Categoria" id="cxR-iF-ZAo"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="twL-UT-KDT">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NgR-R6-7dJ" kind="relationship" relationship="rootViewController" id="TOH-IL-e4K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e3t-ix-b2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1618" y="796"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jf9-KA-95V">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cbb-nc-pVG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DE3-Mh-IAK">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="75q-vr-Poj" kind="relationship" relationship="rootViewController" id="3Tb-U7-epB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uk8-IS-y68" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7741.5" y="348"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LDi-NK-6K8"/>
+        <segue reference="Eq7-Ff-p00"/>
     </inferredMetricsTieBreakers>
 </document>
