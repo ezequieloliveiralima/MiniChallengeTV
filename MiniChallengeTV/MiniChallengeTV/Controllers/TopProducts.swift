@@ -11,6 +11,7 @@ import UIKit
 typealias testProduct = (id: Int, url: String)
 
 class TopProducts: UIViewController {
+    
     @IBOutlet weak var collectionTopProducts: UICollectionView!
     @IBOutlet weak var loadingTopProducts: UIActivityIndicatorView!
     
@@ -23,7 +24,7 @@ class TopProducts: UIViewController {
         let defaultCell = UINib(nibName: "DefaultCollectionCell", bundle: nil)
         collectionTopProducts.registerNib(defaultCell, forCellWithReuseIdentifier: "default-cell")
         
-        MainController.getListTopProducts(.None) { (list) in
+        MainController.getListTopProducts([]) { (list) in
             self.list = list
             self.collectionTopProducts.reloadData()
         }

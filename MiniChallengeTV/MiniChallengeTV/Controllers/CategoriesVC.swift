@@ -9,31 +9,25 @@
 import UIKit
 
 class CategoriesVC: UIViewController {
+    
     @IBOutlet weak var collectionTop: UICollectionView!
     @IBOutlet weak var collectionAll: UICollectionView!
 
-    var topCategories: [String]! = []
+    var topCategories: List<Category>!
     var allCategories: [String]! = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        MainController.getListTopCategories([]) { (list) in
+            self.topCategories = list
+        }
+        
+        MainController.getListCategories([SearchParameter.CategoryId(6420)]) { (list) in
+            
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    
 }

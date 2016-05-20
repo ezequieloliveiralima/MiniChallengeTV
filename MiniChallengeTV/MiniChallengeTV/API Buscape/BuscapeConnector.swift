@@ -12,40 +12,22 @@ typealias Payload = [String : AnyObject]
 
 class BuscapeConnector {
     
-    static let cacheURL = NSURLCache(memoryCapacity: 20 * 1024 * 1024, diskCapacity: 100 * 1024 * 1024, diskPath: "ImageDownloadCache")
-    static let session: NSURLSession = {
-        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        config.requestCachePolicy = NSURLRequestCachePolicy.ReturnCacheDataElseLoad
-        config.URLCache = cacheURL
-        return NSURLSession(configuration: config)
-    }()
-    
-    func openConnection(uri: String, completionHandler:((Payload?, NSURLResponse?, NSError?) -> Void)) {
-        print(uri)
-        guard let url = NSURL(string: uri) else {
-            return
-        }
-        let request = NSURLRequest(URL: url, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30.0)
-        BuscapeConnector.session.dataTaskWithRequest(request, completionHandler: { (data, response, error) in
+    func openConnection(uri: String, completionHandler: (Payload?, NSURLResponse?, NSError?) -> Void) {
+        ConnectionManager.openConnection(uri) { (data, response, error) in
             do {
-                //print(NSString(data: data!, encoding: NSUTF8StringEncoding), "\n\n")
                 var json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? Payload
                 json = BuscapeParser.changeKeyToLower(&json!)
-//                print(json)
-                
-                dispatch_async(dispatch_get_main_queue(), { 
-                    completionHandler(json, response, error)
-                })
+                completionHandler(json, response, error)
             } catch _ {
                 print("JSON Serialization Error")
             }
-        }).resume()
+        }
     }
     
     func openConnection(type type: SearchType, parameters: [SearchParameter], completionHandler:((Payload?, NSURLResponse?, NSError?) -> Void)) {
-        var p = parameters
-        p.append(.Format(.JSON))
-        let uri = BuscapeAPI(searchType: type).addParameters(p).getURI()
+        var parameters = parameters
+        parameters.append(.Format(.JSON))
+        let uri = BuscapeAPI(searchType: type).addParameters(parameters).getURI()
         openConnection(uri, completionHandler: completionHandler)
     }
     

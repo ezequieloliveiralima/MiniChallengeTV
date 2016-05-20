@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+//        MainController.getListTopCategories([]) { (list) in
+//            
+//        }
+        
         main = MainViewControllerDelegate()
         if let tbc = window?.rootViewController as? UITabBarController {
             tbc.delegate = main
