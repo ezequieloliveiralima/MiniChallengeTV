@@ -10,7 +10,7 @@ import UIKit
 
 class FavoritesVC: UITableViewController {
 
-    var favoritesList: [Product]!
+    var favoritesList: List<Product>?
     var selectedProduct: Product?
     
     override func viewDidLoad() {
@@ -42,13 +42,13 @@ class FavoritesVC: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return favoritesList.count
+        return favoritesList?.list.count ?? 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("default-cell", forIndexPath: indexPath) as! GenericTableCell
 
-        cell.label.text = "\(favoritesList[indexPath.row].id)"
+        cell.label.text = "\(favoritesList!.list[indexPath.row].id)"
         let gest = UITapGestureRecognizer(target: self, action: #selector(FavoritesVC.editCell(_:)))
         gest.allowedPressTypes = [ NSNumber(integer: UIPressType.PlayPause.rawValue) ]
         cell.addGestureRecognizer(gest)
@@ -89,7 +89,7 @@ class FavoritesVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedProduct = favoritesList[indexPath.row]
+        selectedProduct = favoritesList!.list[indexPath.row]
         self.performSegueWithIdentifier("Select Product", sender: self)
     }
     

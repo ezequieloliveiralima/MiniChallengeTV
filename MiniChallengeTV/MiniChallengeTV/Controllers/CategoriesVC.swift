@@ -12,15 +12,21 @@ class CategoriesVC: UIViewController {
     
     @IBOutlet weak var collectionTop: UICollectionView!
     @IBOutlet weak var collectionAll: UICollectionView!
+    @IBOutlet weak var textSearch: UITextField!
 
-    var topCategories: List<Category>!
-    var allCategories: [String]! = []
+    var topCategories: List<Category>?
+    var allCategories: List<Category>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionTop.registerNib(UINib(nibName: "DefaultCollectionCell", bundle: nil), forCellWithReuseIdentifier: "default-cell")
+        
         MainController.getListTopCategories([]) { (list) in
             self.topCategories = list
+            dispatch_async(dispatch_get_main_queue(), { 
+                self.collectionTop.reloadData()
+            })
         }
         
         MainController.getListCategories([SearchParameter.CategoryId(6420)]) { (list) in
@@ -28,6 +34,36 @@ class CategoriesVC: UIViewController {
         }
     }
     
+}
+
+extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
     
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (collectionView.tag == 0 ? topCategories?.list.count : allCategories?.list.count) ?? 0
+    }
     
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell: GenericCollectionCell!
+        
+        if collectionView.tag == 0 {
+            let category = topCategories?.list[indexPath.item]
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("default-cell",
+                                                                         forIndexPath: indexPath) as! GenericCollectionCell
+            cell.imageView.image = UIImage(named: "placeholder")
+        } else {
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("category",
+                                                                         forIndexPath: indexPath) as! GenericCollectionCell
+        }
+        
+        return cell
+    }
+}
+
+extension CategoriesVC: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        return true
+    }
 }

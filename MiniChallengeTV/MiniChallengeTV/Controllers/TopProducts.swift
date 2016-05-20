@@ -17,6 +17,7 @@ class TopProducts: UIViewController {
     
     var selectedProduct: Product?
     var list: List<Product>?
+    var searchedTerm: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,21 @@ class TopProducts: UIViewController {
         MainController.getListTopProducts([]) { (list) in
             self.list = list
             self.collectionTopProducts.reloadData()
+            self.loadingTopProducts.stopAnimating()
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        
+        if let split = segue.destinationViewController as? UISplitViewController {
+            if let nextVC = (split.viewControllers[1] as? UINavigationController)?.viewControllers[0] as? ProductVC {
+                nextVC.product = selectedProduct!
+            }
+            
+            if let nextVC = (split.viewControllers[1] as? UINavigationController)?.viewControllers[0] as? FilterResultsVC {
+                nextVC.searchedTerm = searchedTerm
+            }
         }
     }
 }
@@ -64,15 +80,12 @@ extension TopProducts: UICollectionViewDelegate, UICollectionViewDataSource {
         selectedProduct = list?.list[indexPath.item]
         self.performSegueWithIdentifier("Select Product", sender: self)
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        super.prepareForSegue(segue, sender: sender)
-        
-        if let split = segue.destinationViewController as? UISplitViewController {
-            if let nextVC = (split.viewControllers[1] as? UINavigationController)?.viewControllers[0] as? ProductVC {
-                nextVC.product = selectedProduct!
-            }
-        }
-    }
 }
 
+extension TopProducts: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        searchedTerm = textField.text
+        self.performSegueWithIdentifier("Filter", sender: self)
+        return true
+    }
+}
