@@ -9,7 +9,6 @@
 import UIKit
 
 class MainConnector {
-    
     private static let connector = BuscapeConnector()
     
     
@@ -53,12 +52,12 @@ class MainConnector {
         }
     }
     
-    class func getHistory(callback: () -> Void) {
-        callback()
+    class func getHistory(callback: ([SavedProduct]) -> Void) {
+        callback(LocalStorage.fetchHistoric())
     }
     
-    class func getFavorites(callback: () -> Void) {
-        callback()
+    class func getFavorites(callback: ([SavedProduct]) -> Void) {
+        callback(LocalStorage.fetchFavorites())
     }
     
     class func getImage(url: String?, callback: (UIImage?) -> Void) {
@@ -67,5 +66,23 @@ class MainConnector {
         } else {
             callback(nil)
         }
+    }
+    
+    class func registryHistoric(product: Product) {
+        LocalStorage.registryHistoric(product)
+    }
+    
+    class func addFavorite(product: Product, callback: (()->Void)?) {
+        LocalStorage.addFavorite(product)
+        callback?()
+    }
+    
+    class func removeFavorite(product: Int, callback: (()->Void)?) {
+        LocalStorage.removeFavorite(product)
+        callback?()
+    }
+    
+    class func isFavorite(product: Product, callback: (Bool)->Void) {
+        callback(LocalStorage.isFavorite(product))
     }
 }

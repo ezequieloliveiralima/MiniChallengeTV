@@ -18,28 +18,28 @@ class ProductSpecificationVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.registerNib(UINib(nibName: "DefaultTableCell", bundle: nil), forCellReuseIdentifier: "default-cell")
-        
-        
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return productOffers?.product.specification?.items?.count ?? 0
     }
     
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return productOffers?.product.specification?.items?[section].name
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return productOffers?.product.specification?.items?[section].value.count ?? 0
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("default-cell") as! GenericTableCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(.Specification)!
         
-        guard let specification = productOffers?.product.specification?.items?[indexPath.row] else {
+        guard let specification = productOffers?.product.specification?.items?[indexPath.section].value[indexPath.row] else {
             return cell
         }
         
-        cell.label.text = "\(specification.name): \(specification.value)"
+        cell.textLabel?.text = "\(specification)"
         
         return cell
     }
@@ -48,7 +48,6 @@ class ProductSpecificationVC: UITableViewController {
 private extension ProductSpecificationVC {
     
     func updateUI() {
-        print(productOffers?.product.specification)
         tableView.reloadData()
     }
     

@@ -40,7 +40,6 @@ class BProduct: BuscapeModel {
         self.thumbnails     = thumbnails
         self.specification  = specification
     }
-    
 }
 
 class BCategory: BuscapeModel {

@@ -18,6 +18,7 @@ class ProductDetailVC: UIViewController {
     
     var productOffers : ProductOffers? {
         didSet {
+            MainConnector.registryHistoric(productOffers!.product)
             updateUI()
         }
     }
@@ -32,13 +33,20 @@ class ProductDetailVC: UIViewController {
 //Actions
 extension ProductDetailVC {
     @IBAction func onFavorite(sender: UIButton) {
-//        if TestLocalStorage.instance.isFavorite(product) {
-//            TestLocalStorage.instance.removeFavorite(product)
-//            btnFavorite.setTitle("Favoritar", forState: .Normal)
-//        } else {
-//            TestLocalStorage.instance.addFavorite(product)
-//            btnFavorite.setTitle("Desfavoritar", forState: .Normal)
-//        }
+        let product = productOffers!.product
+        MainConnector.isFavorite(product) { (status) in
+            var status1: Bool!
+
+            if status {
+                status1 = false
+                MainConnector.removeFavorite(product.id, callback: nil)
+            } else {
+                status1 = true
+                MainConnector.addFavorite(product, callback: nil)
+            }
+            
+            self.updateFavoriteButton(status1)
+        }
     }
 }
 
@@ -53,18 +61,16 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("default-cell") as! GenericTableCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(.DefaultCell) as! GenericTableCell
         guard let offer = productOffers?.offers[indexPath.row] else {
             return cell
         }
         
         cell.label.text = offer.vendor.name
         cell.imgView.image = UIImage.defaultImage()
-        MainConnector.getImage(offer.vendor.thumbnail?.url, callback: { (img) in
-            if let img = img {
-                cell.imgView.image = img
-            }
-        })
+        MainConnector.getImage(offer.vendor.thumbnail?.url) { (img) in
+            cell.imgView.image = img ?? UIImage.defaultImage()?.imageByMakingWhiteBackgroundTransparent()
+        }
         
         return cell
     }
@@ -75,7 +81,8 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource {
         
         let imageView = UIImageView(frame: CGRect(x: 345, y: -400, width: 400, height: 400))
         alert.view.addSubview(imageView)
-        imageView.image = QRCode(content: "http://www.google.com").generate()
+        let offer = productOffers?.offers[indexPath.row]
+        imageView.image = QRCode(content: offer?.url ?? "").generate()
         
         self.presentViewController(alert, animated: true, completion: nil)
     }
@@ -86,8 +93,13 @@ private extension ProductDetailVC {
     func updateUI() {
         MainConnector.getImage(productOffers?.product.imageUrl) { (image) in
             self.productImage.image = image?.imageByMakingWhiteBackgroundTransparent() ?? UIImage(named: "placeholder")
+            self.productName.text = self.productOffers?.product.nameShort
         }
-        updateFavoriteButton(true)
+        
+        MainConnector.isFavorite(productOffers!.product) { (status) in
+            self.updateFavoriteButton(status)
+        }
+        
         tableView.reloadData()
     }
     

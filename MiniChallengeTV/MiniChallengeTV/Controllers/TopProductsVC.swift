@@ -35,7 +35,7 @@ class TopProductsVC: UIViewController {
         
         if let split = segue.destinationViewController as? UISplitViewController {
             if let split = split as? ProductSplitVC {
-                split.product = selectedProduct
+                split.productId = selectedProduct?.id
             }
             if let split = split as? FilterSplitVC {
                 split.searchText = searchText
@@ -54,20 +54,18 @@ extension TopProductsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(.DefaultCell, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(.DefaultCell, forIndexPath: indexPath) as! GenericCollectionCell
         
-        guard let product = list?.list[indexPath.item], ccell = cell as? GenericCollectionCell else {
+        guard let product = list?.list[indexPath.item] else {
             return cell
         }
         
-        ccell.imageView.image = UIImage.defaultImage()
+        cell.imageView.image = UIImage.defaultImage()
         MainConnector.getImage(product.imageUrl, callback: { (img) in
-            if let img = img {
-                ccell.imageView.image = img.imageByMakingWhiteBackgroundTransparent()
-            }
+            cell.imageView.image = (img ?? UIImage.defaultImage())?.imageByMakingWhiteBackgroundTransparent()
         })
         
-        return ccell
+        return cell
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {

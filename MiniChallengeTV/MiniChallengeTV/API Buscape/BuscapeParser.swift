@@ -147,7 +147,7 @@ class BuscapeParser {
                 list.append(t)
             }
             
-            if let formats = thumbnail["formats"] as? [Payload] {
+            if let formats =  thumbnail["formats"] as? [Payload] {
                 list.appendContentsOf(formats.flatMap({ (format) -> Thumbnail? in
                     //checking if is double nested
                     let format = nestedValue(format, key: "formats")
@@ -160,6 +160,7 @@ class BuscapeParser {
     }
     
     class func parseThumbnail(json: Payload) -> Thumbnail? {
+        let json = nestedValue(json, key: "thumbnail")
         guard let url = json["url"] as? String else {
             return nil
         }

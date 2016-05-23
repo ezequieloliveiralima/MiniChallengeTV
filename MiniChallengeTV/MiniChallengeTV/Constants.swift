@@ -11,6 +11,7 @@ import Foundation
 enum CellIdentifier: String {
     
     case DefaultCell = "default-cell"
+    , Specification = "specification"
     
 }
 
