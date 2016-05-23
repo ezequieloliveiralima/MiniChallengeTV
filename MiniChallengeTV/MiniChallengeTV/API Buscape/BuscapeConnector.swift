@@ -63,8 +63,10 @@ class BuscapeConnector {
         }
     }
     
-    func getProductOffers(id: Int, callback: (BProductOffers) -> Void) {
-        openConnection(type: .TopOffers, parameters: [.ProductId(id)]) { (json, response, error) in
+    func getProductOffers(id: Int, parameters: [SearchParameter], callback: (BListDetail, BProduct, BCategory, [BOffer]) -> Void) {
+        var parameters = parameters
+        parameters.append(.ProductId(id))
+        openConnection(type: .Offer, parameters: parameters) { (json, response, error) in
             guard let json = json
                 , offersJson = json["offer"] as? [Payload]
                 , productJson = json["product"]?[0]?["product"] as? Payload
@@ -72,13 +74,12 @@ class BuscapeConnector {
                 , detail = BuscapeParser.parseListDetail(json)
                 , product = BuscapeParser.parseProduct(productJson)
                 , category = BuscapeParser.parseCategory(categoryJson) else {
-                    print("TODO error getting Product by Id")
+                    print("TODO error getting product offers \(id)")
                     return
             }
             
             let offers = offersJson.flatMap({ BuscapeParser.parseOffer($0) })
-            let result = BProductOffers(detail: detail, product: product, category: category, offers: offers)
-            callback(result)
+            callback(detail, product, category, offers)
         }
     }
 }

@@ -28,10 +28,6 @@ class FavoritesVC: UITableViewController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     // MARK: - Table view data source
 
@@ -62,8 +58,8 @@ class FavoritesVC: UITableViewController {
         super.prepareForSegue(segue, sender: sender)
         
         if let split = segue.destinationViewController as? UISplitViewController {
-            if let nextVC = (split.viewControllers[1] as? UINavigationController)?.viewControllers[0] as? ProductVC {
-                nextVC.product = selectedProduct
+            if let split = split as? ProductSplitVC {
+                split.product = selectedProduct
             }
         }
     }

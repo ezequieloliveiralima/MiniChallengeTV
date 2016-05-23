@@ -41,8 +41,21 @@ class Product: BaseModel, CustomStringConvertible {
         self.specification = data.specification
     }
     
+    init(data: BProduct) {
+        self.id         = data.id
+        self.idCategory = data.idCategory
+        self.name       = data.name
+        self.nameShort  = data.nameShort
+        self.price      = data.price
+        self.userRating = data.userRating
+        self.url        = data.url
+        self.detailUrl  = data.detailUrl
+        self.thumbnails = data.thumbnails
+        self.specification = data.specification
+    }
+    
     var description: String {
-        return ""
+        return "{id:\(id), name:\(name), price:\(price)}"
     }
     
     var imageUrl: String? {
@@ -62,8 +75,7 @@ class Offer: BaseModel, CustomStringConvertible {
     let vendor          : Vendor
     
     required init?(data: BuscapeModel) {
-        guard let data = data as? BOffer
-            , vendor = Vendor(data: data.vendor) else {
+        guard let data = data as? BOffer else {
             return nil
         }
         self.id         = data.id
@@ -73,7 +85,18 @@ class Offer: BaseModel, CustomStringConvertible {
         self.price      = data.price
         self.url        = data.url
         self.thumbnail  = data.thumbnail
-        self.vendor     = vendor
+        self.vendor     = Vendor(data: data.vendor)
+    }
+    
+    init(data: BOffer) {
+        self.id         = data.id
+        self.idCategory = data.idCategory
+        self.idProduct  = data.idProduct
+        self.name       = data.name
+        self.price      = data.price
+        self.url        = data.url
+        self.thumbnail  = data.thumbnail
+        self.vendor     = Vendor(data: data.vendor)
     }
     
     var description: String {
@@ -93,6 +116,14 @@ class Vendor: BaseModel, CustomStringConvertible {
         guard let data = data as? BVendor else {
             return nil
         }
+        self.id           = data.id
+        self.name         = data.name
+        self.userRating   = data.userRating
+        self.url          = data.url
+        self.thumbnail    = data.thumbnail
+    }
+    
+    init(data: BVendor) {
         self.id           = data.id
         self.name         = data.name
         self.userRating   = data.userRating
@@ -128,7 +159,46 @@ class Category: BaseModel, CustomStringConvertible {
         self.thumbnail      = data.thumbnail
     }
     
+    init(data: BCategory) {
+        self.id             = data.id
+        self.idParent       = data.idParent
+        self.name           = data.name
+        self.isFinal        = data.isFinal
+        self.productsUrl    = data.productsUrl
+        self.offersUrl      = data.offersUrl
+        self.thumbnail      = data.thumbnail
+    }
+    
     var description: String {
         return ""
+    }
+}
+
+class Detail: BaseModel, CustomStringConvertible {
+    let page: Int
+    let totalPages: Int
+    let totalResultsReturned: Int
+    let totalResultsAvailable: Int
+    
+    required init?(data: BuscapeModel) {
+        guard let data = data as? BListDetail else {
+            return nil
+        }
+        
+        self.page                   = data.page
+        self.totalPages             = data.totalPages
+        self.totalResultsReturned   = data.totalResultsReturned
+        self.totalResultsAvailable  = data.totalResultsAvailable
+    }
+    
+    init(data: BListDetail) {
+        self.page                   = data.page
+        self.totalPages             = data.totalPages
+        self.totalResultsReturned   = data.totalResultsReturned
+        self.totalResultsAvailable  = data.totalResultsAvailable
+    }
+    
+    var description: String {
+        return "{page: \(page), total: \(totalPages), totalResults: \(totalResultsReturned), totalResultsAvailable: \(totalResultsAvailable)}"
     }
 }

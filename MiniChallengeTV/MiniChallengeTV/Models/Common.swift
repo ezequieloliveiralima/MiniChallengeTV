@@ -61,7 +61,7 @@ enum SearchParameter {
     }
 }
 
-struct Specification {
+struct Specification: CustomStringConvertible {
     let url: String?
     let items: [SpecificationItem]?
     
@@ -69,15 +69,23 @@ struct Specification {
         self.url = url
         self.items = items
     }
+    
+    var description: String {
+        return "{url: \(url), items: \(items)}"
+    }
 }
 
-struct SpecificationItem {
+struct SpecificationItem: CustomStringConvertible {
     let name: String
     let value: [String]
     
     init(name: String, value: [String]) {
         self.name = name
         self.value = value
+    }
+    
+    var description: String {
+        return "{name: \(name), value:\(value)}"
     }
 }
 

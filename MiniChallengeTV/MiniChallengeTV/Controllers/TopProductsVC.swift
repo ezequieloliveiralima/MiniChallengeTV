@@ -16,7 +16,7 @@ class TopProductsVC: UIViewController {
     
     var selectedProduct: Product?
     var list: List<Product>?
-    var searchedTerm: String?
+    var searchText: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +38,8 @@ class TopProductsVC: UIViewController {
             if let split = split as? ProductSplitVC {
                 split.product = selectedProduct
             }
-            if let nextVC = (split.viewControllers[1] as? UINavigationController)?.viewControllers[0] as? FilterResultsVC {
-                nextVC.searchedTerm = searchedTerm
+            if let split = split as? FilterSplitVC {
+                split.searchText = searchText
             }
         }
     }
@@ -58,11 +58,13 @@ extension TopProductsVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let product = list!.list[indexPath.item]
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("default-cell", forIndexPath: indexPath) as! GenericCollectionCell
         
-        if let thumbnail = product.thumbnails?.maxElement({ $0.0.width > $0.1.width }) {
-            cell.imageView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: thumbnail.url)!)!)?.imageByMakingWhiteBackgroundTransparent()
-        } else {
-            cell.imageView.image = UIImage(named: "placeholder")
-        }
+        MainConnector.getImage(product.imageUrl, callback: { (image) in
+            if let image = image {
+                cell.imageView.image = image.imageByMakingWhiteBackgroundTransparent()
+            } else {
+                cell.imageView.image = UIImage(named: "placeholder")
+            }
+        })
         
         return cell
     }
@@ -82,7 +84,7 @@ extension TopProductsVC: UICollectionViewDelegate, UICollectionViewDataSource {
 
 extension TopProductsVC: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        searchedTerm = textField.text
+        searchText = textField.text
         self.performSegueWithIdentifier("Filter", sender: self)
         return true
     }
