@@ -22,8 +22,7 @@ class TopProductsVC: UIViewController {
         super.viewDidLoad()
         
         let defaultCell = UINib(nibName: "DefaultCollectionCell", bundle: nil)
-        collectionTopProducts.registerNib(defaultCell, forCellWithReuseIdentifier: "default-cell")
-        
+        collectionTopProducts.registerNib(defaultCell, forCellWithReuseIdentifier: .DefaultCell)
         MainConnector.getListTopProducts([]) { (list) in
             self.list = list
             self.collectionTopProducts.reloadData()
@@ -55,18 +54,20 @@ extension TopProductsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let product = list!.list[indexPath.item]
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("default-cell", forIndexPath: indexPath) as! GenericCollectionCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(.DefaultCell, forIndexPath: indexPath)
         
-        MainConnector.getImage(product.imageUrl, callback: { (image) in
-            if let image = image {
-                cell.imageView.image = image.imageByMakingWhiteBackgroundTransparent()
-            } else {
-                cell.imageView.image = UIImage(named: "placeholder")
+        guard let product = list?.list[indexPath.item], ccell = cell as? GenericCollectionCell else {
+            return cell
+        }
+        
+        ccell.imageView.image = UIImage.defaultImage()
+        MainConnector.getImage(product.imageUrl, callback: { (img) in
+            if let img = img {
+                ccell.imageView.image = img.imageByMakingWhiteBackgroundTransparent()
             }
         })
         
-        return cell
+        return ccell
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {

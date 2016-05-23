@@ -59,8 +59,11 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         cell.label.text = offer.vendor.name
+        cell.imgView.image = UIImage.defaultImage()
         MainConnector.getImage(offer.vendor.thumbnail?.url, callback: { (img) in
-            cell.imgView.image = img ?? UIImage(named: "placeholder")
+            if let img = img {
+                cell.imgView.image = img
+            }
         })
         
         return cell

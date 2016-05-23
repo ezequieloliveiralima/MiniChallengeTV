@@ -26,8 +26,7 @@ class BuscapeConnector {
     
     func openConnection(type type: SearchType, parameters: [SearchParameter], completionHandler:((Payload?, NSURLResponse?, NSError?) -> Void)) {
         var parameters = parameters
-        parameters.append(.Format(.JSON))
-        let uri = BuscapeAPI(searchType: type).addParameters(parameters).getURI()
+        let uri = BuscapeAPI(searchType: type).addParameters(parameters.add(.Format(.JSON))).getURI()
         openConnection(uri, completionHandler: completionHandler)
     }
     
@@ -65,8 +64,7 @@ class BuscapeConnector {
     
     func getProductOffers(id: Int, parameters: [SearchParameter], callback: (BListDetail, BProduct, BCategory, [BOffer]) -> Void) {
         var parameters = parameters
-        parameters.append(.ProductId(id))
-        openConnection(type: .Offer, parameters: parameters) { (json, response, error) in
+        openConnection(type: .Offer, parameters: parameters.add(.ProductId(id))) { (json, response, error) in
             guard let json = json
                 , offersJson = json["offer"] as? [Payload]
                 , productJson = json["product"]?[0]?["product"] as? Payload

@@ -20,7 +20,7 @@ class CategoriesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionTop.registerNib(UINib(nibName: "DefaultCollectionCell", bundle: nil), forCellWithReuseIdentifier: "default-cell")
+        collectionTop.registerNib(UINib(nibName: "DefaultCollectionCell", bundle: nil), forCellWithReuseIdentifier: .DefaultCell)
         collectionTop.contentInset = UIEdgeInsets(top: -135, left: 0, bottom: 0, right: 0)
         
         MainConnector.getListTopCategories([]) { (list) in
@@ -41,17 +41,13 @@ extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell: GenericCollectionCell!
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(.DefaultCell, forIndexPath: indexPath) as! GenericCollectionCell
         
-        if collectionView.tag == 0 {
-            let category = topCategories?.list[indexPath.item]
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("default-cell",
-                                                                         forIndexPath: indexPath) as! GenericCollectionCell
-            cell.imageView.image = UIImage(named: "placeholder")
-        } else {
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("category",
-                                                                         forIndexPath: indexPath) as! GenericCollectionCell
-        }
+//        guard let category = topCategories?.list[indexPath.item] else {
+//            return cell
+//        }
+        
+        cell.imageView.image = UIImage(named: "placeholder")
         
         return cell
     }

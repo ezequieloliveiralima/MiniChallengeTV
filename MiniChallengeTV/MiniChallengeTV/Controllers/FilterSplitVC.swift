@@ -12,11 +12,13 @@ class FilterSplitVC: UISplitViewController {
     
     var searchText: String! {
         didSet {
-            let vc = self.viewControllers
-//            let master = (vc[0] as! UINavigationController).viewControllers[0] as! FilterOptionsVC
-            let detail = (vc[1] as! UINavigationController).viewControllers[0] as! FilterResultsVC
-            
-            detail.searchText = searchText
+            MainConnector.getListProducts([.Keyword(searchText)]) { (list) in
+                let vc = self.viewControllers
+                //let master = (vc[0] as! UINavigationController).viewControllers.first as! FilterOptionsVC
+                let detail = (vc[1] as! UINavigationController).viewControllers.first as! FilterResultsVC
+                
+                detail.products = list
+            }
         }
     }
     

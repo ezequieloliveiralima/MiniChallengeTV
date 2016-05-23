@@ -67,6 +67,5 @@ class MainConnector {
         } else {
             callback(nil)
         }
-        
     }
 }

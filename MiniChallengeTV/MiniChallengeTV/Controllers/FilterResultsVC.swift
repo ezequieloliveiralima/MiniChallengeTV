@@ -10,36 +10,41 @@ import UIKit
 
 class FilterResultsVC: UITableViewController {
     
-    var results: List<Product>?
-    var searchText: String!
+    var products: List<Product>? {
+        didSet {
+            print(products)
+            updateUI()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.registerNib(UINib(nibName: "DefaultTableCell", bundle: nil), forCellReuseIdentifier: "default-cell")
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return results?.list.count ?? 0
+        return products?.list.count ?? 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("default-cell", forIndexPath: indexPath) as! GenericTableCell
         
-        let product = results!.list[indexPath.row]
+        guard let product = products?.list[indexPath.row] else {
+            return cell
+        }
+        
         cell.label.text = "\(product.name)"
-        cell.imgView.image = UIImage(named: "placeholder")
+        cell.imgView.image = UIImage.defaultImage()
+        MainConnector.getImage(product.imageUrl) { (img) in
+            if let img = img {
+                cell.imgView.image = img
+            }
+        }
 
         return cell
     }
@@ -52,4 +57,12 @@ class FilterResultsVC: UITableViewController {
         super.prepareForSegue(segue, sender: sender)
     }
 
+}
+
+private extension FilterResultsVC {
+    
+    func updateUI() {
+        tableView.reloadData()
+    }
+    
 }
