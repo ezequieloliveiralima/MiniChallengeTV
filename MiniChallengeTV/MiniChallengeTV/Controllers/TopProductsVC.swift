@@ -39,7 +39,7 @@ class TopProductsVC: UIViewController {
                 split.product = selectedProduct
             }
             if let nextVC = (split.viewControllers[1] as? UINavigationController)?.viewControllers[0] as? FilterResultsVC {
-                nextVC.searchedTerm = searchedTerm
+                nextVC.searchText = searchedTerm
             }
         }
     }

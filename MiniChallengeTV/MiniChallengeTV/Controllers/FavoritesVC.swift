@@ -10,8 +10,8 @@ import UIKit
 
 class FavoritesVC: UITableViewController {
 
-    var favoritesList: List<Product>?
-    var selectedProduct: Product?
+    var favoritesList: [SavedProduct]! = []
+    var selectedProduct: SavedProduct?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,15 @@ class FavoritesVC: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        MainConnector.getFavorites { (list) in
+            self.favoritesList = list
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,13 +51,18 @@ class FavoritesVC: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return favoritesList?.list.count ?? 0
+        return favoritesList.count ?? 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("default-cell", forIndexPath: indexPath) as! GenericTableCell
 
-        cell.label.text = "\(favoritesList!.list[indexPath.row].id)"
+        let product = favoritesList[indexPath.row]
+        cell.label.text = "\(product.name)"
+        ConnectionManager.getImage(product.thumbnail) { (img) in
+            cell.imgView.image = img?.imageByMakingWhiteBackgroundTransparent()
+        }
+        
         let gest = UITapGestureRecognizer(target: self, action: #selector(FavoritesVC.editCell(_:)))
         gest.allowedPressTypes = [ NSNumber(integer: UIPressType.PlayPause.rawValue) ]
         cell.addGestureRecognizer(gest)
@@ -63,7 +77,7 @@ class FavoritesVC: UITableViewController {
         
         if let split = segue.destinationViewController as? UISplitViewController {
             if let nextVC = (split.viewControllers[1] as? UINavigationController)?.viewControllers[0] as? ProductVC {
-                nextVC.product = selectedProduct
+//                nextVC.product = selectedProduct
             }
         }
     }
@@ -75,13 +89,13 @@ class FavoritesVC: UITableViewController {
             , message: "O que deseja fazer com este item?"
             , preferredStyle: .ActionSheet)
 
-//        alert.addAction(UIAlertAction(title: "Remover", style: .Destructive, handler: { (action) -> Void in
-//            TestLocalStorage.instance.removeFavorite(self.favoritesList[index])
-//            self.favoritesList.removeAtIndex(index)
-//            dispatch_async(dispatch_get_main_queue(), {
-//                self.tableView.reloadData()
-//            })
-//        }))
+        alert.addAction(UIAlertAction(title: "Remover", style: .Destructive, handler: { (action) -> Void in
+            MainConnector.removeFavorite(self.favoritesList[index].id, callback: nil)
+            self.favoritesList.removeAtIndex(index)
+            dispatch_async(dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+            })
+        }))
 
         alert.addAction(UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil))
 
@@ -89,7 +103,7 @@ class FavoritesVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedProduct = favoritesList!.list[indexPath.row]
+//        selectedProduct = favoritesList!.list[indexPath.row]
         self.performSegueWithIdentifier("Select Product", sender: self)
     }
     

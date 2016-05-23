@@ -25,6 +25,12 @@
 		E65B77051CEB92630054526E /* DefaultTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E65B77041CEB92630054526E /* DefaultTableCell.xib */; };
 		E65B77081CEBA78E0054526E /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65B77061CEBA78E0054526E /* FavoritesVC.swift */; };
 		E65B77091CEBA78E0054526E /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65B77071CEBA78E0054526E /* QRCode.swift */; };
+		E69AF08B1CF3804E00E2A2B3 /* CDProduct+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AF0851CF3804E00E2A2B3 /* CDProduct+CoreDataProperties.swift */; };
+		E69AF08C1CF3804E00E2A2B3 /* CDProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AF0861CF3804E00E2A2B3 /* CDProduct.swift */; };
+		E69AF08D1CF3804E00E2A2B3 /* CDFavoriteItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AF0871CF3804E00E2A2B3 /* CDFavoriteItem+CoreDataProperties.swift */; };
+		E69AF08E1CF3804E00E2A2B3 /* CDFavoriteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AF0881CF3804E00E2A2B3 /* CDFavoriteItem.swift */; };
+		E69AF08F1CF3804E00E2A2B3 /* CDHistoricItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AF0891CF3804E00E2A2B3 /* CDHistoricItem+CoreDataProperties.swift */; };
+		E69AF0901CF3804E00E2A2B3 /* CDHistoricItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AF08A1CF3804E00E2A2B3 /* CDHistoricItem.swift */; };
 		E6CC77E31CE66F700046DF18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77E21CE66F700046DF18 /* AppDelegate.swift */; };
 		E6CC77E51CE66F700046DF18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77E41CE66F700046DF18 /* ViewController.swift */; };
 		E6CC77E81CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77E61CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld */; };
@@ -81,6 +87,12 @@
 		E65B77041CEB92630054526E /* DefaultTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DefaultTableCell.xib; path = Views/DefaultTableCell.xib; sourceTree = "<group>"; };
 		E65B77061CEBA78E0054526E /* FavoritesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesVC.swift; path = Controllers/FavoritesVC.swift; sourceTree = "<group>"; };
 		E65B77071CEBA78E0054526E /* QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRCode.swift; path = Controllers/QRCode.swift; sourceTree = "<group>"; };
+		E69AF0851CF3804E00E2A2B3 /* CDProduct+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CDProduct+CoreDataProperties.swift"; path = "CoreData Models/CDProduct+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E69AF0861CF3804E00E2A2B3 /* CDProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDProduct.swift; path = "CoreData Models/CDProduct.swift"; sourceTree = "<group>"; };
+		E69AF0871CF3804E00E2A2B3 /* CDFavoriteItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CDFavoriteItem+CoreDataProperties.swift"; path = "CoreData Models/CDFavoriteItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E69AF0881CF3804E00E2A2B3 /* CDFavoriteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDFavoriteItem.swift; path = "CoreData Models/CDFavoriteItem.swift"; sourceTree = "<group>"; };
+		E69AF0891CF3804E00E2A2B3 /* CDHistoricItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CDHistoricItem+CoreDataProperties.swift"; path = "CoreData Models/CDHistoricItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E69AF08A1CF3804E00E2A2B3 /* CDHistoricItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDHistoricItem.swift; path = "CoreData Models/CDHistoricItem.swift"; sourceTree = "<group>"; };
 		E6CC77DF1CE66F700046DF18 /* MiniChallengeTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallengeTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CC77E21CE66F700046DF18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6CC77E41CE66F700046DF18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +179,19 @@
 			path = "API Buscape";
 			sourceTree = "<group>";
 		};
+		E69AF0601CF376A600E2A2B3 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				E69AF0851CF3804E00E2A2B3 /* CDProduct+CoreDataProperties.swift */,
+				E69AF0861CF3804E00E2A2B3 /* CDProduct.swift */,
+				E69AF0871CF3804E00E2A2B3 /* CDFavoriteItem+CoreDataProperties.swift */,
+				E69AF0881CF3804E00E2A2B3 /* CDFavoriteItem.swift */,
+				E69AF0891CF3804E00E2A2B3 /* CDHistoricItem+CoreDataProperties.swift */,
+				E69AF08A1CF3804E00E2A2B3 /* CDHistoricItem.swift */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
 		E6CC77D61CE66F700046DF18 = {
 			isa = PBXGroup;
 			children = (
@@ -247,7 +272,7 @@
 		E6F760881CEA383D0099B5A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E6F760911CEA54650099B5A6 /* Core Data */,
+				E69AF0601CF376A600E2A2B3 /* Core Data */,
 				577C250F1CED077D00360149 /* Common.swift */,
 				578FDA991CEE28A50068A6DC /* Models.swift */,
 				57BC8BD91CEBA9D7001AB292 /* GroupModels.swift */,
@@ -275,13 +300,6 @@
 				578A2BC81CEF8C3C0034180F /* MainViewControllerDelegate.swift */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		E6F760911CEA54650099B5A6 /* Core Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,7 +441,9 @@
 				E6F760901CEA543B0099B5A6 /* CoreDataManager.swift in Sources */,
 				E6CC77E51CE66F700046DF18 /* ViewController.swift in Sources */,
 				577C25101CED077D00360149 /* Common.swift in Sources */,
+				E69AF08B1CF3804E00E2A2B3 /* CDProduct+CoreDataProperties.swift in Sources */,
 				57BF64FA1CEA600E00298EA2 /* BuscapeAPI.swift in Sources */,
+				E69AF08D1CF3804E00E2A2B3 /* CDFavoriteItem+CoreDataProperties.swift in Sources */,
 				E6EF35621CEE49EA00131D96 /* TopProductsVC.swift in Sources */,
 				E6EF35601CEE496D00131D96 /* CategoriesVC.swift in Sources */,
 				578A2BCB1CEF9FA60034180F /* ConnetionManager.swift in Sources */,
@@ -432,8 +452,11 @@
 				578E1F1F1CF3726600B4E51D /* FilterSplitVC.swift in Sources */,
 				57BC8BDA1CEBA9D7001AB292 /* GroupModels.swift in Sources */,
 				E6EF355E1CEE496400131D96 /* ProductVC.swift in Sources */,
+				E69AF0901CF3804E00E2A2B3 /* CDHistoricItem.swift in Sources */,
 				578FDA9C1CEE2D550068A6DC /* MainConnector.swift in Sources */,
+				E69AF08C1CF3804E00E2A2B3 /* CDProduct.swift in Sources */,
 				578A2BC91CEF8C3C0034180F /* MainViewControllerDelegate.swift in Sources */,
+				E69AF08E1CF3804E00E2A2B3 /* CDFavoriteItem.swift in Sources */,
 				E6CC77E31CE66F700046DF18 /* AppDelegate.swift in Sources */,
 				578FDA9E1CEE3DC00068A6DC /* BuscapeGroupModels.swift in Sources */,
 				E6EF35681CEE4E0300131D96 /* FilterOptionsVC.swift in Sources */,
@@ -442,6 +465,7 @@
 				E65B77081CEBA78E0054526E /* FavoritesVC.swift in Sources */,
 				E6EF355C1CEE492200131D96 /* HistoricVC.swift in Sources */,
 				E65B77091CEBA78E0054526E /* QRCode.swift in Sources */,
+				E69AF08F1CF3804E00E2A2B3 /* CDHistoricItem+CoreDataProperties.swift in Sources */,
 				578FDA9A1CEE28A50068A6DC /* Models.swift in Sources */,
 				57BF64FB1CEA600E00298EA2 /* BuscapeConnector.swift in Sources */,
 				E6E8ACC41CEE25DB006012E9 /* SpecificationsVC.swift in Sources */,

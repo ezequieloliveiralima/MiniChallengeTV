@@ -34,7 +34,11 @@ class ProductVC: UIViewController {
             self.tableView.reloadData()
         }
         
-        updateFavoriteButton(true)
+        MainConnector.registryHistoric(product)
+        
+        MainConnector.isFavorite(product) { (status) in
+            self.updateFavoriteButton(status)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -56,13 +60,19 @@ class ProductVC: UIViewController {
 //Actions
 extension ProductVC {
     @IBAction func onFavorite(sender: UIButton) {
-//        if TestLocalStorage.instance.isFavorite(product) {
-//            TestLocalStorage.instance.removeFavorite(product)
-//            btnFavorite.setTitle("Favoritar", forState: .Normal)
-//        } else {
-//            TestLocalStorage.instance.addFavorite(product)
-//            btnFavorite.setTitle("Desfavoritar", forState: .Normal)
-//        }
+        MainConnector.isFavorite(product) { (status) in
+            var status1: Bool!
+
+            if status {
+                status1 = false
+                MainConnector.removeFavorite(self.product.id, callback: nil)
+            } else {
+                status1 = true
+                MainConnector.addFavorite(self.product, callback: nil)
+            }
+            
+            self.updateFavoriteButton(status1)
+        }
     }
 }
 
