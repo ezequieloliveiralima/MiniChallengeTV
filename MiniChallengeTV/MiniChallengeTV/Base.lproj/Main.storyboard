@@ -19,7 +19,6 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uRQ-fJ-a33">
                                 <rect key="frame" x="20" y="155" width="1880" height="200"/>
-                                <color key="backgroundColor" red="0.76075014910000005" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="ZFt-3b-Txv"/>
                                 </constraints>
@@ -221,7 +220,7 @@
                             <tableViewSection headerTitle="Filtrar por" id="B3Z-qv-CcU">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="TZl-uh-shO" style="IBUITableViewCellStyleDefault" id="4Af-3e-Ef4">
-                                        <rect key="frame" x="0.0" y="199" width="634" height="66"/>
+                                        <rect key="frame" x="0.0" y="199" width="594" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Af-3e-Ef4" id="LeZ-B7-xeb">
                                             <rect key="frame" x="0.0" y="0.0" width="558" height="66"/>
@@ -238,7 +237,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="f5d-Ve-kfC" style="IBUITableViewCellStyleDefault" id="Qgj-0r-L0k">
-                                        <rect key="frame" x="0.0" y="279" width="634" height="66"/>
+                                        <rect key="frame" x="0.0" y="279" width="594" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qgj-0r-L0k" id="F0P-tU-ikx">
                                             <rect key="frame" x="0.0" y="0.0" width="558" height="66"/>
@@ -255,7 +254,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="7vg-O4-Mqv" style="IBUITableViewCellStyleDefault" id="xK4-Zc-Ec5">
-                                        <rect key="frame" x="0.0" y="359" width="634" height="66"/>
+                                        <rect key="frame" x="0.0" y="359" width="594" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xK4-Zc-Ec5" id="wd3-zn-ufq">
                                             <rect key="frame" x="0.0" y="0.0" width="558" height="66"/>
@@ -272,7 +271,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Ujs-Cu-MGj" style="IBUITableViewCellStyleDefault" id="ygK-m0-aGe">
-                                        <rect key="frame" x="0.0" y="439" width="634" height="66"/>
+                                        <rect key="frame" x="0.0" y="439" width="594" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ygK-m0-aGe" id="pvj-dQ-rd0">
                                             <rect key="frame" x="0.0" y="0.0" width="558" height="66"/>
@@ -327,7 +326,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PCb-XV-m37">
-                                <rect key="frame" x="0.0" y="199" width="1285" height="66"/>
+                                <rect key="frame" x="0.0" y="199" width="1245" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PCb-XV-m37" id="blr-Kc-6tk">
                                     <rect key="frame" x="0.0" y="0.0" width="1269" height="66"/>
