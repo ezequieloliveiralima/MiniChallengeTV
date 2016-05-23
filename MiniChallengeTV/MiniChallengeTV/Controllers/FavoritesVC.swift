@@ -72,8 +72,8 @@ class FavoritesVC: UITableViewController {
         super.prepareForSegue(segue, sender: sender)
         
         if let split = segue.destinationViewController as? UISplitViewController {
-            if let nextVC = (split.viewControllers[1] as? UINavigationController)?.viewControllers[0] as? ProductVC {
-//                nextVC.product = selectedProduct
+            if let split = split as? ProductSplitVC {
+                split.productId = selectedProduct?.id
             }
         }
     }
@@ -99,7 +99,7 @@ class FavoritesVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        selectedProduct = favoritesList!.list[indexPath.row]
+        selectedProduct = favoritesList![indexPath.row]
         self.performSegueWithIdentifier("Select Product", sender: self)
     }
     

@@ -18,6 +18,7 @@ class ProductDetailVC: UIViewController {
     
     var productOffers : ProductOffers? {
         didSet {
+            MainConnector.registryHistoric(productOffers!.product)
             updateUI()
         }
     }
@@ -25,33 +26,6 @@ class ProductDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerNib(UINib(nibName: "DefaultTableCell", bundle: nil), forCellReuseIdentifier: "default-cell")
-
-        if let imageUrl = product.imageUrl {
-            productImage.image = UIImage(data: NSData(contentsOfURL: NSURL(string: imageUrl)!)!)?.imageByMakingWhiteBackgroundTransparent()
-        } else {
-            productImage.image = UIImage(named: "placeholder")
-        }
-        
-        MainConnector.getProductOffers(product, params: []) { (list) in
-            self.offers = list
-            self.tableView.reloadData()
-        }
-        
-        MainConnector.registryHistoric(product)
-        
-        MainConnector.isFavorite(product) { (status) in
-            self.updateFavoriteButton(status)
-        }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-//        if TestLocalStorage.instance.isFavorite(product) {
-//            btnFavorite.setTitle("Desfavoritar", forState: .Normal)
-//        }
-//        
-//        TestLocalStorage.instance.addHistoric(product)
     }
 
 }
@@ -59,15 +33,16 @@ class ProductDetailVC: UIViewController {
 //Actions
 extension ProductDetailVC {
     @IBAction func onFavorite(sender: UIButton) {
+        let product = productOffers!.product
         MainConnector.isFavorite(product) { (status) in
             var status1: Bool!
 
             if status {
                 status1 = false
-                MainConnector.removeFavorite(self.product.id, callback: nil)
+                MainConnector.removeFavorite(product.id, callback: nil)
             } else {
                 status1 = true
-                MainConnector.addFavorite(self.product, callback: nil)
+                MainConnector.addFavorite(product, callback: nil)
             }
             
             self.updateFavoriteButton(status1)
@@ -92,9 +67,11 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         cell.label.text = offer.vendor.name
-        MainConnector.getImage(offer.vendor.thumbnail?.url, callback: { (img) in
-            cell.imgView.image = img ?? UIImage(named: "placeholder")
+        let imageVendor = "http://imagem.buscape.com.br/vitrine/logo\(offer.vendor.id).gif"
+        MainConnector.getImage(imageVendor, callback: { (img) in
+            cell.imgView.image = img ?? UIImage(named: "placeholder")?.imageByMakingWhiteBackgroundTransparent()
         })
+        
         
         return cell
     }
@@ -105,7 +82,8 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource {
         
         let imageView = UIImageView(frame: CGRect(x: 345, y: -400, width: 400, height: 400))
         alert.view.addSubview(imageView)
-        imageView.image = QRCode(content: "http://www.google.com").generate()
+        let offer = productOffers?.offers[indexPath.row]
+        imageView.image = QRCode(content: offer?.url ?? "").generate()
         
         self.presentViewController(alert, animated: true, completion: nil)
     }
@@ -116,8 +94,13 @@ private extension ProductDetailVC {
     func updateUI() {
         MainConnector.getImage(productOffers?.product.imageUrl) { (image) in
             self.productImage.image = image?.imageByMakingWhiteBackgroundTransparent() ?? UIImage(named: "placeholder")
+            self.productName.text = self.productOffers?.product.nameShort
         }
-        updateFavoriteButton(true)
+        
+        MainConnector.isFavorite(productOffers!.product) { (status) in
+            self.updateFavoriteButton(status)
+        }
+        
         tableView.reloadData()
     }
     

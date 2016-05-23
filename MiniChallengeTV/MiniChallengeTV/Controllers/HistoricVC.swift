@@ -11,6 +11,7 @@ import UIKit
 class HistoricVC: UITableViewController {
     
     var historic: [SavedProduct]! = []
+    var selectedItem: SavedProduct?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,5 +49,20 @@ class HistoricVC: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 150
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedItem = historic![indexPath.row]
+        self.performSegueWithIdentifier("Select Product", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        
+        if let split = segue.destinationViewController as? UISplitViewController {
+            if let split = split as? ProductSplitVC {
+                split.productId = selectedItem?.id
+            }
+        }
     }
 }

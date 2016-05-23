@@ -36,10 +36,10 @@ class TopProductsVC: UIViewController {
         
         if let split = segue.destinationViewController as? UISplitViewController {
             if let split = split as? ProductSplitVC {
-                split.product = selectedProduct
+                split.productId = selectedProduct?.id
             }
-            if let nextVC = (split.viewControllers[1] as? UINavigationController)?.viewControllers[0] as? FilterResultsVC {
-                nextVC.searchText = searchedTerm
+            if let split = split as? FilterSplitVC {
+                split.searchText = searchText
             }
         }
     }

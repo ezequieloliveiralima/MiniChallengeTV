@@ -31,6 +31,7 @@
 		E69AF08E1CF3804E00E2A2B3 /* CDFavoriteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AF0881CF3804E00E2A2B3 /* CDFavoriteItem.swift */; };
 		E69AF08F1CF3804E00E2A2B3 /* CDHistoricItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AF0891CF3804E00E2A2B3 /* CDHistoricItem+CoreDataProperties.swift */; };
 		E69AF0901CF3804E00E2A2B3 /* CDHistoricItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AF08A1CF3804E00E2A2B3 /* CDHistoricItem.swift */; };
+		E69AF0921CF38BD600E2A2B3 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AF0911CF38BD600E2A2B3 /* ProductDetailVC.swift */; };
 		E6CC77E31CE66F700046DF18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77E21CE66F700046DF18 /* AppDelegate.swift */; };
 		E6CC77E51CE66F700046DF18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77E41CE66F700046DF18 /* ViewController.swift */; };
 		E6CC77E81CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6CC77E61CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld */; };
@@ -40,7 +41,6 @@
 		E6CC78031CE66F700046DF18 /* MiniChallengeTVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CC78021CE66F700046DF18 /* MiniChallengeTVUITests.swift */; };
 		E6E8ACC41CEE25DB006012E9 /* ProductSpecificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E8ACC31CEE25DB006012E9 /* ProductSpecificationVC.swift */; };
 		E6EF355C1CEE492200131D96 /* HistoricVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF355B1CEE492200131D96 /* HistoricVC.swift */; };
-		E6EF355E1CEE496400131D96 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF355D1CEE496400131D96 /* ProductDetailVC.swift */; };
 		E6EF35601CEE496D00131D96 /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF355F1CEE496D00131D96 /* CategoriesVC.swift */; };
 		E6EF35621CEE49EA00131D96 /* TopProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF35611CEE49EA00131D96 /* TopProductsVC.swift */; };
 		E6EF35641CEE4A3000131D96 /* GenericCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF35631CEE4A3000131D96 /* GenericCollectionCell.swift */; };
@@ -93,6 +93,7 @@
 		E69AF0881CF3804E00E2A2B3 /* CDFavoriteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDFavoriteItem.swift; path = "CoreData Models/CDFavoriteItem.swift"; sourceTree = "<group>"; };
 		E69AF0891CF3804E00E2A2B3 /* CDHistoricItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CDHistoricItem+CoreDataProperties.swift"; path = "CoreData Models/CDHistoricItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E69AF08A1CF3804E00E2A2B3 /* CDHistoricItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDHistoricItem.swift; path = "CoreData Models/CDHistoricItem.swift"; sourceTree = "<group>"; };
+		E69AF0911CF38BD600E2A2B3 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductDetailVC.swift; path = MiniChallengeTV/Controllers/ProductDetailVC.swift; sourceTree = "<group>"; };
 		E6CC77DF1CE66F700046DF18 /* MiniChallengeTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallengeTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CC77E21CE66F700046DF18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6CC77E41CE66F700046DF18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +196,7 @@
 		E6CC77D61CE66F700046DF18 = {
 			isa = PBXGroup;
 			children = (
+				E69AF0911CF38BD600E2A2B3 /* ProductDetailVC.swift */,
 				E6F7608F1CEA543B0099B5A6 /* CoreDataManager.swift */,
 				E6CC77E11CE66F700046DF18 /* MiniChallengeTV */,
 				E6CC77F61CE66F700046DF18 /* MiniChallengeTVTests */,
@@ -434,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E69AF0921CF38BD600E2A2B3 /* ProductDetailVC.swift in Sources */,
 				57BF64F91CEA600E00298EA2 /* BuscapeModels.swift in Sources */,
 				57A54A6A1CEE4E9F006F333F /* Extensions.swift in Sources */,
 				E6EF356B1CEE4E2900131D96 /* FilterResultsVC.swift in Sources */,
@@ -451,7 +454,6 @@
 				57EC6A1E1CEE553800ED0EA6 /* BuscapeParser.swift in Sources */,
 				578E1F1F1CF3726600B4E51D /* FilterSplitVC.swift in Sources */,
 				57BC8BDA1CEBA9D7001AB292 /* GroupModels.swift in Sources */,
-				E6EF355E1CEE496400131D96 /* ProductVC.swift in Sources */,
 				E69AF0901CF3804E00E2A2B3 /* CDHistoricItem.swift in Sources */,
 				578FDA9C1CEE2D550068A6DC /* MainConnector.swift in Sources */,
 				E69AF08C1CF3804E00E2A2B3 /* CDProduct.swift in Sources */,
