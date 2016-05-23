@@ -27,10 +27,6 @@ class CategoriesVC: UIViewController {
             self.topCategories = list
             self.collectionTop.reloadData()
         }
-        
-        MainConnector.getListCategories([SearchParameter.CategoryId(6420)]) { (list) in
-            
-        }
     }
     
 }

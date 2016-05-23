@@ -14,7 +14,7 @@ class ProductSplitVC: UISplitViewController {
         didSet {
             MainConnector.getProductOffers(product.id, params: []) { (productOffers) in
                 let vc = self.viewControllers
-                let master = (vc[0] as! UINavigationController).viewControllers[0] as! SpecificationsVC
+                let master = (vc[0] as! UINavigationController).viewControllers[0] as! ProductSpecificationVC
                 let detail = (vc[1] as! UINavigationController).viewControllers[0] as! ProductDetailVC
                 
                 master.productOffers = productOffers
