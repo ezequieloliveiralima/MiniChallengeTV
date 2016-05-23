@@ -10,6 +10,8 @@
 		577C25101CED077D00360149 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577C250F1CED077D00360149 /* Common.swift */; };
 		578A2BC91CEF8C3C0034180F /* MainViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578A2BC81CEF8C3C0034180F /* MainViewControllerDelegate.swift */; };
 		578A2BCB1CEF9FA60034180F /* ConnetionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578A2BCA1CEF9FA60034180F /* ConnetionManager.swift */; };
+		578E1F1D1CF36EFD00B4E51D /* ProductSplitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578E1F1C1CF36EFD00B4E51D /* ProductSplitVC.swift */; };
+		578E1F1F1CF3726600B4E51D /* FilterSplitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578E1F1E1CF3726600B4E51D /* FilterSplitVC.swift */; };
 		578FDA9A1CEE28A50068A6DC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FDA991CEE28A50068A6DC /* Models.swift */; };
 		578FDA9C1CEE2D550068A6DC /* MainConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FDA9B1CEE2D550068A6DC /* MainConnector.swift */; };
 		578FDA9E1CEE3DC00068A6DC /* BuscapeGroupModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FDA9D1CEE3DC00068A6DC /* BuscapeGroupModels.swift */; };
@@ -34,7 +36,7 @@
 		E6EF355C1CEE492200131D96 /* HistoricVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF355B1CEE492200131D96 /* HistoricVC.swift */; };
 		E6EF355E1CEE496400131D96 /* ProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF355D1CEE496400131D96 /* ProductVC.swift */; };
 		E6EF35601CEE496D00131D96 /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF355F1CEE496D00131D96 /* CategoriesVC.swift */; };
-		E6EF35621CEE49EA00131D96 /* TopProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF35611CEE49EA00131D96 /* TopProducts.swift */; };
+		E6EF35621CEE49EA00131D96 /* TopProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF35611CEE49EA00131D96 /* TopProductsVC.swift */; };
 		E6EF35641CEE4A3000131D96 /* GenericCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF35631CEE4A3000131D96 /* GenericCollectionCell.swift */; };
 		E6EF35661CEE4AA000131D96 /* GenericTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF35651CEE4AA000131D96 /* GenericTableCell.swift */; };
 		E6EF35681CEE4E0300131D96 /* FilterOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF35671CEE4E0300131D96 /* FilterOptionsVC.swift */; };
@@ -64,6 +66,8 @@
 		577C250F1CED077D00360149 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = Models/Common.swift; sourceTree = "<group>"; };
 		578A2BC81CEF8C3C0034180F /* MainViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewControllerDelegate.swift; path = Controllers/MainViewControllerDelegate.swift; sourceTree = "<group>"; };
 		578A2BCA1CEF9FA60034180F /* ConnetionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnetionManager.swift; path = Controllers/ConnetionManager.swift; sourceTree = "<group>"; };
+		578E1F1C1CF36EFD00B4E51D /* ProductSplitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductSplitVC.swift; path = Controllers/ProductSplitVC.swift; sourceTree = "<group>"; };
+		578E1F1E1CF3726600B4E51D /* FilterSplitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterSplitVC.swift; path = Controllers/FilterSplitVC.swift; sourceTree = "<group>"; };
 		578FDA991CEE28A50068A6DC /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Models/Models.swift; sourceTree = "<group>"; };
 		578FDA9B1CEE2D550068A6DC /* MainConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainConnector.swift; path = Controllers/MainConnector.swift; sourceTree = "<group>"; };
 		578FDA9D1CEE3DC00068A6DC /* BuscapeGroupModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeGroupModels.swift; sourceTree = "<group>"; };
@@ -94,7 +98,7 @@
 		E6EF355B1CEE492200131D96 /* HistoricVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoricVC.swift; path = Controllers/HistoricVC.swift; sourceTree = "<group>"; };
 		E6EF355D1CEE496400131D96 /* ProductVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductVC.swift; path = Controllers/ProductVC.swift; sourceTree = "<group>"; };
 		E6EF355F1CEE496D00131D96 /* CategoriesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoriesVC.swift; path = Controllers/CategoriesVC.swift; sourceTree = "<group>"; };
-		E6EF35611CEE49EA00131D96 /* TopProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopProducts.swift; path = Controllers/TopProducts.swift; sourceTree = "<group>"; };
+		E6EF35611CEE49EA00131D96 /* TopProductsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopProductsVC.swift; path = Controllers/TopProductsVC.swift; sourceTree = "<group>"; };
 		E6EF35631CEE4A3000131D96 /* GenericCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericCollectionCell.swift; path = Views/GenericCollectionCell.swift; sourceTree = "<group>"; };
 		E6EF35651CEE4AA000131D96 /* GenericTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericTableCell.swift; path = Views/GenericTableCell.swift; sourceTree = "<group>"; };
 		E6EF35671CEE4E0300131D96 /* FilterOptionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterOptionsVC.swift; path = Controllers/FilterOptionsVC.swift; sourceTree = "<group>"; };
@@ -128,6 +132,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		578E1F1A1CF36B4700B4E51D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				578FDA9B1CEE2D550068A6DC /* MainConnector.swift */,
+				E63D42CC1CEF7F1D00D574C9 /* LocalStorage.swift */,
+				578A2BCA1CEF9FA60034180F /* ConnetionManager.swift */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		578E1F1B1CF36B6000B4E51D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E6EF35691CEE4E0700131D96 /* Search */,
+				E6E8ACC21CEE25BA006012E9 /* Product */,
+				E6EF35611CEE49EA00131D96 /* TopProductsVC.swift */,
+				E6EF355F1CEE496D00131D96 /* CategoriesVC.swift */,
+				E65B77061CEBA78E0054526E /* FavoritesVC.swift */,
+				E6EF355B1CEE492200131D96 /* HistoricVC.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		57BF64F41CEA600E00298EA2 /* API Buscape */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +227,7 @@
 		E6E8ACC21CEE25BA006012E9 /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				578E1F1C1CF36EFD00B4E51D /* ProductSplitVC.swift */,
 				E6EF355D1CEE496400131D96 /* ProductVC.swift */,
 				E6E8ACC31CEE25DB006012E9 /* SpecificationsVC.swift */,
 			);
@@ -209,6 +237,7 @@
 		E6EF35691CEE4E0700131D96 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				578E1F1E1CF3726600B4E51D /* FilterSplitVC.swift */,
 				E6EF35671CEE4E0300131D96 /* FilterOptionsVC.swift */,
 				E6EF356A1CEE4E2900131D96 /* FilterResultsVC.swift */,
 			);
@@ -240,16 +269,9 @@
 		E6F7608A1CEA38490099B5A6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E6EF35691CEE4E0700131D96 /* Search */,
-				E6E8ACC21CEE25BA006012E9 /* Product */,
+				578E1F1B1CF36B6000B4E51D /* View Controllers */,
+				578E1F1A1CF36B4700B4E51D /* Manager */,
 				E65B77071CEBA78E0054526E /* QRCode.swift */,
-				E65B77061CEBA78E0054526E /* FavoritesVC.swift */,
-				578FDA9B1CEE2D550068A6DC /* MainConnector.swift */,
-				E6EF355B1CEE492200131D96 /* HistoricVC.swift */,
-				E6EF355F1CEE496D00131D96 /* CategoriesVC.swift */,
-				E6EF35611CEE49EA00131D96 /* TopProducts.swift */,
-				E63D42CC1CEF7F1D00D574C9 /* LocalStorage.swift */,
-				578A2BCA1CEF9FA60034180F /* ConnetionManager.swift */,
 				578A2BC81CEF8C3C0034180F /* MainViewControllerDelegate.swift */,
 			);
 			name = Controllers;
@@ -397,15 +419,17 @@
 				57BF64F91CEA600E00298EA2 /* BuscapeModels.swift in Sources */,
 				57A54A6A1CEE4E9F006F333F /* Extensions.swift in Sources */,
 				E6EF356B1CEE4E2900131D96 /* FilterResultsVC.swift in Sources */,
+				578E1F1D1CF36EFD00B4E51D /* ProductSplitVC.swift in Sources */,
 				E6F760901CEA543B0099B5A6 /* CoreDataManager.swift in Sources */,
 				E6CC77E51CE66F700046DF18 /* ViewController.swift in Sources */,
 				577C25101CED077D00360149 /* Common.swift in Sources */,
 				57BF64FA1CEA600E00298EA2 /* BuscapeAPI.swift in Sources */,
-				E6EF35621CEE49EA00131D96 /* TopProducts.swift in Sources */,
+				E6EF35621CEE49EA00131D96 /* TopProductsVC.swift in Sources */,
 				E6EF35601CEE496D00131D96 /* CategoriesVC.swift in Sources */,
 				578A2BCB1CEF9FA60034180F /* ConnetionManager.swift in Sources */,
 				E6CC77E81CE66F700046DF18 /* MiniChallengeTV.xcdatamodeld in Sources */,
 				57EC6A1E1CEE553800ED0EA6 /* BuscapeParser.swift in Sources */,
+				578E1F1F1CF3726600B4E51D /* FilterSplitVC.swift in Sources */,
 				57BC8BDA1CEBA9D7001AB292 /* GroupModels.swift in Sources */,
 				E6EF355E1CEE496400131D96 /* ProductVC.swift in Sources */,
 				578FDA9C1CEE2D550068A6DC /* MainConnector.swift in Sources */,

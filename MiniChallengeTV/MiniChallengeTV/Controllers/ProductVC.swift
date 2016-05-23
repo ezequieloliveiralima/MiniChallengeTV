@@ -33,6 +33,8 @@ class ProductVC: UIViewController {
             self.offers = list
             self.tableView.reloadData()
         }
+        
+        updateFavoriteButton(true)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -78,10 +80,11 @@ extension ProductVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("default-cell") as! GenericTableCell
         let offer = offers!.list[indexPath.row]
         
-        cell.label.text = "Ver link da compra"
-        
+        cell.label.text = offer.vendor.name
         if let imageUrl = offer.vendor.thumbnail?.url {
-            cell.imgView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: imageUrl)!)!)
+            MainConnector.getImage(imageUrl, callback: { (img) in
+                cell.imgView.image = img
+            })
         } else {
             cell.imgView.image = UIImage(named: "placeholder")
         }
@@ -108,5 +111,9 @@ private extension ProductVC {
 //        let filled = UIImageView(image: UIImage(named: "star_filled"))
 //        let nonFilled = UIImageView(image: UIImage(named: "non_star_filled"))
 //        let halfFilled = UIImageView(image: UIImage(named: "half_star_filled"))
+    }
+    
+    func updateFavoriteButton(status: Bool) {
+        btnFavorite.setTitle(status ? "Remover Favorito" : "Adicionar Favorito", forState: .Normal)
     }
 }

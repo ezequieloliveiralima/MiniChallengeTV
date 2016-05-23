@@ -8,41 +8,6 @@
 
 import UIKit
 
-class TestLocalStorage {
-    static let instance = TestLocalStorage()
-    
-    var favorits: [testProduct]! = []
-    var historic: [testProduct]! = []
-    
-    private init() {
-    }
-    
-    func addHistoric(product: testProduct) {
-        if !isFavorite(product) && historic.count < 30 {
-            historic.append(product)
-        }
-    }
-    
-    func addFavorite(product: testProduct) {
-        if !isFavorite(product) {
-            favorits.append(product)
-        }
-    }
-    
-    func isFavorite(product: testProduct) -> Bool {
-        return favorits.contains { (tmp) -> Bool in
-            return tmp.id == product.id
-        }
-    }
-    
-    func removeFavorite(product: testProduct) {
-        let index = favorits.indexOf { (tmp) -> Bool in
-            return tmp.id == product.id
-        }
-        
-        favorits.removeAtIndex(index ?? -1)
-    }
-}
 
 class LocalStorage {
     func addFavorite() {

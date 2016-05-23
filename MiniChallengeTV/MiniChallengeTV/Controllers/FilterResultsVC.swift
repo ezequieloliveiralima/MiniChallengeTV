@@ -11,7 +11,7 @@ import UIKit
 class FilterResultsVC: UITableViewController {
     
     var results: List<Product>?
-    var searchedTerm: String!
+    var searchText: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +23,6 @@ class FilterResultsVC: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

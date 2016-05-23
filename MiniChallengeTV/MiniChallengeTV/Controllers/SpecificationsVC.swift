@@ -15,6 +15,8 @@ class SpecificationsVC: UITableViewController {
         super.viewDidLoad()
         
         tableView.registerNib(UINib(nibName: "DefaultTableCell", bundle: nil), forCellReuseIdentifier: "default-cell")
+        
+        
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

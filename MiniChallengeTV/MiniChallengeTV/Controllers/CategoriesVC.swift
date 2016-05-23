@@ -21,12 +21,11 @@ class CategoriesVC: UIViewController {
         super.viewDidLoad()
         
         collectionTop.registerNib(UINib(nibName: "DefaultCollectionCell", bundle: nil), forCellWithReuseIdentifier: "default-cell")
+        collectionTop.contentInset = UIEdgeInsets(top: -135, left: 0, bottom: 0, right: 0)
         
         MainConnector.getListTopCategories([]) { (list) in
             self.topCategories = list
-            dispatch_async(dispatch_get_main_queue(), { 
-                self.collectionTop.reloadData()
-            })
+            self.collectionTop.reloadData()
         }
         
         MainConnector.getListCategories([SearchParameter.CategoryId(6420)]) { (list) in
@@ -59,6 +58,10 @@ extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         }
         
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: 200, height: 200)
     }
 }
 
