@@ -103,3 +103,23 @@ class BVendor: BuscapeModel {
         self.thumbnail    = thumbnail
     }
 }
+
+class BListDetail : BuscapeModel, CustomStringConvertible {
+    
+    let page: Int
+    let totalPages: Int
+    let totalResultsAvailable: Int
+    let totalResultsReturned: Int
+    
+    var description: String {
+        return "{page: \(page), total: \(totalPages), totalResults: \(totalResultsReturned), totalResultsAvailable: \(totalResultsAvailable)}"
+    }
+    
+    init(page: Int, totalPages: Int, totalResultsReturned: Int, totalResultsAvailable: Int) {
+        self.page = page
+        self.totalPages = totalPages
+        self.totalResultsReturned = totalResultsReturned
+        self.totalResultsAvailable = totalResultsAvailable
+    }
+    
+}

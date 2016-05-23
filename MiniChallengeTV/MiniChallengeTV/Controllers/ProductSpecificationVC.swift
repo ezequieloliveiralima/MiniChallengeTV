@@ -8,8 +8,13 @@
 
 import UIKit
 
-class SpecificationsVC: UITableViewController {
-    var product: Product!
+class ProductSpecificationVC: UITableViewController {
+    
+    var productOffers: ProductOffers? {
+        didSet {
+            updateUI()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +29,27 @@ class SpecificationsVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return product.specification?.items?.count ?? 0
+        return productOffers?.product.specification?.items?.count ?? 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("default-cell") as! GenericTableCell
         
+        guard let specification = productOffers?.product.specification?.items?[indexPath.row] else {
+            return cell
+        }
+        
+        cell.label.text = "\(specification.name): \(specification.value)"
+        
         return cell
     }
+}
+
+private extension ProductSpecificationVC {
+    
+    func updateUI() {
+        print(productOffers?.product.specification)
+        tableView.reloadData()
+    }
+    
 }

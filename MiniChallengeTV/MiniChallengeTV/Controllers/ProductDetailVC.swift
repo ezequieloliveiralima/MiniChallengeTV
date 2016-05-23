@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductVC: UIViewController {
+class ProductDetailVC: UIViewController {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
@@ -16,8 +16,11 @@ class ProductVC: UIViewController {
     @IBOutlet weak var rating: UIStackView!
     @IBOutlet weak var btnFavorite: UIButton!
     
-    var offers  : List<Offer>?
-    var product : Product!
+    var productOffers : ProductOffers? {
+        didSet {
+            updateUI()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,14 +54,10 @@ class ProductVC: UIViewController {
 //        TestLocalStorage.instance.addHistoric(product)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }
 
 //Actions
-extension ProductVC {
+extension ProductDetailVC {
     @IBAction func onFavorite(sender: UIButton) {
         MainConnector.isFavorite(product) { (status) in
             var status1: Bool!
@@ -77,28 +76,25 @@ extension ProductVC {
 }
 
 //Delegate
-extension ProductVC: UITableViewDelegate, UITableViewDataSource {
+extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return offers?.list.count ?? 0
+        return productOffers?.offers.count ?? 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("default-cell") as! GenericTableCell
-        let offer = offers!.list[indexPath.row]
-        
-        cell.label.text = offer.vendor.name
-        if let imageUrl = offer.vendor.thumbnail?.url {
-            MainConnector.getImage(imageUrl, callback: { (img) in
-                cell.imgView.image = img
-            })
-        } else {
-            cell.imgView.image = UIImage(named: "placeholder")
+        guard let offer = productOffers?.offers[indexPath.row] else {
+            return cell
         }
         
+        cell.label.text = offer.vendor.name
+        MainConnector.getImage(offer.vendor.thumbnail?.url, callback: { (img) in
+            cell.imgView.image = img ?? UIImage(named: "placeholder")
+        })
         
         return cell
     }
@@ -116,7 +112,15 @@ extension ProductVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 //Private
-private extension ProductVC {
+private extension ProductDetailVC {
+    func updateUI() {
+        MainConnector.getImage(productOffers?.product.imageUrl) { (image) in
+            self.productImage.image = image?.imageByMakingWhiteBackgroundTransparent() ?? UIImage(named: "placeholder")
+        }
+        updateFavoriteButton(true)
+        tableView.reloadData()
+    }
+    
     func calcalateRating(value: Double) {
 //        let filled = UIImageView(image: UIImage(named: "star_filled"))
 //        let nonFilled = UIImageView(image: UIImage(named: "non_star_filled"))

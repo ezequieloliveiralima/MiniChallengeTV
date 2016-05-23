@@ -46,11 +46,9 @@ class MainConnector {
         }
     }
     
-    class func getProductOffers(product: Product, params: [SearchParameter], callback: (List<Offer>) -> Void) {
-        var params = params
-        params.append(SearchParameter.ProductId(product.id))
-        connector.getList(.Offer, parameters: params) { (list: BList<BOffer>) in
-            callback(List<Offer>(list: list))
+    class func getProductOffers(productId: Int, params: [SearchParameter], callback: (ProductOffers) -> Void) {
+        connector.getProductOffers(productId, parameters: params) { (detail, product, category, offers) in
+            callback(ProductOffers(detail: detail, product: product, category: category, offers: offers))
         }
     }
     
@@ -62,8 +60,13 @@ class MainConnector {
         callback(LocalStorage.fetchFavorites())
     }
     
-    class func getImage(url: String, callback: (UIImage?) -> Void) {
-        ConnectionManager.getImage(url, completionHandler: callback)
+    class func getImage(url: String?, callback: (UIImage?) -> Void) {
+        if let url = url {
+            ConnectionManager.getImage(url, completionHandler: callback)
+        } else {
+            callback(nil)
+        }
+        
     }
     
     class func registryHistoric(product: Product) {

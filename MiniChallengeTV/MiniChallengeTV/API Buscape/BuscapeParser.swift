@@ -206,11 +206,12 @@ class BuscapeParser {
             return nil
         }
         let url = parseLinks(specification)?.filter({ $0.0 == "xml" }).first?.1
-        let items = (specification["items"] as? [Payload])?.flatMap({ parseSpecificationItem($0) })
+        let items = ((specification["items"] ?? specification["item"]) as? [Payload])?.flatMap({ parseSpecificationItem($0) })
         return Specification(url: url, items: items)
     }
     
     class func parseSpecificationItem(json: Payload) -> SpecificationItem? {
+        let json = nestedValue(json, key: "item")
         guard let label = json["label"] as? String, value = json["value"] as? [String] else {
             return nil
         }

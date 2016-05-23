@@ -393,7 +393,7 @@
         <!--Especificações-->
         <scene sceneID="QLe-PC-dI2">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="Hek-z1-KkO" customClass="SpecificationsVC" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="Hek-z1-KkO" customClass="ProductSpecificationVC" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="40" sectionFooterHeight="40" id="3kt-Oa-xXg">
                         <rect key="frame" x="0.0" y="0.0" width="634" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -447,10 +447,10 @@
             </objects>
             <point key="canvasLocation" x="5996" y="2461"/>
         </scene>
-        <!--ProductVC-->
+        <!--Product DetailVC-->
         <scene sceneID="ts9-Wx-gCs">
             <objects>
-                <viewController id="aBs-EW-ZLg" customClass="ProductVC" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aBs-EW-ZLg" customClass="ProductDetailVC" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hCA-PB-AIP"/>
                         <viewControllerLayoutGuide type="bottom" id="kfl-1s-TLd"/>
