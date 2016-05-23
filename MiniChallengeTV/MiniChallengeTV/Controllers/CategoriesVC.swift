@@ -22,14 +22,14 @@ class CategoriesVC: UIViewController {
         
         collectionTop.registerNib(UINib(nibName: "DefaultCollectionCell", bundle: nil), forCellWithReuseIdentifier: "default-cell")
         
-        MainController.getListTopCategories([]) { (list) in
+        MainConnector.getListTopCategories([]) { (list) in
             self.topCategories = list
             dispatch_async(dispatch_get_main_queue(), { 
                 self.collectionTop.reloadData()
             })
         }
         
-        MainController.getListCategories([SearchParameter.CategoryId(6420)]) { (list) in
+        MainConnector.getListCategories([SearchParameter.CategoryId(6420)]) { (list) in
             
         }
     }

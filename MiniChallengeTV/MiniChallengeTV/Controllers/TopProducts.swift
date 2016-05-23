@@ -25,7 +25,7 @@ class TopProducts: UIViewController {
         let defaultCell = UINib(nibName: "DefaultCollectionCell", bundle: nil)
         collectionTopProducts.registerNib(defaultCell, forCellWithReuseIdentifier: "default-cell")
         
-        MainController.getListTopProducts([]) { (list) in
+        MainConnector.getListTopProducts([]) { (list) in
             self.list = list
             self.collectionTopProducts.reloadData()
             self.loadingTopProducts.stopAnimating()

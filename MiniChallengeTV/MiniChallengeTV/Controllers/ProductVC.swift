@@ -29,7 +29,7 @@ class ProductVC: UIViewController {
             productImage.image = UIImage(named: "placeholder")
         }
         
-        MainController.getProductOffers(product, params: []) { (list) in
+        MainConnector.getProductOffers(product, params: []) { (list) in
             self.offers = list
             self.tableView.reloadData()
         }

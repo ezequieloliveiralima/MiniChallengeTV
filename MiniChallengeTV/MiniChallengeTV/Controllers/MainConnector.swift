@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainController {
+class MainConnector {
     
     private static let connector = BuscapeConnector()
     
@@ -63,7 +63,7 @@ class MainController {
         callback()
     }
     
-    class func getImage() {
-        
+    class func getImage(url: String, callback: (UIImage?) -> Void) {
+        ConnectionManager.getImage(url, completionHandler: callback)
     }
 }

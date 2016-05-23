@@ -11,7 +11,7 @@
 		578A2BC91CEF8C3C0034180F /* MainViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578A2BC81CEF8C3C0034180F /* MainViewControllerDelegate.swift */; };
 		578A2BCB1CEF9FA60034180F /* ConnetionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578A2BCA1CEF9FA60034180F /* ConnetionManager.swift */; };
 		578FDA9A1CEE28A50068A6DC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FDA991CEE28A50068A6DC /* Models.swift */; };
-		578FDA9C1CEE2D550068A6DC /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FDA9B1CEE2D550068A6DC /* MainController.swift */; };
+		578FDA9C1CEE2D550068A6DC /* MainConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FDA9B1CEE2D550068A6DC /* MainConnector.swift */; };
 		578FDA9E1CEE3DC00068A6DC /* BuscapeGroupModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FDA9D1CEE3DC00068A6DC /* BuscapeGroupModels.swift */; };
 		57A54A6A1CEE4E9F006F333F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A54A691CEE4E9F006F333F /* Extensions.swift */; };
 		57BC8BDA1CEBA9D7001AB292 /* GroupModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC8BD91CEBA9D7001AB292 /* GroupModels.swift */; };
@@ -65,7 +65,7 @@
 		578A2BC81CEF8C3C0034180F /* MainViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewControllerDelegate.swift; path = Controllers/MainViewControllerDelegate.swift; sourceTree = "<group>"; };
 		578A2BCA1CEF9FA60034180F /* ConnetionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnetionManager.swift; path = Controllers/ConnetionManager.swift; sourceTree = "<group>"; };
 		578FDA991CEE28A50068A6DC /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Models/Models.swift; sourceTree = "<group>"; };
-		578FDA9B1CEE2D550068A6DC /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainController.swift; path = Controllers/MainController.swift; sourceTree = "<group>"; };
+		578FDA9B1CEE2D550068A6DC /* MainConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainConnector.swift; path = Controllers/MainConnector.swift; sourceTree = "<group>"; };
 		578FDA9D1CEE3DC00068A6DC /* BuscapeGroupModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscapeGroupModels.swift; sourceTree = "<group>"; };
 		57A54A691CEE4E9F006F333F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		57BC8BD91CEBA9D7001AB292 /* GroupModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupModels.swift; path = Models/GroupModels.swift; sourceTree = "<group>"; };
@@ -244,7 +244,7 @@
 				E6E8ACC21CEE25BA006012E9 /* Product */,
 				E65B77071CEBA78E0054526E /* QRCode.swift */,
 				E65B77061CEBA78E0054526E /* FavoritesVC.swift */,
-				578FDA9B1CEE2D550068A6DC /* MainController.swift */,
+				578FDA9B1CEE2D550068A6DC /* MainConnector.swift */,
 				E6EF355B1CEE492200131D96 /* HistoricVC.swift */,
 				E6EF355F1CEE496D00131D96 /* CategoriesVC.swift */,
 				E6EF35611CEE49EA00131D96 /* TopProducts.swift */,
@@ -408,7 +408,7 @@
 				57EC6A1E1CEE553800ED0EA6 /* BuscapeParser.swift in Sources */,
 				57BC8BDA1CEBA9D7001AB292 /* GroupModels.swift in Sources */,
 				E6EF355E1CEE496400131D96 /* ProductVC.swift in Sources */,
-				578FDA9C1CEE2D550068A6DC /* MainController.swift in Sources */,
+				578FDA9C1CEE2D550068A6DC /* MainConnector.swift in Sources */,
 				578A2BC91CEF8C3C0034180F /* MainViewControllerDelegate.swift in Sources */,
 				E6CC77E31CE66F700046DF18 /* AppDelegate.swift in Sources */,
 				578FDA9E1CEE3DC00068A6DC /* BuscapeGroupModels.swift in Sources */,
