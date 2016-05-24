@@ -15,7 +15,7 @@ class QRCode {
         self.content = content
     }
     
-    func generate() -> UIImage {
+    func generate() -> UIImage? {
         let data = content.dataUsingEncoding(NSISOLatin1StringEncoding, allowLossyConversion: false)
         let filter = CIFilter(name: "CIQRCodeGenerator")
         filter!.setValue(data, forKey: "inputMessage")

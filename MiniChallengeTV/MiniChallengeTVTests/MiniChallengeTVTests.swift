@@ -33,4 +33,69 @@ class MiniChallengeTVTests: XCTestCase {
         }
     }
     
+    func testHistoricCount() {
+        assert(LocalStorage.fetchHistoric().count > 0)
+    }
+    
+    func testInheranceCoreData() {
+        assert(CoreDataManager.instance.all("CDProduct").count > 0)
+    }
+    
+    func testQRCode() {
+        assert(QRCode(content: "http://www.google.com.br").generate() != nil)
+    }
+    
+    func testImageCache() {
+        let expectation = expectationWithDescription("image api")
+        var image: UIImage?
+        MainConnector.getImage(nil) { (img) in
+            image = img
+            expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(1) { (error) in
+            assert(error == nil)
+        }
+        
+        XCTAssertNil(image, "image is nil")
+    }
+    
+    func testTopProducts() {
+        let expectation = expectationWithDescription("top products")
+
+        MainConnector.getListTopProducts([]) { (list) in
+            assert(list.list.count > 0)
+            expectation.fulfill()
+        }
+
+        waitForExpectationsWithTimeout(2) { (error) in
+            XCTAssertNil(error, "error is nil")
+        }
+    }
+    
+    func testTopCategories() {
+        let expectation = expectationWithDescription("top categories")
+        
+        MainConnector.getListTopCategories([]) { (list) in
+            assert(list.list.count > 0)
+            expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(2) { (error) in
+            XCTAssertNil(error, "error is nil")
+        }
+    }
+    
+    func testNumOffers() {
+        let expectation = expectationWithDescription("top categories")
+        
+        MainConnector.getProductOffers(615241, params: []) { (list) in
+            assert(list.offers.count == 16)
+            expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(2) { (error) in
+            XCTAssertNil(error, "error is nil")
+        }
+    }
 }
