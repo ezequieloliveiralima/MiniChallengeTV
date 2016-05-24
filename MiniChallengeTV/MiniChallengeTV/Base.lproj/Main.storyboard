@@ -17,12 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uRQ-fJ-a33">
-                                <rect key="frame" x="20" y="155" width="1880" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="ZFt-3b-Txv"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q3F-ON-7yF">
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uRQ-fJ-a33">
+                                <rect key="frame" x="20" y="155" width="1880" height="925"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q3F-ON-7yF">
                                     <size key="itemSize" width="100" height="44"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -34,53 +31,9 @@
                                     <outlet property="delegate" destination="NgR-R6-7dJ" id="EaI-GE-wtw"/>
                                 </connections>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nh0-eM-X7M">
-                                <rect key="frame" x="20" y="363" width="1880" height="697"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dbo-5R-HOZ">
-                                    <size key="itemSize" width="400" height="75"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="category" id="kKB-MT-xdh" customClass="GenericCollectionCell" customModule="MiniChallengeTV" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="20" width="400" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="75"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3e-r9-BC5">
-                                                    <rect key="frame" x="8" y="8" width="384" height="59"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="L3e-r9-BC5" firstAttribute="bottom" secondItem="kKB-MT-xdh" secondAttribute="bottomMargin" id="5XJ-n2-IIY"/>
-                                            <constraint firstItem="L3e-r9-BC5" firstAttribute="leading" secondItem="kKB-MT-xdh" secondAttribute="leadingMargin" id="Obm-iB-dvQ"/>
-                                            <constraint firstItem="L3e-r9-BC5" firstAttribute="trailing" secondItem="kKB-MT-xdh" secondAttribute="trailingMargin" id="dEw-hg-aPH"/>
-                                            <constraint firstItem="L3e-r9-BC5" firstAttribute="top" secondItem="kKB-MT-xdh" secondAttribute="topMargin" id="ka2-aP-dhg"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="label" destination="L3e-r9-BC5" id="vgV-fu-UY0"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="NgR-R6-7dJ" id="Q3P-fB-2M9"/>
-                                    <outlet property="delegate" destination="NgR-R6-7dJ" id="jWt-rr-gag"/>
-                                </connections>
-                            </collectionView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="R0g-qj-wZw" firstAttribute="top" secondItem="nh0-eM-X7M" secondAttribute="bottom" constant="20" id="ECn-O2-3GJ"/>
-                            <constraint firstItem="nh0-eM-X7M" firstAttribute="trailing" secondItem="BAg-eM-vJR" secondAttribute="trailingMargin" id="Iik-sU-ew3"/>
-                            <constraint firstItem="nh0-eM-X7M" firstAttribute="top" secondItem="uRQ-fJ-a33" secondAttribute="bottom" constant="8" id="Ijf-Uy-CNU"/>
-                            <constraint firstItem="nh0-eM-X7M" firstAttribute="leading" secondItem="BAg-eM-vJR" secondAttribute="leadingMargin" id="SSc-ZC-IyD"/>
+                            <constraint firstItem="R0g-qj-wZw" firstAttribute="top" secondItem="uRQ-fJ-a33" secondAttribute="bottom" id="NXV-ux-qXQ"/>
                             <constraint firstItem="uRQ-fJ-a33" firstAttribute="top" secondItem="mey-dx-HyX" secondAttribute="bottom" constant="10" id="VR5-jp-6UA"/>
                             <constraint firstItem="uRQ-fJ-a33" firstAttribute="trailing" secondItem="BAg-eM-vJR" secondAttribute="trailingMargin" id="YPO-sS-qER"/>
                             <constraint firstItem="uRQ-fJ-a33" firstAttribute="leading" secondItem="BAg-eM-vJR" secondAttribute="leadingMargin" id="rWQ-Qs-xLd"/>
@@ -99,23 +52,14 @@
                         </textField>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionAll" destination="nh0-eM-X7M" id="Gvq-GA-SRQ"/>
-                        <outlet property="collectionTop" destination="uRQ-fJ-a33" id="H1P-ec-yef"/>
+                        <outlet property="collectionView" destination="uRQ-fJ-a33" id="eIQ-hC-Ell"/>
                         <outlet property="textSearch" destination="cXP-TU-hfx" id="xRi-Og-eOM"/>
-                        <segue destination="rYs-Bb-xOX" kind="show" identifier="Select category" id="DMN-1w-Ire"/>
+                        <segue destination="Ymq-7c-awy" kind="show" identifier="category_selected" id="Ysc-jS-XGJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acv-x6-qYl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3750" y="796"/>
-        </scene>
-        <!--Top Products-->
-        <scene sceneID="RLy-ZF-5uL">
-            <objects>
-                <viewControllerPlaceholder referencedIdentifier="Top Products" id="rYs-Bb-xOX" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z8V-2J-VwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4947.5" y="796"/>
         </scene>
         <!--Top ProductsVC-->
         <scene sceneID="6k7-Ot-vkk">
@@ -130,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rIG-zR-Upi">
-                                <rect key="frame" x="20" y="195" width="1880" height="757"/>
+                                <rect key="frame" x="20" y="195" width="1880" height="885"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="50" id="SSU-SQ-ttg">
                                     <size key="itemSize" width="300" height="350"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -138,7 +82,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" id="5mU-Tt-GrP">
-                                    <rect key="frame" x="0.0" y="-145" width="1880" height="757"/>
+                                    <rect key="frame" x="0.0" y="-145" width="1880" height="885"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </activityIndicatorView>
                                 <cells/>
@@ -147,35 +91,12 @@
                                     <outlet property="delegate" destination="ueO-9I-RSF" id="pUg-yj-PmW"/>
                                 </connections>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pWR-cd-wSF">
-                                <rect key="frame" x="20" y="960" width="1880" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="OyK-2d-L57"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="ayM-Oh-3FV">
-                                    <size key="itemSize" width="200" height="70"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="20" minY="10" maxX="20" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" id="DFI-GH-aWd">
-                                    <rect key="frame" x="0.0" y="0.0" width="1880" height="100"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </activityIndicatorView>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="ueO-9I-RSF" id="azg-7Q-agI"/>
-                                </connections>
-                            </collectionView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="rIG-zR-Upi" firstAttribute="trailing" secondItem="cIW-Ue-WvV" secondAttribute="trailingMargin" id="4Jj-4Y-wFl"/>
+                            <constraint firstItem="9Iz-2c-Gbv" firstAttribute="top" secondItem="rIG-zR-Upi" secondAttribute="bottom" id="cY2-b3-uLp"/>
                             <constraint firstItem="rIG-zR-Upi" firstAttribute="top" secondItem="yZp-9Y-HZG" secondAttribute="bottom" constant="50" id="gba-Ye-8lc"/>
-                            <constraint firstItem="pWR-cd-wSF" firstAttribute="top" secondItem="rIG-zR-Upi" secondAttribute="bottom" constant="8" id="gdZ-xL-4vU"/>
                             <constraint firstItem="rIG-zR-Upi" firstAttribute="leading" secondItem="cIW-Ue-WvV" secondAttribute="leadingMargin" id="m41-Kw-fmv"/>
-                            <constraint firstItem="pWR-cd-wSF" firstAttribute="leading" secondItem="cIW-Ue-WvV" secondAttribute="leadingMargin" id="oZy-rZ-fAR"/>
-                            <constraint firstItem="pWR-cd-wSF" firstAttribute="trailing" secondItem="cIW-Ue-WvV" secondAttribute="trailingMargin" id="v0q-iv-ZIh"/>
-                            <constraint firstItem="9Iz-2c-Gbv" firstAttribute="top" secondItem="pWR-cd-wSF" secondAttribute="bottom" constant="20" id="wTb-3o-vB2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QYn-Gw-KrJ">
@@ -191,23 +112,15 @@
                         </textField>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionTopProducts" destination="rIG-zR-Upi" id="fJC-xw-slq"/>
+                        <outlet property="collectionView" destination="rIG-zR-Upi" id="QjD-sI-FFM"/>
                         <outlet property="loadingTopProducts" destination="5mU-Tt-GrP" id="tYU-n8-RQf"/>
-                        <segue destination="Ymq-7c-awy" kind="show" identifier="Filter" id="NjL-XU-nk3"/>
-                        <segue destination="Tem-to-mCy" kind="show" identifier="Select Product" id="MGD-s3-wi5"/>
+                        <segue destination="Ymq-7c-awy" kind="show" identifier="product_searched" id="NjL-XU-nk3"/>
+                        <segue destination="qQq-WJ-k9s" kind="show" identifier="product_selected" id="E8e-15-cI6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDR-oY-Tvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3750" y="-340"/>
-        </scene>
-        <!--Product-->
-        <scene sceneID="ShO-zT-R2T">
-            <objects>
-                <viewControllerPlaceholder referencedIdentifier="Product" id="Tem-to-mCy" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mRa-bc-1JD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3750.5" y="-1070"/>
         </scene>
         <!--Filter OptionsVC-->
         <scene sceneID="UGN-mZ-AhL">
@@ -299,7 +212,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MsH-XK-AMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8272" y="-908"/>
+            <point key="canvasLocation" x="9633" y="-2664"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Q0s-kR-lto">
@@ -315,7 +228,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v09-tU-C8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7416" y="-908"/>
+            <point key="canvasLocation" x="8777" y="-2664"/>
         </scene>
         <!--Filter ResultsVC-->
         <scene sceneID="JTJ-1e-2H7">
@@ -340,26 +253,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ODu-SA-wIZ"/>
-                    <connections>
-                        <segue destination="QDO-hH-r2Y" kind="show" identifier="Select Product" id="HWV-C5-S65"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cg7-pS-DVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9238.5" y="348"/>
-        </scene>
-        <!--Product-->
-        <scene sceneID="TdF-Vl-2at">
-            <objects>
-                <viewControllerPlaceholder referencedIdentifier="Product" id="QDO-hH-r2Y" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MGm-wL-xWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="10223.5" y="348"/>
+            <point key="canvasLocation" x="10599.5" y="-1408"/>
         </scene>
         <!--Filter SplitVC-->
         <scene sceneID="q7h-73-wsW">
             <objects>
-                <splitViewController id="Ymq-7c-awy" customClass="FilterSplitVC" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="FilterSplitVC" id="Ymq-7c-awy" customClass="FilterSplitVC" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="aZF-3I-vh5" kind="relationship" relationship="masterViewController" id="l5p-mn-SZb"/>
                         <segue destination="Cbb-nc-pVG" kind="relationship" relationship="detailViewController" id="W8y-Jy-sP1"/>
@@ -367,7 +269,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sl3-av-vGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5923" y="-340"/>
+            <point key="canvasLocation" x="7180" y="-2036"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7JJ-9n-eJs">
@@ -388,7 +290,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7uW-ck-k4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-508" y="228"/>
+            <point key="canvasLocation" x="-764" y="292"/>
         </scene>
         <!--Especificações-->
         <scene sceneID="QLe-PC-dI2">
@@ -425,7 +327,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LaX-AG-fpW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8449" y="1613"/>
+            <point key="canvasLocation" x="9641" y="-75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ebs-eq-1oK">
@@ -441,12 +343,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFy-gV-ptP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7593" y="1613"/>
+            <point key="canvasLocation" x="8785" y="-75"/>
         </scene>
         <!--Product SplitVC-->
         <scene sceneID="5lJ-m1-ote">
             <objects>
-                <splitViewController storyboardIdentifier="Product" id="qQq-WJ-k9s" customClass="ProductSplitVC" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="ProductSplitVC" id="qQq-WJ-k9s" customClass="ProductSplitVC" customModule="MiniChallengeTV" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="Ypw-O1-4mh" kind="relationship" relationship="masterViewController" id="GP9-s0-M7V"/>
                         <segue destination="qBM-2h-KRc" kind="relationship" relationship="detailViewController" id="cXM-Xk-xJh"/>
@@ -454,7 +356,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEl-BG-hqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5996" y="2461"/>
+            <point key="canvasLocation" x="7180" y="509"/>
         </scene>
         <!--Product DetailVC-->
         <scene sceneID="ts9-Wx-gCs">
@@ -489,11 +391,11 @@
                                 <rect key="frame" x="20" y="551" width="1245" height="509"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="6BN-Uz-dh8">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="6BN-Uz-dh8">
                                         <rect key="frame" x="0.0" y="54" width="1245" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6BN-Uz-dh8" id="nwN-sl-oWP">
-                                            <rect key="frame" x="0.0" y="0.0" width="1245" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1229" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -568,7 +470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kde-JI-zWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9339.5" y="2780"/>
+            <point key="canvasLocation" x="10531.5" y="1092"/>
         </scene>
         <!--Busca-->
         <scene sceneID="cw7-8x-fMh">
@@ -696,7 +598,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZhV-7f-j3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7918.5" y="2780"/>
+            <point key="canvasLocation" x="9110.5" y="1092"/>
         </scene>
         <!--Categoria-->
         <scene sceneID="YFO-Je-Jxy">
@@ -733,13 +635,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uk8-IS-y68" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7741.5" y="348"/>
+            <point key="canvasLocation" x="9102.5" y="-1408"/>
         </scene>
     </scenes>
     <resources>
         <image name="non_star_filled" width="308" height="295"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Eq7-Ff-p00"/>
+        <segue reference="LDi-NK-6K8"/>
+        <segue reference="NjL-XU-nk3"/>
     </inferredMetricsTieBreakers>
 </document>

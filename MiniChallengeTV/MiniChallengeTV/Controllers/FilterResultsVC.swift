@@ -10,27 +10,31 @@ import UIKit
 
 class FilterResultsVC: UITableViewController {
     
+    var container: FilterSplitVC?
     var products: List<Product>? {
         didSet {
-            print(products)
             updateUI()
         }
     }
 
+    var selectedProduct: Product?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.registerNib(UINib(nibName: "DefaultTableCell", bundle: nil), forCellReuseIdentifier: .DefaultCell)
     }
+}
 
+extension FilterResultsVC {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products?.list.count ?? 0
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(.DefaultCell, forIndexPath: indexPath) as! GenericTableCell
         
@@ -43,18 +47,14 @@ class FilterResultsVC: UITableViewController {
         MainConnector.getImage(product.imageUrl) { (img) in
             cell.imgView.image = (img ?? UIImage.defaultImage())?.imageByMakingWhiteBackgroundTransparent()
         }
-
+        
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("Select Product", sender: self)
+        selectedProduct = products?.list[indexPath.row]
+        container?.goToProduct()
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        super.prepareForSegue(segue, sender: sender)
-    }
-
 }
 
 private extension FilterResultsVC {

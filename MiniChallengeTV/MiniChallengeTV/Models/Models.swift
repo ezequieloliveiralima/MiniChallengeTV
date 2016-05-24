@@ -187,8 +187,8 @@ class Category: BaseModel, CustomStringConvertible {
 }
 
 class Detail: BaseModel, CustomStringConvertible {
-    let page: Int
-    let totalPages: Int
+    let page: Int?
+    let totalPages: Int?
     let totalResultsReturned: Int
     let totalResultsAvailable: Int
     

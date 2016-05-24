@@ -10,22 +10,42 @@ import UIKit
 
 class CategoriesVC: UIViewController {
     
-    @IBOutlet weak var collectionTop: UICollectionView!
-    @IBOutlet weak var collectionAll: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var textSearch: UITextField!
 
     var topCategories: List<Category>?
-    var allCategories: List<Category>?
+    var tempCategories: List<Category>?
+    
+    private var selectedCategory: Category?
+    private var currentList: List<Category>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionTop.registerNib(UINib(nibName: "DefaultCollectionCell", bundle: nil), forCellWithReuseIdentifier: .DefaultCell)
-        collectionTop.contentInset = UIEdgeInsets(top: -135, left: 0, bottom: 0, right: 0)
+        let nib = UINib(nibName: "DefaultCollectionCell", bundle: nil)
+        collectionView.registerNib(nib, forCellWithReuseIdentifier: .DefaultCell)
+        collectionView.contentInset = UIEdgeInsets(top: -135, left: 0, bottom: 0, right: 0)
         
-        getTopCategories()
+        MainConnector.getListTopCategories([]) { (list) in
+            self.topCategories = list
+            self.updateUI()
+        }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        guard let identifier = segue.identifier, segueId = SegueIdentifier(rawValue: identifier) else {
+            return
+        }
+        
+        switch (segueId) {
+        case .CategorySelected:
+            if let split = segue.destinationViewController as? FilterSplitVC {
+                split.searchParameters = [SearchParameter.CategoryId(selectedCategory!.id)]
+            }
+        default: break
+        }
+    }
 }
 
 extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -34,42 +54,30 @@ extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch collectionView {
-        case collectionTop:
-            return topCategories?.list.count ?? 0
-        case collectionAll:
-            return allCategories?.list.count ?? 0
-        default:
-            return 0
-        }
+        return currentList?.list.count ?? 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(.DefaultCell, forIndexPath: indexPath) as! GenericCollectionCell
-        let list: List<Category>?
-        switch collectionView {
-        case collectionTop:
-            list = topCategories
-        case collectionAll:
-            list = allCategories
-        default:
-            list = nil
-        }
         
-        guard let category = list?.list[indexPath.item] else {
+        guard let category = currentList?.list[indexPath.item] else {
             return cell
         }
         
-//        cell.label.text = category.name
+        cell.label.text = category.name
         MainConnector.getImage(category.imageUrl) { (image) in
-            cell.imageView.image = (image) ?? UIImage.defaultImage()
+            cell.imageView.image = (image ?? UIImage.defaultImage())?.imageByMakingWhiteBackgroundTransparent()
         }
-        
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 200, height: 200)
+        return CGSize(width: 250, height: 250)
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        selectedCategory = currentList?.list[indexPath.item]
+        performSegueWithIdentifier(.CategorySelected, sender: self)
     }
 }
 
@@ -84,30 +92,20 @@ extension CategoriesVC: UITextFieldDelegate {
 }
 
 private extension CategoriesVC {
-    func updateTopUI(list list: List<Category>?) {
-        topCategories = list
-        collectionTop.reloadData()
-    }
-    
-    func updateBottomUI(list list: List<Category>?) {
-        allCategories = list
-        collectionAll.reloadData()
-    }
-    
-    func getTopCategories() {
-        MainConnector.getListTopCategories([]) { (list) in
-            self.updateTopUI(list: list)
-        }
+    func updateUI() {
+        currentList = tempCategories ?? topCategories
+        collectionView.reloadData()
     }
     
     func search(keyword text: String?) {
-        if let keyword = text {
-            MainConnector.getListCategories([.Keyword(keyword)]) { (list) in
-                self.updateBottomUI(list: list)
+        if text != nil && !text!.isEmpty {
+            MainConnector.getListCategories([.Keyword(text!)]) { (list) in
+                self.tempCategories = list
+                self.updateUI()
             }
         } else {
-            updateBottomUI(list: nil)
+            tempCategories = nil
+            updateUI()
         }
-        
     }
 }
