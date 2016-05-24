@@ -11,10 +11,10 @@ import UIKit
 class ProductDetailVC: UIViewController {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
-    @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var rating: UIStackView!
     @IBOutlet weak var btnFavorite: UIButton!
+    @IBOutlet var imageRating: [UIImageView]!
     
     var productOffers : ProductOffers? {
         didSet {
@@ -94,6 +94,7 @@ private extension ProductDetailVC {
         MainConnector.getImage(productOffers?.product.imageUrl) { (image) in
             self.productImage.image = image?.imageByMakingWhiteBackgroundTransparent() ?? UIImage(named: "placeholder")
             self.productName.text = self.productOffers?.product.nameShort
+            self.calcalateRating()
         }
         
         MainConnector.isFavorite(productOffers!.product) { (status) in
@@ -103,13 +104,23 @@ private extension ProductDetailVC {
         tableView.reloadData()
     }
     
-    func calcalateRating(value: Double) {
-//        let filled = UIImageView(image: UIImage(named: "star_filled"))
-//        let nonFilled = UIImageView(image: UIImage(named: "non_star_filled"))
-//        let halfFilled = UIImageView(image: UIImage(named: "half_star_filled"))
+    func calcalateRating() {
+        let filled = UIImage(named: "star_filled")
+        let halfFilled = UIImage(named: "half_star_filled")
+        var total = Double(productOffers?.product.userRating.value ?? "0.0") ?? 0.0
+        total = total / 2
+        let totalInteger = Int(total)
+        let rest = total - Double(totalInteger)
+        for i in 0..<totalInteger {
+            imageRating[i].image = filled
+        }
+        if rest >= 0.3 {
+            imageRating[totalInteger].image = halfFilled
+        }
     }
     
     func updateFavoriteButton(status: Bool) {
         btnFavorite.setTitle(status ? "Remover Favorito" : "Adicionar Favorito", forState: .Normal)
+        btnFavorite.setImage(status ? UIImage(named: "button-rated")! : UIImage(named: "button-rate")!, forState: .Normal)
     }
 }
