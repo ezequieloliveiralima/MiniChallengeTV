@@ -485,22 +485,15 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="51j-0A-fEj">
-                                <rect key="frame" x="460" y="363" width="500" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="500" id="34u-me-Fz9"/>
-                                    <constraint firstAttribute="height" constant="100" id="EJx-Kf-yX4"/>
-                                </constraints>
-                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="40" sectionFooterHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="B8e-U5-PTy">
-                                <rect key="frame" x="20" y="531" width="1245" height="529"/>
+                                <rect key="frame" x="20" y="551" width="1245" height="509"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="6BN-Uz-dh8">
+                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="6BN-Uz-dh8">
                                         <rect key="frame" x="0.0" y="54" width="1245" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6BN-Uz-dh8" id="nwN-sl-oWP">
-                                            <rect key="frame" x="0.0" y="0.0" width="1229" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1245" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -518,17 +511,42 @@
                                     <action selector="onFavorite:" destination="aBs-EW-ZLg" eventType="primaryActionTriggered" id="sw5-pa-gHu"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="51j-0A-fEj">
+                                <rect key="frame" x="350" y="401" width="500" height="100"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="non_star_filled" translatesAutoresizingMaskIntoConstraints="NO" id="W4f-Tj-oog">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="non_star_filled" translatesAutoresizingMaskIntoConstraints="NO" id="sIA-ug-AnP">
+                                        <rect key="frame" x="100" y="0.0" width="100" height="100"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="non_star_filled" translatesAutoresizingMaskIntoConstraints="NO" id="ULB-vs-Uev">
+                                        <rect key="frame" x="200" y="0.0" width="100" height="100"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="non_star_filled" translatesAutoresizingMaskIntoConstraints="NO" id="bkd-gv-52k">
+                                        <rect key="frame" x="300" y="0.0" width="100" height="100"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="non_star_filled" translatesAutoresizingMaskIntoConstraints="NO" id="joa-Jw-wpz">
+                                        <rect key="frame" x="400" y="0.0" width="100" height="100"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="500" id="34u-me-Fz9"/>
+                                    <constraint firstAttribute="height" constant="100" id="EJx-Kf-yX4"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="YzU-zT-bMT" secondAttribute="trailing" id="5Uk-dY-Mm8"/>
-                            <constraint firstItem="B8e-U5-PTy" firstAttribute="top" secondItem="vYh-73-4T1" secondAttribute="bottom" constant="30" id="ITc-cD-V73"/>
-                            <constraint firstItem="51j-0A-fEj" firstAttribute="leading" secondItem="EO7-Vg-Tqc" secondAttribute="trailing" constant="90" id="P6s-rN-SGw"/>
+                            <constraint firstItem="B8e-U5-PTy" firstAttribute="top" secondItem="vYh-73-4T1" secondAttribute="bottom" constant="50" id="ITc-cD-V73"/>
+                            <constraint firstItem="51j-0A-fEj" firstAttribute="leading" secondItem="vYh-73-4T1" secondAttribute="trailing" constant="100" id="Vam-FX-r3Z"/>
                             <constraint firstItem="kfl-1s-TLd" firstAttribute="top" secondItem="B8e-U5-PTy" secondAttribute="bottom" constant="20" id="a5Y-xN-xLv"/>
                             <constraint firstItem="EO7-Vg-Tqc" firstAttribute="leading" secondItem="YLX-kM-Ozv" secondAttribute="leadingMargin" id="alo-Ig-NVG"/>
                             <constraint firstItem="vYh-73-4T1" firstAttribute="leading" secondItem="YLX-kM-Ozv" secondAttribute="leadingMargin" id="cNQ-Hq-TO1"/>
                             <constraint firstItem="B8e-U5-PTy" firstAttribute="trailing" secondItem="YLX-kM-Ozv" secondAttribute="trailingMargin" id="liP-FH-j6f"/>
                             <constraint firstItem="YzU-zT-bMT" firstAttribute="top" secondItem="hCA-PB-AIP" secondAttribute="bottom" constant="-120" id="mp3-vX-gzG"/>
                             <constraint firstItem="B8e-U5-PTy" firstAttribute="leading" secondItem="YLX-kM-Ozv" secondAttribute="leadingMargin" id="sYU-cZ-SrM"/>
+                            <constraint firstItem="51j-0A-fEj" firstAttribute="bottom" secondItem="vYh-73-4T1" secondAttribute="bottom" id="uVS-OL-otJ"/>
                             <constraint firstItem="YzU-zT-bMT" firstAttribute="leading" secondItem="EO7-Vg-Tqc" secondAttribute="trailing" constant="90" id="w7Y-0u-aQe"/>
                             <constraint firstItem="vYh-73-4T1" firstAttribute="top" secondItem="EO7-Vg-Tqc" secondAttribute="bottom" constant="40" id="wed-5N-I9f"/>
                             <constraint firstItem="EO7-Vg-Tqc" firstAttribute="top" secondItem="hCA-PB-AIP" secondAttribute="bottom" constant="-120" id="xcE-To-MnR"/>
@@ -541,6 +559,11 @@
                         <outlet property="productName" destination="YzU-zT-bMT" id="rSV-tz-Yay"/>
                         <outlet property="rating" destination="51j-0A-fEj" id="5Bm-dd-n6c"/>
                         <outlet property="tableView" destination="B8e-U5-PTy" id="giF-dR-yWh"/>
+                        <outletCollection property="imageRating" destination="W4f-Tj-oog" collectionClass="NSMutableArray" id="2gK-WV-m0a"/>
+                        <outletCollection property="imageRating" destination="sIA-ug-AnP" collectionClass="NSMutableArray" id="iac-ES-ZZS"/>
+                        <outletCollection property="imageRating" destination="ULB-vs-Uev" collectionClass="NSMutableArray" id="zBP-As-utz"/>
+                        <outletCollection property="imageRating" destination="bkd-gv-52k" collectionClass="NSMutableArray" id="qHo-lt-NBE"/>
+                        <outletCollection property="imageRating" destination="joa-Jw-wpz" collectionClass="NSMutableArray" id="dnt-Zi-O7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kde-JI-zWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -713,6 +736,9 @@
             <point key="canvasLocation" x="7741.5" y="348"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="non_star_filled" width="308" height="295"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Eq7-Ff-p00"/>
     </inferredMetricsTieBreakers>

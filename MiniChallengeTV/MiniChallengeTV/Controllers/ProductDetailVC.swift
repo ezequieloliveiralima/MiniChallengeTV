@@ -11,10 +11,10 @@ import UIKit
 class ProductDetailVC: UIViewController {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
-    @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var rating: UIStackView!
     @IBOutlet weak var btnFavorite: UIButton!
+    @IBOutlet var imageRating: [UIImageView]!
     
     var productOffers : ProductOffers? {
         didSet {
@@ -105,26 +105,22 @@ private extension ProductDetailVC {
     }
     
     func calcalateRating() {
+        let filled = UIImage(named: "star_filled")
+        let halfFilled = UIImage(named: "half_star_filled")
         var total = Double(productOffers?.product.userRating.value ?? "0.0") ?? 0.0
-        let filled = UIImageView(image: UIImage(named: "star_filled"))
-        filled.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        
-        let nonFilled = UIImageView(image: UIImage(named: "non_star_filled"))
-        nonFilled.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        
-        let halfFilled = UIImageView(image: UIImage(named: "half_star_filled"))
-        halfFilled.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        
-        total = total - total % 0.5
-        let totalStars = total / 2
-        let integer = Int(totalStars)
-
-        for _ in 1..<integer {
-            self.rating.addArrangedSubview(filled)
+        total = total / 2
+        let totalInteger = Int(total)
+        let rest = total - Double(totalInteger)
+        for i in 0..<totalInteger {
+            imageRating[i].image = filled
+        }
+        if rest >= 0.3 {
+            imageRating[totalInteger].image = halfFilled
         }
     }
     
     func updateFavoriteButton(status: Bool) {
         btnFavorite.setTitle(status ? "Remover Favorito" : "Adicionar Favorito", forState: .Normal)
+        btnFavorite.setImage(status ? UIImage(named: "button-rated")! : UIImage(named: "button-rate")!, forState: .Normal)
     }
 }
