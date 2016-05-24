@@ -10,6 +10,7 @@ import UIKit
 
 class FilterResultsVC: UITableViewController {
     
+    var container: FilterSplitVC?
     var results: [Product]? = []
     var products: List<Product>? {
         didSet {
@@ -18,6 +19,8 @@ class FilterResultsVC: UITableViewController {
             updateUI()
         }
     }
+
+    var selectedProduct: Product?
     
     override func viewDidLoad() {
         super.viewDidLoad()
