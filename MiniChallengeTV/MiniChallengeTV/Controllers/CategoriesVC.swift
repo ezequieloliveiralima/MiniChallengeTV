@@ -23,10 +23,7 @@ class CategoriesVC: UIViewController {
         collectionTop.registerNib(UINib(nibName: "DefaultCollectionCell", bundle: nil), forCellWithReuseIdentifier: .DefaultCell)
         collectionTop.contentInset = UIEdgeInsets(top: -135, left: 0, bottom: 0, right: 0)
         
-        MainConnector.getListTopCategories([]) { (list) in
-            self.topCategories = list
-            self.collectionTop.reloadData()
-        }
+        getTopCategories()
     }
     
 }
@@ -37,17 +34,36 @@ extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (collectionView.tag == 0 ? topCategories?.list.count : allCategories?.list.count) ?? 0
+        switch collectionView {
+        case collectionTop:
+            return topCategories?.list.count ?? 0
+        case collectionAll:
+            return allCategories?.list.count ?? 0
+        default:
+            return 0
+        }
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(.DefaultCell, forIndexPath: indexPath) as! GenericCollectionCell
+        let list: List<Category>?
+        switch collectionView {
+        case collectionTop:
+            list = topCategories
+        case collectionAll:
+            list = allCategories
+        default:
+            list = nil
+        }
         
-//        guard let category = topCategories?.list[indexPath.item] else {
-//            return cell
-//        }
+        guard let category = list?.list[indexPath.item] else {
+            return cell
+        }
         
-        cell.imageView.image = UIImage(named: "placeholder")
+//        cell.label.text = category.name
+        MainConnector.getImage(category.imageUrl) { (image) in
+            cell.imageView.image = (image) ?? UIImage.defaultImage()
+        }
         
         return cell
     }
@@ -60,5 +76,38 @@ extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
 extension CategoriesVC: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         return true
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        search(keyword: textField.text)
+    }
+}
+
+private extension CategoriesVC {
+    func updateTopUI(list list: List<Category>?) {
+        topCategories = list
+        collectionTop.reloadData()
+    }
+    
+    func updateBottomUI(list list: List<Category>?) {
+        allCategories = list
+        collectionAll.reloadData()
+    }
+    
+    func getTopCategories() {
+        MainConnector.getListTopCategories([]) { (list) in
+            self.updateTopUI(list: list)
+        }
+    }
+    
+    func search(keyword text: String?) {
+        if let keyword = text {
+            MainConnector.getListCategories([.Keyword(keyword)]) { (list) in
+                self.updateBottomUI(list: list)
+            }
+        } else {
+            updateBottomUI(list: nil)
+        }
+        
     }
 }

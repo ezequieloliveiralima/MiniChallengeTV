@@ -23,6 +23,7 @@ class TopProductsVC: UIViewController {
         
         let defaultCell = UINib(nibName: "DefaultCollectionCell", bundle: nil)
         collectionTopProducts.registerNib(defaultCell, forCellWithReuseIdentifier: .DefaultCell)
+        
         MainConnector.getListTopProducts([]) { (list) in
             self.list = list
             self.collectionTopProducts.reloadData()

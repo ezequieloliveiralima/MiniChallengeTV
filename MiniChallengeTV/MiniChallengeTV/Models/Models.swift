@@ -102,6 +102,10 @@ class Offer: BaseModel, CustomStringConvertible {
     var description: String {
         return ""
     }
+    
+    var imageUrl: String? {
+        return thumbnail?.url
+    }
 }
 
 class Vendor: BaseModel, CustomStringConvertible {
@@ -133,6 +137,10 @@ class Vendor: BaseModel, CustomStringConvertible {
     
     var description: String {
         return ""
+    }
+    
+    var imageUrl: String? {
+        return thumbnail?.url
     }
 }
 
@@ -171,6 +179,10 @@ class Category: BaseModel, CustomStringConvertible {
     
     var description: String {
         return ""
+    }
+    
+    var imageUrl: String? {
+        return thumbnail?.url
     }
 }
 

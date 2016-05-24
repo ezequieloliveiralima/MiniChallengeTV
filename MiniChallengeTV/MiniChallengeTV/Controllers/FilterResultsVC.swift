@@ -20,7 +20,7 @@ class FilterResultsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerNib(UINib(nibName: "DefaultTableCell", bundle: nil), forCellReuseIdentifier: "default-cell")
+        tableView.registerNib(UINib(nibName: "DefaultTableCell", bundle: nil), forCellReuseIdentifier: .DefaultCell)
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -32,7 +32,7 @@ class FilterResultsVC: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("default-cell", forIndexPath: indexPath) as! GenericTableCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(.DefaultCell, forIndexPath: indexPath) as! GenericTableCell
         
         guard let product = products?.list[indexPath.row] else {
             return cell
