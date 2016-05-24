@@ -642,7 +642,7 @@
         <image name="non_star_filled" width="308" height="295"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Ysc-jS-XGJ"/>
         <segue reference="LDi-NK-6K8"/>
-        <segue reference="NjL-XU-nk3"/>
     </inferredMetricsTieBreakers>
 </document>
