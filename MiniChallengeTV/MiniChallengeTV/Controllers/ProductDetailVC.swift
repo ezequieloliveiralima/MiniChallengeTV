@@ -94,6 +94,7 @@ private extension ProductDetailVC {
         MainConnector.getImage(productOffers?.product.imageUrl) { (image) in
             self.productImage.image = image?.imageByMakingWhiteBackgroundTransparent() ?? UIImage(named: "placeholder")
             self.productName.text = self.productOffers?.product.nameShort
+            self.calcalateRating()
         }
         
         MainConnector.isFavorite(productOffers!.product) { (status) in
@@ -103,10 +104,24 @@ private extension ProductDetailVC {
         tableView.reloadData()
     }
     
-    func calcalateRating(value: Double) {
-//        let filled = UIImageView(image: UIImage(named: "star_filled"))
-//        let nonFilled = UIImageView(image: UIImage(named: "non_star_filled"))
-//        let halfFilled = UIImageView(image: UIImage(named: "half_star_filled"))
+    func calcalateRating() {
+        var total = Double(productOffers?.product.userRating.value ?? "0.0") ?? 0.0
+        let filled = UIImageView(image: UIImage(named: "star_filled"))
+        filled.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        
+        let nonFilled = UIImageView(image: UIImage(named: "non_star_filled"))
+        nonFilled.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        
+        let halfFilled = UIImageView(image: UIImage(named: "half_star_filled"))
+        halfFilled.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        
+        total = total - total % 0.5
+        let totalStars = total / 2
+        let integer = Int(totalStars)
+
+        for _ in 1..<integer {
+            self.rating.addArrangedSubview(filled)
+        }
     }
     
     func updateFavoriteButton(status: Bool) {
