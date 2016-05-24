@@ -106,8 +106,8 @@ class BVendor: BuscapeModel {
 
 class BListDetail : BuscapeModel, CustomStringConvertible {
     
-    let page: Int
-    let totalPages: Int
+    let page: Int?
+    let totalPages: Int?
     let totalResultsAvailable: Int
     let totalResultsReturned: Int
     
@@ -115,7 +115,7 @@ class BListDetail : BuscapeModel, CustomStringConvertible {
         return "{page: \(page), total: \(totalPages), totalResults: \(totalResultsReturned), totalResultsAvailable: \(totalResultsAvailable)}"
     }
     
-    init(page: Int, totalPages: Int, totalResultsReturned: Int, totalResultsAvailable: Int) {
+    init(page: Int?, totalPages: Int?, totalResultsReturned: Int, totalResultsAvailable: Int) {
         self.page = page
         self.totalPages = totalPages
         self.totalResultsReturned = totalResultsReturned

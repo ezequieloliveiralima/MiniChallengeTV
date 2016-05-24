@@ -29,16 +29,17 @@ class BuscapeParser {
     }
     
     class func parseListDetail(json: Payload) -> BListDetail? {
-        guard let page = json["page"] as? Int
-            , totalPages = json["totalpages"] as? Int
-            , totalResultsReturned = json["totalresultsreturned"] as? Int
+        guard let totalResultsReturned = json["totalresultsreturned"] as? Int
             , totalResultsAvailable = json["totalresultsavailable"] as? Int else {
                 return nil
         }
+        let page = json["page"] as? Int
+        let totalPages = json["totalpages"] as? Int
         return BListDetail(page: page, totalPages: totalPages, totalResultsReturned: totalResultsReturned, totalResultsAvailable: totalResultsAvailable)
     }
     
     class func parseCategory(json: Payload) -> BCategory? {
+        let json = nestedValue(json, key: "subcategory")
         guard let id        = json["id"] as? Int
             , idParent      = json["parentcategoryid"] as? Int
             , name          = json["name"] as? String
@@ -49,9 +50,9 @@ class BuscapeParser {
                 return nil
         }
         
-        let thumbnail = parseThumbnail(json)
-        let productUrl    = links.filter({ $0.0 == "list_product" }).first?.0
-        let offerUrl      = links.filter({ $0.0 == "list_offer" }).first?.0
+        let thumbnail   = parseThumbnail(json)
+        let productUrl  = links.filter({ $0.0 == "list_product" }).first?.0
+        let offerUrl    = links.filter({ $0.0 == "list_offer" }).first?.0
         return BCategory(id: id, idParent: idParent, name: name, isFinal: isFinal, productsUrl: productUrl, offersUrl: offerUrl, thumbnail: thumbnail)
     }
     

@@ -11,7 +11,7 @@ import UIKit
 
 class TopProductsVC: UIViewController {
     
-    @IBOutlet weak var collectionTopProducts: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var loadingTopProducts: UIActivityIndicatorView!
     
     var selectedProduct: Product?
@@ -22,11 +22,11 @@ class TopProductsVC: UIViewController {
         super.viewDidLoad()
         
         let defaultCell = UINib(nibName: "DefaultCollectionCell", bundle: nil)
-        collectionTopProducts.registerNib(defaultCell, forCellWithReuseIdentifier: .DefaultCell)
+        collectionView.registerNib(defaultCell, forCellWithReuseIdentifier: .DefaultCell)
         
         MainConnector.getListTopProducts([]) { (list) in
             self.list = list
-            self.collectionTopProducts.reloadData()
+            self.collectionView.reloadData()
             self.loadingTopProducts.stopAnimating()
         }
     }
@@ -34,13 +34,20 @@ class TopProductsVC: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
         
-        if let split = segue.destinationViewController as? UISplitViewController {
-            if let split = split as? ProductSplitVC {
+        guard let identifier = segue.identifier, segueId = SegueIdentifier(rawValue: identifier) else {
+            return
+        }
+        
+        switch (segueId) {
+        case .ProductSearched:
+            if let split = segue.destinationViewController as? FilterSplitVC {
+                split.searchParameters = [.Keyword(searchText!)]
+            }
+        case .ProductSelected:
+            if let split = segue.destinationViewController as? ProductSplitVC {
                 split.productId = selectedProduct?.id
             }
-            if let split = split as? FilterSplitVC {
-                split.searchText = searchText
-            }
+        default: break
         }
     }
 }
@@ -61,7 +68,7 @@ extension TopProductsVC: UICollectionViewDelegate, UICollectionViewDataSource {
             return cell
         }
         
-        cell.imageView.image = UIImage.defaultImage()
+        cell.label.text = product.nameShort
         MainConnector.getImage(product.imageUrl, callback: { (img) in
             cell.imageView.image = (img ?? UIImage.defaultImage())?.imageByMakingWhiteBackgroundTransparent()
         })
@@ -78,14 +85,14 @@ extension TopProductsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         selectedProduct = list?.list[indexPath.item]
-        self.performSegueWithIdentifier("Select Product", sender: self)
+        self.performSegueWithIdentifier(.ProductSelected, sender: self)
     }
 }
 
 extension TopProductsVC: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         searchText = textField.text
-        self.performSegueWithIdentifier("Filter", sender: self)
+        self.performSegueWithIdentifier(.ProductSearched, sender: self)
         return true
     }
 }

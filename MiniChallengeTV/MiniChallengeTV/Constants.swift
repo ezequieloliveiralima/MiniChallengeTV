@@ -12,9 +12,12 @@ enum CellIdentifier: String {
     
     case DefaultCell = "default-cell"
     , Specification = "specification"
-    
+
 }
 
 enum SegueIdentifier: String {
-    case Next, Product, Find
+    case CategorySelected = "category_selected"
+        , ProductSelected = "product_selected"
+        , ProductSearched = "product_searched"
+    
 }

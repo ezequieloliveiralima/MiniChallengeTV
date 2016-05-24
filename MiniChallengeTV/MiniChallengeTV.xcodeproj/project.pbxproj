@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570E88C61CF4CD600010D1BE /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E88C51CF4CD600010D1BE /* Errors.swift */; };
 		577C25101CED077D00360149 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577C250F1CED077D00360149 /* Common.swift */; };
 		578A2BC91CEF8C3C0034180F /* MainViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578A2BC81CEF8C3C0034180F /* MainViewControllerDelegate.swift */; };
 		578A2BCB1CEF9FA60034180F /* ConnetionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578A2BCA1CEF9FA60034180F /* ConnetionManager.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		570E88C51CF4CD600010D1BE /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Models/Errors.swift; sourceTree = "<group>"; };
 		577C250F1CED077D00360149 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = Models/Common.swift; sourceTree = "<group>"; };
 		578A2BC81CEF8C3C0034180F /* MainViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewControllerDelegate.swift; path = Controllers/MainViewControllerDelegate.swift; sourceTree = "<group>"; };
 		578A2BCA1CEF9FA60034180F /* ConnetionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnetionManager.swift; path = Controllers/ConnetionManager.swift; sourceTree = "<group>"; };
@@ -173,9 +175,9 @@
 		57BF64F41CEA600E00298EA2 /* API Buscape */ = {
 			isa = PBXGroup;
 			children = (
+				57BF64F61CEA600E00298EA2 /* BuscapeAPI.swift */,
 				57BF64F51CEA600E00298EA2 /* BuscapeModels.swift */,
 				578FDA9D1CEE3DC00068A6DC /* BuscapeGroupModels.swift */,
-				57BF64F61CEA600E00298EA2 /* BuscapeAPI.swift */,
 				57BF64F71CEA600E00298EA2 /* BuscapeConnector.swift */,
 				57EC6A1D1CEE553800ED0EA6 /* BuscapeParser.swift */,
 			);
@@ -279,6 +281,7 @@
 				577C250F1CED077D00360149 /* Common.swift */,
 				578FDA991CEE28A50068A6DC /* Models.swift */,
 				57BC8BD91CEBA9D7001AB292 /* GroupModels.swift */,
+				570E88C51CF4CD600010D1BE /* Errors.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				577C25101CED077D00360149 /* Common.swift in Sources */,
 				E69AF08B1CF3804E00E2A2B3 /* CDProduct+CoreDataProperties.swift in Sources */,
 				57BF64FA1CEA600E00298EA2 /* BuscapeAPI.swift in Sources */,
+				570E88C61CF4CD600010D1BE /* Errors.swift in Sources */,
 				E69AF08D1CF3804E00E2A2B3 /* CDFavoriteItem+CoreDataProperties.swift in Sources */,
 				E6EF35621CEE49EA00131D96 /* TopProductsVC.swift in Sources */,
 				578E1F211CF3906A00B4E51D /* Constants.swift in Sources */,

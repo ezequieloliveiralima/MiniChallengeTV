@@ -50,7 +50,8 @@ class FilterResultsVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("Select Product", sender: self)
+        selectedProduct = products?.list[indexPath.row]
+        container?.goToProduct()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
