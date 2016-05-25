@@ -22,7 +22,7 @@ class HistoricVC: UITableViewController {
         super.viewDidAppear(animated)
         
         MainConnector.getHistory { (list) in
-            self.historic = list
+            self.historic = list.reverse()
             self.tableView.reloadData()
         }
     }

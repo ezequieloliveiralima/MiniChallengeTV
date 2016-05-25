@@ -66,7 +66,24 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         
-        cell.label.text = "\(offer.vendor.name) : \(offer.price)"
+        var text = ""
+        switch offer.price {
+        case .Value(let value):
+            text = String(format: "%.2f", "\(value)")
+            break
+        case .Discount(let value, let originalValue, let discountPercent):
+            text = "\(discountPercent) %"
+            break
+        case .Parcel(let value, let parcelValue, let interest, let parcel):
+            text = "\(value)"
+            break
+        case .Range(let min, let max):
+            text = "\(min)"
+            break
+        default:
+            break
+        }
+        cell.label.text = "\(offer.vendor.name) : \(text)"
         cell.imgView.image = UIImage.defaultImage()
 
         let url = offer.vendor.thumbnail?.url

@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uRQ-fJ-a33">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uRQ-fJ-a33">
                                 <rect key="frame" x="20" y="155" width="1880" height="925"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q3F-ON-7yF">
                                     <size key="itemSize" width="100" height="44"/>
@@ -643,6 +643,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ysc-jS-XGJ"/>
-        <segue reference="LDi-NK-6K8"/>
+        <segue reference="Eq7-Ff-p00"/>
     </inferredMetricsTieBreakers>
 </document>
