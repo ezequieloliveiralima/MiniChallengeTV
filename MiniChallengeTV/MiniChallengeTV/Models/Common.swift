@@ -61,6 +61,10 @@ enum SearchParameter {
     }
 }
 
+enum SortBy {
+    case Alphabetic, DAlphabetic, Rating, DRating, Price, DPrice
+}
+
 struct Specification: CustomStringConvertible {
     let url: String?
     let items: [SpecificationItem]?

@@ -35,7 +35,7 @@
             </view>
             <constraints>
                 <constraint firstItem="J58-kI-urb" firstAttribute="leading" secondItem="baX-ek-eGi" secondAttribute="leading" id="0Jp-bk-nkX"/>
-                <constraint firstAttribute="bottom" secondItem="J58-kI-urb" secondAttribute="bottom" id="OfW-JR-wdW"/>
+                <constraint firstItem="jrg-5J-2bx" firstAttribute="top" secondItem="J58-kI-urb" secondAttribute="bottom" id="ON1-Pd-JxS"/>
                 <constraint firstItem="jrg-5J-2bx" firstAttribute="leading" secondItem="baX-ek-eGi" secondAttribute="leading" id="kct-WE-62r"/>
                 <constraint firstItem="J58-kI-urb" firstAttribute="top" secondItem="baX-ek-eGi" secondAttribute="top" id="nI4-pe-SBc"/>
                 <constraint firstAttribute="trailing" secondItem="J58-kI-urb" secondAttribute="trailing" id="shI-ck-RQA"/>

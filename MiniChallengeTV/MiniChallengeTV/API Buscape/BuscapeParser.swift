@@ -62,7 +62,6 @@ class BuscapeParser {
             , idCategory    = json["categoryid"] as? Int
             , name          = json["productname"] as? String
             , nameShort     = json["productshortname"] as? String
-            , price         = parsePrice(json)
             , links         = parseLinks(json)
             , url           = links.filter({ $0.0 == "product"}).first?.1
             , detailUrl     = links.filter({ $0.0 == "xml" }).first?.1
@@ -76,8 +75,9 @@ class BuscapeParser {
                 return nil
         }
         
-        let thumbnails = parseThumbnails(json)
-        let specification = parseSpecification(json)
+        let price           = parsePrice(json)
+        let thumbnails      = parseThumbnails(json)
+        let specification   = parseSpecification(json)
         
         return BProduct(id: id, idCategory: idCategory, name: name, nameShort: nameShort, price: price, rating: rating, url: url, detail: detailUrl, thumbnails: thumbnails, specification: specification)
     }
@@ -136,7 +136,7 @@ class BuscapeParser {
                 return Price.Value(value: value)
             }
         }
-        print("Price didn't parse properly")
+//        print("Price didn't parse properly")
         return nil
     }
     

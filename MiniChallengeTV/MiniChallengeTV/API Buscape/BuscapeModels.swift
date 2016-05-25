@@ -19,7 +19,7 @@ class BProduct: BuscapeModel {
     let idCategory  : Int
     let name        : String
     let nameShort   : String
-    let price       : Price
+    let price       : Price?
     let userRating  : Rating
     
     let url         : String
@@ -28,7 +28,7 @@ class BProduct: BuscapeModel {
     let thumbnails      : [Thumbnail]?
     let specification   : Specification?
     
-    init(id: Int, idCategory: Int, name: String, nameShort: String, price: Price, rating: Rating, url: String, detail: String, thumbnails: [Thumbnail]?, specification: Specification?) {
+    init(id: Int, idCategory: Int, name: String, nameShort: String, price: Price?, rating: Rating, url: String, detail: String, thumbnails: [Thumbnail]?, specification: Specification?) {
         self.id             = id
         self.idCategory     = idCategory
         self.name           = name

@@ -63,7 +63,7 @@ extension TopProductsVC: UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(.DefaultCell, forIndexPath: indexPath) as! GenericCollectionCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(.Default, forIndexPath: indexPath) as! GenericCollectionCell
         
         guard let product = list?.list[indexPath.item] else {
             return cell

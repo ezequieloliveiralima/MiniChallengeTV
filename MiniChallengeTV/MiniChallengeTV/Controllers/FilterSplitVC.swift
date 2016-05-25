@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol FilterDelegate {
+    func sort(by sort: SortBy)
+}
+
 class FilterSplitVC: UISplitViewController {
     
     var master: FilterOptionsVC?
@@ -22,6 +26,7 @@ class FilterSplitVC: UISplitViewController {
                 
                 self.master = master
                 self.detail = detail
+                master.container = self
                 detail.container = self
                 detail.products = list
             }
@@ -32,5 +37,20 @@ class FilterSplitVC: UISplitViewController {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ProductSplitVC") as! ProductSplitVC
         vc.productId = detail?.selectedProduct?.id
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func request(page: Int) {
+        var params = searchParameters.map({ $0 })
+        params.append(.Page(page))
+        MainConnector.getListProducts(params, callback: { (products) in
+            self.master?.products = products
+            self.detail?.products = products
+        })
+    }
+}
+
+extension FilterSplitVC: FilterDelegate {
+    func sort(by sort: SortBy) { 
+        detail?.sort(by: sort)
     }
 }
