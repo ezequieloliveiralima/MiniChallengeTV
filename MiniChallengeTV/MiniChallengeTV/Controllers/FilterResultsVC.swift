@@ -46,7 +46,7 @@ class FilterResultsVC: UITableViewController {
         cell.label.text = "\(product.nameShort)"
         cell.imgView.image = UIImage.defaultImage()
         MainConnector.getImage(product.imageUrl) { (img) in
-            cell.imgView.image = (img ?? UIImage.defaultImage())?.imageByMakingWhiteBackgroundTransparent()
+            cell.imgView.image = (img ?? UIImage.defaultImage())//?.imageByMakingWhiteBackgroundTransparent()
         }
         
         return cell

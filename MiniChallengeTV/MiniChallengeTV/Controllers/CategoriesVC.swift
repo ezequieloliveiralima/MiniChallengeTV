@@ -24,7 +24,7 @@ class CategoriesVC: UIViewController {
         
         let nib = UINib(nibName: "DefaultCollectionCell", bundle: nil)
         collectionView.registerNib(nib, forCellWithReuseIdentifier: .DefaultCell)
-        collectionView.contentInset = UIEdgeInsets(top: -135, left: 0, bottom: 0, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 70, bottom: 70, right: 70)
         
         MainConnector.getListTopCategories([]) { (list) in
             self.topCategories = list
@@ -66,8 +66,12 @@ extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         
         cell.label.text = category.name
         MainConnector.getImage(category.imageUrl) { (image) in
-            cell.imageView.image = (image ?? UIImage.defaultImage())?.imageByMakingWhiteBackgroundTransparent()
+            cell.imageView.image = (image ?? UIImage.defaultImage())//?.imageByMakingWhiteBackgroundTransparent()
         }
+        
+        cell.imageView.layer.cornerRadius = 5
+        cell.imageView.layer.masksToBounds  = true
+        
         return cell
     }
     
@@ -78,6 +82,14 @@ extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         selectedCategory = currentList?.list[indexPath.item]
         performSegueWithIdentifier(.CategorySelected, sender: self)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 70
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 70
     }
 }
 

@@ -56,7 +56,7 @@ class FavoritesVC: UITableViewController {
         let product = favoritesList[indexPath.row]
         cell.label.text = "\(product.name)"
         ConnectionManager.getImage(product.thumbnail) { (img) in
-            cell.imgView.image = (img ?? UIImage.defaultImage())?.imageByMakingWhiteBackgroundTransparent()
+            cell.imgView.image = (img ?? UIImage.defaultImage())//?.imageByMakingWhiteBackgroundTransparent()
         }
         
         let gest = UITapGestureRecognizer(target: self, action: #selector(FavoritesVC.editCell(_:)))

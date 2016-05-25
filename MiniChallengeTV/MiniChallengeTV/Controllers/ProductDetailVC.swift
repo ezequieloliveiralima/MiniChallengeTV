@@ -85,11 +85,12 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource {
         }
         cell.label.text = "\(offer.vendor.name) : \(text)"
         cell.imgView.image = UIImage.defaultImage()
+        cell.imgView.backgroundColor = UIColor.whiteColor()
 
         let url = offer.vendor.thumbnail?.url
         
         MainConnector.getImage(url) { (img) in
-            cell.imgView.image = img ?? UIImage.defaultImage()?.imageByMakingWhiteBackgroundTransparent()
+            cell.imgView.image = img ?? UIImage.defaultImage()//?.imageByMakingWhiteBackgroundTransparent()
         }
         
         return cell
@@ -112,7 +113,7 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource {
 private extension ProductDetailVC {
     func updateUI() {
         MainConnector.getImage(productOffers?.product.imageUrl) { (image) in
-            self.productImage.image = image?.imageByMakingWhiteBackgroundTransparent() ?? UIImage(named: "placeholder")
+            self.productImage.image = image/*?.imageByMakingWhiteBackgroundTransparent()*/ ?? UIImage(named: "placeholder")
             self.productName.text = self.productOffers?.product.nameShort
             self.calcalateRating()
         }

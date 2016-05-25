@@ -40,8 +40,12 @@ class HistoricVC: UITableViewController {
         
         let product = historic[indexPath.row]
         cell.label.text = "\(product.name)"
-        ConnectionManager.getImage(product.thumbnail) { (img) in
-            cell.imgView.image = img?.imageByMakingWhiteBackgroundTransparent()
+        if let thumbnail = product.thumbnail {
+            ConnectionManager.getImage(thumbnail) { (img) in
+                cell.imgView.image = img//?.imageByMakingWhiteBackgroundTransparent()
+            }
+        } else {
+            cell.imgView.image = UIImage.defaultImage()
         }
         
         return cell

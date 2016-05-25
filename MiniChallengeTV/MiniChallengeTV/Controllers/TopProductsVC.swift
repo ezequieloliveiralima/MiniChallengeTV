@@ -23,6 +23,7 @@ class TopProductsVC: UIViewController {
         
         let defaultCell = UINib(nibName: "DefaultCollectionCell", bundle: nil)
         collectionView.registerNib(defaultCell, forCellWithReuseIdentifier: .DefaultCell)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 70, bottom: 70, right: 70)
         
         MainConnector.getListTopProducts([]) { (list) in
             self.list = list
@@ -52,7 +53,7 @@ class TopProductsVC: UIViewController {
     }
 }
 
-extension TopProductsVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension TopProductsVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -70,7 +71,7 @@ extension TopProductsVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         cell.label.text = product.nameShort
         MainConnector.getImage(product.imageUrl, callback: { (img) in
-            cell.imageView.image = (img ?? UIImage.defaultImage())?.imageByMakingWhiteBackgroundTransparent()
+            cell.imageView.image = (img ?? UIImage.defaultImage())//?.imageByMakingWhiteBackgroundTransparent()
         })
         
         return cell
@@ -86,6 +87,14 @@ extension TopProductsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         selectedProduct = list?.list[indexPath.item]
         self.performSegueWithIdentifier(.ProductSelected, sender: self)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 70
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 70
     }
 }
 

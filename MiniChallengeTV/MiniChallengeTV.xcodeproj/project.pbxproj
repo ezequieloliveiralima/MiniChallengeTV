@@ -98,7 +98,7 @@
 		E69AF0891CF3804E00E2A2B3 /* CDHistoricItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CDHistoricItem+CoreDataProperties.swift"; path = "CoreData Models/CDHistoricItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E69AF08A1CF3804E00E2A2B3 /* CDHistoricItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDHistoricItem.swift; path = "CoreData Models/CDHistoricItem.swift"; sourceTree = "<group>"; };
 		E69AF0911CF38BD600E2A2B3 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductDetailVC.swift; path = Controllers/ProductDetailVC.swift; sourceTree = "<group>"; };
-		E6CC77DF1CE66F700046DF18 /* MiniChallengeTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallengeTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6CC77DF1CE66F700046DF18 /* Top Ofertas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Top Ofertas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CC77E21CE66F700046DF18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6CC77E41CE66F700046DF18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E6CC77E71CE66F700046DF18 /* MiniChallengeTV.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MiniChallengeTV.xcdatamodel; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 		E6CC77E01CE66F700046DF18 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E6CC77DF1CE66F700046DF18 /* MiniChallengeTV.app */,
+				E6CC77DF1CE66F700046DF18 /* Top Ofertas.app */,
 				E6CC77F31CE66F700046DF18 /* MiniChallengeTVTests.xctest */,
 				E6CC77FE1CE66F700046DF18 /* MiniChallengeTVUITests.xctest */,
 			);
@@ -325,7 +325,7 @@
 			);
 			name = MiniChallengeTV;
 			productName = MiniChallengeTV;
-			productReference = E6CC77DF1CE66F700046DF18 /* MiniChallengeTV.app */;
+			productReference = E6CC77DF1CE66F700046DF18 /* Top Ofertas.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E6CC77F21CE66F700046DF18 /* MiniChallengeTVTests */ = {
@@ -615,7 +615,7 @@
 				INFOPLIST_FILE = MiniChallengeTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BEPiD.MiniChallengeTV;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Top Ofertas";
 			};
 			name = Debug;
 		};
@@ -627,7 +627,7 @@
 				INFOPLIST_FILE = MiniChallengeTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BEPiD.MiniChallengeTV;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Top Ofertas";
 			};
 			name = Release;
 		};

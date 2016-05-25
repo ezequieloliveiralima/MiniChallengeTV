@@ -16,12 +16,18 @@ class GenericCollectionCell: UICollectionViewCell {
         super.didUpdateFocusInContext(context, withAnimationCoordinator: coordinator)
         
         if context.nextFocusedView == self {
-            UIView.animateWithDuration(0.3, animations: { 
+            UIView.animateWithDuration(0.3, animations: {
                 self.transform = CGAffineTransformMakeScale(1.3, 1.3)
+                self.layer.shadowOffset = CGSize(width: 10, height: 20)
+                self.layer.shadowOpacity = 0.3
+                self.layer.shadowRadius = 6
             })
         } else {
             UIView.animateWithDuration(0.3, animations: {
                 self.transform = CGAffineTransformMakeScale(1, 1)
+                self.layer.shadowOffset = CGSize(width: 0, height: 0)
+                self.layer.shadowOpacity = 0
+                self.layer.shadowRadius = 0
             })
         }
     }
