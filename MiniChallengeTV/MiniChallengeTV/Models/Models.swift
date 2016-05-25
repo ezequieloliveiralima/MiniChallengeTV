@@ -18,7 +18,7 @@ class Product: BaseModel, CustomStringConvertible {
     let idCategory      : Int
     let name            : String
     let nameShort       : String
-    let price           : Price
+    let price           : Price?
     let userRating      : Rating
     let url             : String
     let detailUrl       : String

@@ -8,33 +8,50 @@
 
 import UIKit
 
-enum FilterType {
-    case Alphabetic
-    , BetterRated
-    , LowestPrice
-    , BiggestPrice
-}
-
-protocol FilterDelegate {
-    func filter(by filter: FilterType)
-}
-
 class FilterOptionsVC: UITableViewController {
-    var delegate: FilterDelegate?
-
+    
+    var container: FilterSplitVC?
+    var products: List<Product>? {
+        didSet {
+            self.tableView.selectRowAtIndexPath(nil, animated: true, scrollPosition: UITableViewScrollPosition.None)
+        }
+    }
+    
+    private let items:[(SortBy, String)] = [
+        (.Alphabetic, "A -> Z")
+        , (.DAlphabetic, "Z -> A")
+        , (.Rating  , "Pontuação")
+        , (.DPrice  , "Preços Menores")
+        , (.Price   , "Preços Maiores")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let frVC = ((splitViewController as! FilterSplitVC).viewControllers[1] as! UINavigationController).viewControllers[0] as! FilterResultsVC
-        self.delegate = frVC
-        switch indexPath.row {
-        case 0: self.delegate?.filter(by: FilterType.Alphabetic)
-        case 1: self.delegate?.filter(by: FilterType.BetterRated)
-        case 2: self.delegate?.filter(by: FilterType.LowestPrice)
-        case 3: self.delegate?.filter(by: FilterType.BiggestPrice)
-        default: break
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Ordenar Por"
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(.Order) else {
+            assert(false)
         }
+        let item = items[indexPath.row]
+        cell.textLabel?.text = item.1
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let item = items[indexPath.row]
+        container?.sort(by: item.0)
     }
 }

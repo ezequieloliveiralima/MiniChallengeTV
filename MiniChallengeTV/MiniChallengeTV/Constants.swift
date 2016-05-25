@@ -10,8 +10,10 @@ import Foundation
 
 enum CellIdentifier: String {
     
-    case DefaultCell = "default-cell"
+    case Default = "default-cell"
     , Specification = "specification"
+    , Order = "order"
+    , Product = "product"
 
 }
 

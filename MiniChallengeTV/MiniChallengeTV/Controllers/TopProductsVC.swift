@@ -22,7 +22,7 @@ class TopProductsVC: UIViewController {
         super.viewDidLoad()
         
         let defaultCell = UINib(nibName: "DefaultCollectionCell", bundle: nil)
-        collectionView.registerNib(defaultCell, forCellWithReuseIdentifier: .DefaultCell)
+        collectionView.registerNib(defaultCell, forCellWithReuseIdentifier: .Default)
         
         MainConnector.getListTopProducts([]) { (list) in
             self.list = list
@@ -62,7 +62,7 @@ extension TopProductsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(.DefaultCell, forIndexPath: indexPath) as! GenericCollectionCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(.Default, forIndexPath: indexPath) as! GenericCollectionCell
         
         guard let product = list?.list[indexPath.item] else {
             return cell

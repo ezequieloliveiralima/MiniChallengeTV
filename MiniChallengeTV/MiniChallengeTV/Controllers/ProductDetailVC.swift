@@ -15,6 +15,8 @@ class ProductDetailVC: UIViewController {
     @IBOutlet weak var rating: UIStackView!
     @IBOutlet weak var btnFavorite: UIButton!
     @IBOutlet var imageRating: [UIImageView]!
+
+    private var didViewsLoad = false
     
     var productOffers : ProductOffers? {
         didSet {
@@ -25,7 +27,8 @@ class ProductDetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.registerNib(UINib(nibName: "DefaultTableCell", bundle: nil), forCellReuseIdentifier: .DefaultCell)
+        didViewsLoad = true
+        tableView.registerNib(UINib(nibName: "DefaultTableCell", bundle: nil), forCellReuseIdentifier: .Default)
     }
 
 }
@@ -61,7 +64,7 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(.DefaultCell) as! GenericTableCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(.Default) as! GenericTableCell
         guard let offer = productOffers?.offers[indexPath.row] else {
             return cell
         }
@@ -111,6 +114,9 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource {
 //Private
 private extension ProductDetailVC {
     func updateUI() {
+        if !didViewsLoad {
+            return
+        }
         MainConnector.getImage(productOffers?.product.imageUrl) { (image) in
             self.productImage.image = image?.imageByMakingWhiteBackgroundTransparent() ?? UIImage(named: "placeholder")
             self.productName.text = self.productOffers?.product.nameShort

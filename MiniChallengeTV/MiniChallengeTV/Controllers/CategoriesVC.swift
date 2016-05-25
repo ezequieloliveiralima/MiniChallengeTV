@@ -23,7 +23,7 @@ class CategoriesVC: UIViewController {
         super.viewDidLoad()
         
         let nib = UINib(nibName: "DefaultCollectionCell", bundle: nil)
-        collectionView.registerNib(nib, forCellWithReuseIdentifier: .DefaultCell)
+        collectionView.registerNib(nib, forCellWithReuseIdentifier: .Default)
         collectionView.contentInset = UIEdgeInsets(top: -135, left: 0, bottom: 0, right: 0)
         
         MainConnector.getListTopCategories([]) { (list) in
@@ -58,7 +58,7 @@ extension CategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(.DefaultCell, forIndexPath: indexPath) as! GenericCollectionCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(.Default, forIndexPath: indexPath) as! GenericCollectionCell
         
         guard let category = currentList?.list[indexPath.item] else {
             return cell

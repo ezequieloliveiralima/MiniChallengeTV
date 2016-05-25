@@ -17,7 +17,7 @@ class FavoritesVC: UITableViewController {
         super.viewDidLoad()
 
         let productCell = UINib(nibName: "DefaultTableCell", bundle: nil)
-        tableView.registerNib(productCell, forCellReuseIdentifier: .DefaultCell)
+        tableView.registerNib(productCell, forCellReuseIdentifier: .Default)
         
 //        favoritesList = TestLocalStorage.instance.favorits
         // Uncomment the following line to preserve selection between presentations
@@ -51,7 +51,7 @@ class FavoritesVC: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(.DefaultCell, forIndexPath: indexPath) as! GenericTableCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(.Default, forIndexPath: indexPath) as! GenericTableCell
 
         let product = favoritesList[indexPath.row]
         cell.label.text = "\(product.name)"
