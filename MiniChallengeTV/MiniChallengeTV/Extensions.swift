@@ -24,6 +24,10 @@ extension Array {
         self.appendContentsOf(newElements)
         return self
     }
+    
+    public func copy() -> Array<Element> {
+        return self.map({$0})
+    }
 
 }
 

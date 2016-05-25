@@ -23,7 +23,7 @@ class CategoriesVC: UIViewController {
         super.viewDidLoad()
         
         let nib = UINib(nibName: "DefaultCollectionCell", bundle: nil)
-        collectionView.registerNib(nib, forCellWithReuseIdentifier: .DefaultCell)
+        collectionView.registerNib(nib, forCellWithReuseIdentifier: .Default)
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 70, bottom: 70, right: 70)
         
         MainConnector.getListTopCategories([]) { (list) in

@@ -40,7 +40,7 @@ class FilterSplitVC: UISplitViewController {
     }
     
     func request(page: Int) {
-        var params = searchParameters.map({ $0 })
+        var params = searchParameters.copy()
         params.append(.Page(page))
         MainConnector.getListProducts(params, callback: { (products) in
             self.master?.products = products

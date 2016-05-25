@@ -22,7 +22,7 @@ class TopProductsVC: UIViewController {
         super.viewDidLoad()
         
         let defaultCell = UINib(nibName: "DefaultCollectionCell", bundle: nil)
-        collectionView.registerNib(defaultCell, forCellWithReuseIdentifier: .DefaultCell)
+        collectionView.registerNib(defaultCell, forCellWithReuseIdentifier: .Default)
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 70, bottom: 70, right: 70)
         
         MainConnector.getListTopProducts([]) { (list) in
