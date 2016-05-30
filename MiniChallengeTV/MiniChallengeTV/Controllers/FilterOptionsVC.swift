@@ -42,9 +42,7 @@ class FilterOptionsVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(.Order) else {
-            assert(false)
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier(.Order)!
         let item = items[indexPath.row]
         cell.textLabel?.text = item.1
         return cell
