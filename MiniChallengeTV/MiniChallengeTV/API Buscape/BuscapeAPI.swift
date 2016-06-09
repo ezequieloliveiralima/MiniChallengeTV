@@ -14,7 +14,7 @@ private enum BuscapeEnviromentType {
 
 class BuscapeAPI {
     
-    private let BASE = "http://sandbox.buscape.com.br/service" //topCategories/{app-token}/BR/
+    private let BASE = "http://bws.buscape.com.br/service" //topCategories/{app-token}/BR/
     private let KEY = "4130577772346e466a48673d"
     
     private var enviromentType = BuscapeEnviromentType.Sandbox
