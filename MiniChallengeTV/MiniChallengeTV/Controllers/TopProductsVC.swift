@@ -69,7 +69,7 @@ extension TopProductsVC: UICollectionViewDelegate, UICollectionViewDataSource, U
             return cell
         }
         
-        cell.label.text = product.nameShort
+        cell.label.text = product.nameShort ?? product.name
         MainConnector.getImage(product.imageUrl, callback: { (img) in
             cell.imageView.image = (img ?? UIImage.defaultImage())//?.imageByMakingWhiteBackgroundTransparent()
         })

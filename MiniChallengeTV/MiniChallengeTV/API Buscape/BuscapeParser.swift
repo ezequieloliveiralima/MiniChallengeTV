@@ -61,7 +61,6 @@ class BuscapeParser {
         guard let id        = json["id"] as? Int
             , idCategory    = json["categoryid"] as? Int
             , name          = json["productname"] as? String
-            , nameShort     = json["productshortname"] as? String
             , links         = parseLinks(json)
             , url           = links.filter({ $0.0 == "product"}).first?.1
             , detailUrl     = links.filter({ $0.0 == "xml" }).first?.1
@@ -75,6 +74,7 @@ class BuscapeParser {
                 return nil
         }
         
+        let nameShort       = json["productshortname"] as? String
         let price           = parsePrice(json)
         let thumbnails      = parseThumbnails(json)
         let specification   = parseSpecification(json)

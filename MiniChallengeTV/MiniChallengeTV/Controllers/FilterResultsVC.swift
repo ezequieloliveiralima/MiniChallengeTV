@@ -63,7 +63,8 @@ extension FilterResultsVC: UITableViewDelegate, UITableViewDataSource {
             price = "Sem Ofertas"
         }
         
-        cell.nameText.text  = "\(product.nameShort)"
+        let productName = product.nameShort ?? product.name
+        cell.nameText.text  = "\(productName)"
         cell.priceText.text = price
         cell.imgView.image  = nil
         MainConnector.getImage(product.imageUrl) { (img) in
@@ -74,7 +75,8 @@ extension FilterResultsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedProduct = products?.list[indexPath.row]
+//        selectedProduct = products?.list[indexPath.row]
+        selectedProduct = results?[indexPath.row]
         container?.goToProduct()
     }
     

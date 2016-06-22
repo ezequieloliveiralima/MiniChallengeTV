@@ -72,18 +72,16 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource {
         var text = ""
         switch offer.price {
         case .Value(let value):
-            text = String(format: "%.2f", "\(value)")
+            text = "$\(String(format: "%.2f", "\(value)"))"
             break
-        case .Discount(let value, let originalValue, let discountPercent):
+        case .Discount( _, _, let discountPercent):
             text = "\(discountPercent) %"
             break
-        case .Parcel(let value, let parcelValue, let interest, let parcel):
-            text = "\(value)"
+        case .Parcel(let value, _, _, _):
+            text = "$\(value)"
             break
-        case .Range(let min, let max):
-            text = "\(min)"
-            break
-        default:
+        case .Range(let min, _):
+            text = "$\(min)"
             break
         }
         cell.label.text = "\(offer.vendor.name) : \(text)"
@@ -120,7 +118,9 @@ private extension ProductDetailVC {
         }
         MainConnector.getImage(productOffers?.product.imageUrl) { (image) in
             self.productImage.image = image/*?.imageByMakingWhiteBackgroundTransparent()*/ ?? UIImage(named: "placeholder")
-            self.productName.text = self.productOffers?.product.nameShort
+            self.productName.text = self.productOffers?.product.nameShort ?? self.productOffers?.product.name
+                
+                ?? self.productOffers?.product.name
             self.calcalateRating()
         }
         
